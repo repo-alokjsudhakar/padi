@@ -1,0 +1,18 @@
+{
+  "name": "padi",
+  "version": "1.1.0",
+  "description": "Padi (படி): TNPSC Group 4 past-paper practice app with PDF import powered by Claude",
+  "main": "server.js",
+  "type": "commonjs",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": { "node": ">=18.17" },
+  "dependencies": {
+    "@upstash/redis": "1.34.3",
+    "dotenv": "16.4.5",
+    "express": "4.21.2"
+  }
+}

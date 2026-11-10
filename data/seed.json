@@ -1,0 +1,3098 @@
+{
+ "version": 1,
+ "docs": {
+  "papers/starter": {
+   "createdAt": 1762646400000,
+   "kind": "practice",
+   "title": "Starter practice set",
+   "year": ""
+  },
+  "papers/g4-2025": {
+   "title": "Group 4 (CCSE-IV) 2025",
+   "year": "2025",
+   "kind": "official",
+   "createdAt": 1762732800000,
+   "note": "General English version. Answers taken from the tick marks in the uploaded booklet and checked by Claude; not yet verified against the official TNPSC answer key."
+  },
+  "questions/g4-2025-001": {
+   "answer": 3,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 1,
+   "options": [
+    "He told Mr. Y that Mr. Z will leave for his native place tomorrow",
+    "He told Mr. Y that Mr. Z left for his native place the next day",
+    "He told Mr. Y that Mr. Z would be leaving for his native place tomorrow",
+    "He told Mr. Y that Mr. Z would leave for his native place the next day"
+   ],
+   "paperId": "g4-2025",
+   "q": "Direct to Indirect Speech:\nHe said to Mr. Y, “Mr. Z will leave for his native place tomorrow”."
+  },
+  "questions/g4-2025-002": {
+   "answer": 3,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 2,
+   "options": [
+    "Ramesh is a strong man in the village",
+    "Ramesh is a stronger man in the village",
+    "Ramesh is the stronger man in the village",
+    "No other man in the village is so strong as Ramesh"
+   ],
+   "paperId": "g4-2025",
+   "q": "The positive form of “Ramesh is the strongest man in the village” is"
+  },
+  "questions/g4-2025-003": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 3,
+   "options": [
+    "shut down",
+    "work out",
+    "take off",
+    "warm up"
+   ],
+   "paperId": "g4-2025",
+   "q": "Fill in with the correct phrase:\nThe airhostess instructed the passengers to fasten the seat belts during the ______."
+  },
+  "questions/g4-2025-004": {
+   "answer": 3,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 4,
+   "options": [
+    "(a), (b)",
+    "(b), (c)",
+    "(a), (c)",
+    "(a), (d)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following sentences have gerunds?\n(a) They began playing\n(b) They began to play\n(c) We prefer to take tea\n(d) We prefer taking tea"
+  },
+  "questions/g4-2025-005": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 5,
+   "options": [
+    "have been studied",
+    "to be studying",
+    "to study",
+    "has been studied"
+   ],
+   "paperId": "g4-2025",
+   "q": "Fill in the blank with a suitable infinitive:\nHe is supposed ______ for his examinations now, but he is wasting his time relentlessly."
+  },
+  "questions/g4-2025-006": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 6,
+   "options": [
+    "forgot",
+    "visited",
+    "went",
+    "saw"
+   ],
+   "paperId": "g4-2025",
+   "q": "Fill in with the correct regular verb:\n“Both the officer and the worker ______ the affected areas”."
+  },
+  "questions/g4-2025-007": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 7,
+   "options": [
+    "(a)",
+    "(b)",
+    "(c)",
+    "(d)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Transform the following exclamatory sentence into an assertive sentence:\n“What a spectacular goal!”\n(a) Was it a spectacular goal?\n(b) The goal was spectacular\n(c) It was a spectacular goal.\n(d) Why the goal was spectacular?"
+  },
+  "questions/g4-2025-008": {
+   "answer": 3,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 8,
+   "options": [
+    "The mission is not over",
+    "The mission is not finished",
+    "The mission is not completed",
+    "The mission is not accomplished"
+   ],
+   "paperId": "g4-2025",
+   "q": "The negative form of ‘The Mission is accomplished’ is"
+  },
+  "questions/g4-2025-009": {
+   "answer": 3,
+   "category": "General English (Part A)",
+   "explanation": "The booklet’s tick is debatable here; confirm against the official TNPSC key.",
+   "n": 9,
+   "options": [
+    "Provide me some convenient place for laying my eggs",
+    "Which is the convenient place for laying my eggs",
+    "This is the convenient place for laying my eggs",
+    "Search a convenient place for laying my eggs"
+   ],
+   "paperId": "g4-2025",
+   "q": "“Cannot you find me some place convenient for laying my eggs” – the statement form of this interrogative sentence is"
+  },
+  "questions/g4-2025-010": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 10,
+   "options": [
+    "Imperative",
+    "Interrogative",
+    "Declarative",
+    "Exclamatory"
+   ],
+   "paperId": "g4-2025",
+   "q": "Choose the correct type of sentence:\nYou leave today."
+  },
+  "questions/g4-2025-011": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 11,
+   "options": [
+    "The enemy was defeated our army",
+    "The enemy was defeated by our army",
+    "The enemy has defeated our army",
+    "The enemy had defeated our army"
+   ],
+   "paperId": "g4-2025",
+   "q": "Select correct active form for the sentence:\n“Our army has been defeated by the enemy”."
+  },
+  "questions/g4-2025-012": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 12,
+   "options": [
+    "have",
+    "am having",
+    "had",
+    "was having"
+   ],
+   "paperId": "g4-2025",
+   "q": "Find out the correct tense form of the verb from the options given below:\nI got up early and ______ a shower."
+  },
+  "questions/g4-2025-013": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 13,
+   "options": [
+    "(1) and (2)",
+    "(1) and (4)",
+    "(2) and (3)",
+    "(3) and (4)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following British English words are correctly paired with the American English words?\n(1) Spanner — Wrench\n(2) Hoover — Nonsense\n(3) Bollocks — Vacuum\n(4) Hairslide — Barrette"
+  },
+  "questions/g4-2025-014": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 14,
+   "options": [
+    "Personal Digital Assistant",
+    "Personal Development Agency",
+    "Personal Data Authority",
+    "Personal Data Array"
+   ],
+   "paperId": "g4-2025",
+   "q": "PDA stands for"
+  },
+  "questions/g4-2025-015": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 15,
+   "options": [
+    "a-1, b-2, c-4, d-3",
+    "a-3, b-1, c-2, d-4",
+    "a-4, b-1, c-2, d-3",
+    "a-2, b-1, c-3, d-4"
+   ],
+   "paperId": "g4-2025",
+   "q": "Match the following:\n(a) Careful — 1. Verb formed from a noun\n(b) Teach — 2. Noun formed from a verb\n(c) Writer — 3. Noun formed from an adjective\n(d) Kindness — 4. Adjective formed from a verb"
+  },
+  "questions/g4-2025-016": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 16,
+   "options": [
+    "Time given for something to be done",
+    "Insufficient time",
+    "Exceed the allotted time",
+    "Finish before the given time"
+   ],
+   "paperId": "g4-2025",
+   "q": "Choose the correct meaning of the given phrasal verb in the context of time:\nRun out"
+  },
+  "questions/g4-2025-017": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 17,
+   "options": [
+    "a-4, b-3, c-1, d-2",
+    "a-2, b-4, c-3, d-1",
+    "a-1, b-3, c-4, d-2",
+    "a-2, b-3, c-1, d-4"
+   ],
+   "paperId": "g4-2025",
+   "q": "Match the following idioms in Column A with their meanings in Column B:\n(a) Fall out — 1. to collapse\n(b) Fall for — 2. to come into collision\n(c) Fall flat — 3. yield to its charms\n(d) Fall foul of — 4. to quarrel"
+  },
+  "questions/g4-2025-018": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 18,
+   "options": [
+    "Strongly",
+    "Heavily",
+    "Speedily",
+    "Fast"
+   ],
+   "paperId": "g4-2025",
+   "q": "Find out the suitable word for the underlined collocation in the following sentence.\nIt rains cats and dogs."
+  },
+  "questions/g4-2025-019": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 19,
+   "options": [
+    "(1)-(c) (2)-(e) (3)-(a) (4)-(b) (5)-(d)",
+    "(1)-(a) (2)-(d) (3)-(c) (4)-(e) (5)-(b)",
+    "(1)-(d) (2)-(e) (3)-(a) (4)-(b) (5)-(c)",
+    "(1)-(b) (2)-(e) (3)-(c) (4)-(a) (5)-(d)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Read the passage and replace the underlined words with their antonyms given in the options.\nRam is a (1) robust person born to (2) affluent parents. His (3) odious behaviour and habits had an effect on his physical and mental (4) agility which made him to look (5) gaunt.\n(a) Pleasant (b) Awkwardness (c) Portly (d) Weak (e) Poor"
+  },
+  "questions/g4-2025-020": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 20,
+   "options": [
+    "(1) and (2)",
+    "(1) and (3)",
+    "(3) and (4)",
+    "(1) and (4)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following synonyms are incorrectly paired?\n(1) Gregarious — A person who walks unsteadily\n(2) Glutton — A person who eats too much\n(3) Groggy — A person who likes to be with others\n(4) Gourmet — A person who enjoys food"
+  },
+  "questions/g4-2025-021": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 21,
+   "options": [
+    "Hypallage",
+    "Malapropism",
+    "Metaphor",
+    "Simile"
+   ],
+   "paperId": "g4-2025",
+   "q": "An interchange of two elements in a phrase or sentence from a more logical to a less logical relationship ______."
+  },
+  "questions/g4-2025-022": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 22,
+   "options": [
+    "Only (c)",
+    "(a), (b) and (c)",
+    "Only (d)",
+    "All of the above"
+   ],
+   "paperId": "g4-2025",
+   "q": "Text: E-governance can empower citizens to participate in climate action by providing platforms for feedback, collaboration and reporting environmental concerns.\nQuestion: How can e-governance enhance citizen engagement in climate change initiatives?\n(a) Providing online forums for citizens to share ideas.\n(b) Enabling citizens to report illegal dumping or pollution incidents.\n(c) Offering online tools for citizens to calculate their carbon footprint.\n(d) Replacing all traditional in-person meetings with online surveys."
+  },
+  "questions/g4-2025-023": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 23,
+   "options": [
+    "Maria forgot to check the weather forecast",
+    "Maria is superstitious about umbrellas",
+    "Maria expects it to rain later",
+    "Maria doesn’t like sunny days"
+   ],
+   "paperId": "g4-2025",
+   "q": "Maria always carries an umbrella in her bag. Today, despite clear skies, she brought her umbrella to work.\nWhat can be inferred about Maria?"
+  },
+  "questions/g4-2025-024": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 24,
+   "options": [
+    "(b) (a) (d) (c) (e)",
+    "(c) (e) (a) (d) (b)",
+    "(a) (c) (b) (d) (e)",
+    "(b) (c) (e) (d) (a)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Rearrange the jumbled sentences:\n(a) Taking a few steps back, the fox jumped and just missed the hanging grapes.\n(b) Finally, giving up, the fox turned up his nose and said “They are probably sour anyway” and proceeded to walk away.\n(c) One afternoon a fox was walking through the forest and spotted a bunch of grapes hanging from over a lofty branch.\n(d) Again the fox took a few paces back and tried to reach them but still failed.\n(e) “Just the thing to quench my thirst”, he thought."
+  },
+  "questions/g4-2025-025": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 25,
+   "options": [
+    "(a)",
+    "(b)",
+    "(c)",
+    "(d)"
+   ],
+   "paperId": "g4-2025",
+   "q": "What type of letter is used to request information about a product or service?\n(a) Inquiry letter\n(b) Sales letter\n(c) Personal letter\n(d) Resignation letter"
+  },
+  "questions/g4-2025-026": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 26,
+   "options": [
+    "(a) and (d)",
+    "only (c)",
+    "(b) and (a)",
+    "only (d)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Scenario: A government agency is updating its website to include downloadable forms. They want to ensure the instructions for completing the forms are clear and professional.\nQuestion: Which of the following instruction best reflects the principles of official correspondence?\n(a) Just fill this out and send it in, no big deal.\n(b) You gotta put your info here, then sign there and you are good to go.\n(c) Please complete all sections of the form using legible handwriting or typed text. Submit the completed form along with the required supporting documentation.\n(d) Write your name and address, then do the rest however you want."
+  },
+  "questions/g4-2025-027": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 27,
+   "options": [
+    "Heavy",
+    "Menacing",
+    "Impurity",
+    "Dark"
+   ],
+   "paperId": "g4-2025",
+   "q": "Find the suitable words:\nThe ______ clouds signaled an approaching storm."
+  },
+  "questions/g4-2025-028": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 28,
+   "options": [
+    "a-1, b-2, c-4, d-3",
+    "a-2, b-1, c-4, d-3",
+    "a-3, b-4, c-1, d-2",
+    "a-4, b-2, c-3, d-1"
+   ],
+   "paperId": "g4-2025",
+   "q": "Scenario: Ms. Priyanka is seeking assistance and information regarding services for differently-abled individuals in the state. Match Ms. Priyanka’s needs with the appropriate department.\n(a) Obtain a disability certificate and access related benefits — 1. Department of Social Welfare and Women Empowerment\n(b) Information about educational scholarships and vocational training programs for her differently-abled child — 2. Directorate for Welfare of the Differently-abled\n(c) Report accessibility issues in public buildings and transport — 3. Department of Labour and Employment\n(d) Information on self-employment schemes and financial assistance for differently-abled entrepreneurs — 4. Department of Municipal Administration and Water Supply"
+  },
+  "questions/g4-2025-029": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 29,
+   "options": [
+    "Credit squeeze",
+    "Credit transfer",
+    "Credit control",
+    "Credit creation"
+   ],
+   "paperId": "g4-2025",
+   "q": "Fill in the blanks:\n______ refer to a situation where borrowing money from banks and other financial institutions becomes difficult, often due to rising interest rates or a general economic downturn."
+  },
+  "questions/g4-2025-030": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 30,
+   "options": [
+    "Technical Management",
+    "Performance Management",
+    "Human Resources Management",
+    "Evaluation Committee"
+   ],
+   "paperId": "g4-2025",
+   "q": "The process of hiring and managing employees is called"
+  },
+  "questions/g4-2025-031": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 31,
+   "options": [
+    "(b), (a), (d)",
+    "(b), (c), (d)",
+    "(a), (c), (d)",
+    "(a), (b), (c)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Passage: Smart home technologies aim to simplify daily life. They offer increased convenience and efficiency. User-friendly interfaces are essential for widespread adoption. The goal is to empower individuals through technology.\nQuestion: Which of the following statements best describe the author’s purpose in the passage?\n(a) to criticize the complexity of smart home technologies\n(b) to highlight the benefits of smart home technologies\n(c) to emphasize the importance of user-friendly interfaces\n(d) to advocate for the empowerment of individuals through technology"
+  },
+  "questions/g4-2025-032": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 32,
+   "options": [
+    "(b), (a), (d)",
+    "(b), (c), (d)",
+    "(a), (c), (d)",
+    "(d), (b), (a), (c)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Passage: A solar eclipse happens when the moon blocks the sun. This causes temporary darkness. It requires the Sun, Moon and Earth to align. The result is a shadow on Earth.\nQuestion: Which of the following statements accurately define or explain terms from the passage?\n(a) A solar eclipse is when the Earth blocks the Sun.\n(b) A solar eclipse is when the Moon blocks the Sun.\n(c) Alignment of the Sun, Moon and Earth is required\n(d) A shadow on Earth is a result of a solar eclipse"
+  },
+  "questions/g4-2025-033": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 33,
+   "options": [
+    "Nose out",
+    "Nestle up",
+    "Nail somebody down",
+    "Nuzzle up"
+   ],
+   "paperId": "g4-2025",
+   "q": "Complete the following sentence, choosing the appropriate word from the options given.\nI can ______ the presence of something rotten in the room."
+  },
+  "questions/g4-2025-034": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 34,
+   "options": [
+    "a-1, b-2, c-3, d-4",
+    "a-4, b-3, c-2, d-1",
+    "a-3, b-2, c-1, d-4",
+    "a-2, b-1, c-4, d-3"
+   ],
+   "paperId": "g4-2025",
+   "q": "Match the words in Column A with their suitable synonyms in Column B:\n(a) dissonance — 1. abnormality\n(b) esoteric — 2. mockery\n(c) lampoon — 3. abstruse\n(d) idiosyncrasy — 4. discord"
+  },
+  "questions/g4-2025-035": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 35,
+   "options": [
+    "AABB",
+    "ABBA",
+    "ABAB",
+    "BBAB"
+   ],
+   "paperId": "g4-2025",
+   "q": "In the given dialogue, some questions are underlined. Identify their type and mark ‘A’ if it is a strong question and ‘B’ if it is a weak question.\nAnu: Dear friends, how can we celebrate women’s day?\nMalar: Please clarify. Where and how are we going to celebrate?\nAnu: It must be celebrated in a grand manner.\nMalar: Shall we identify the venue?\nAnu: JKM Palace.\nMalar: Will it be available?\nAnu: Yes."
+  },
+  "questions/g4-2025-036": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 36,
+   "options": [
+    "both (a) and (b)",
+    "both (b) and (d)",
+    "both (a) and (d)",
+    "both (b) and (c)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Passage: A new social media platform gained rapid popularity among teenagers. Concerns arose about data privacy and the spread of misinformation. Despite these issues, the platform provided a space for creative expression and fostered online communities.\nQuestion: Based on the above scenario, which of the following statements are most likely to be true?\n(a) The platform is universally considered harmful.\n(b) The platform has both positive and negative impacts.\n(c) The platform is primarily used for educational purposes.\n(d) There are significant concerns about the platform’s ethical implications."
+  },
+  "questions/g4-2025-037": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 37,
+   "options": [
+    "both (a) and (b)",
+    "both (a) and (d)",
+    "both (b) and (d)",
+    "both (b) and (c)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Passage: The city’s rapid expansion led to increased traffic congestion and air pollution. Public transport systems were overwhelmed, and green spaces were replaced by concrete structures for the growing population. Residents complained of rising stress levels and a loss of community feeling.\nQuestion: Based on the given passage, which of the following statements is most likely to be true?\n(a) The city is focused on preserving its historical landmarks.\n(b) The city is experiencing negative consequences of unchecked growth.\n(c) Residents are actively involved in urban planning decisions.\n(d) The city’s infrastructure is struggling to keep pace with its population."
+  },
+  "questions/g4-2025-038": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 38,
+   "options": [
+    "(a), (b), (c), (d)",
+    "(b) and (c)",
+    "(b), (c), (d)",
+    "only (d)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Passage: The advent of remote work changed employment. Seamless collaboration rose with technology. Flexibility increased, yet isolation concerns grew.\nQuestion: Which of the following statements accurately reflect the meaning of the underlined word(s) as used in the passage?\n(a) ‘advent’ means the gradual decline of\n(b) ‘seamless’ means smooth and without interruption\n(c) ‘flexibility’ refers to the ability to adapt\n(d) ‘isolation’ means the state of being alone"
+  },
+  "questions/g4-2025-039": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 39,
+   "options": [
+    "Relentless surge",
+    "Paints a stark picture",
+    "Legacy of irreversible damage",
+    "Balanced and calm"
+   ],
+   "paperId": "g4-2025",
+   "q": "Passage: The relentless surge in global temperatures paints a stark picture of our planet’s future. Melting glaciers, raging wildfires and unprecedented floods serve as grim reminders of the escalating crisis. A sense of urgency pervades scientific reports, echoing the desperate need for immediate and decisive action. The window of opportunity to mitigate the catastrophic effects of climate change is rapidly closing, leaving behind a legacy of irreversible damage.\nQuestion: Which of the following words and phrases contribute to the mood of the passage?"
+  },
+  "questions/g4-2025-040": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 40,
+   "options": [
+    "Did you play cricket along with him?",
+    "Had you played cricket along with him?",
+    "Were you playing cricket with him?",
+    "You played cricket along with him?"
+   ],
+   "paperId": "g4-2025",
+   "q": "நீங்கள் அவருடன் கிரிக்கெட் விளையாடிக் கொண்டிருந்தீர்களா?\nChoose the correct English sentence from the options given, which best conveys the meaning of the sentence above."
+  },
+  "questions/g4-2025-041": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 41,
+   "options": [
+    "(b) and (a)",
+    "only (c)",
+    "only (a)",
+    "only (d)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Sentence: The meeting will have been scheduled by the time we arrive.\nQuestion: Which of the following Tamil sentences best conveys the meaning of the given sentence?\n(a) நாம் வரும்போது கூட்டம் திட்டமிடப்படும்.\n(b) நாம் வரும்போது கூட்டம் திட்டமிட்டிருப்பார்கள்.\n(c) நாம் வரும்போது கூட்டம் திட்டமிடப்பட்டு இருக்கும்.\n(d) நாம் வரும்போது கூட்டம் திட்டமிடுகிறார்கள்."
+  },
+  "questions/g4-2025-042": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "The booklet’s tick is debatable here; confirm against the official TNPSC key.",
+   "n": 42,
+   "options": [
+    "Both (b) and (d)",
+    "Both (b) and (c)",
+    "Both (a) and (c)",
+    "Both (a) and (d)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Passage: The company needs to ‘develop’ a new strategy. They want to ‘develop’ the land for a new factory.\nQuestion: Which of the following Tamil translations are appropriate for the word ‘develop’ in the given sentences?\n(a) வளர்க்க\n(b) உருவாக்க\n(c) மேம்படுத்த\n(d) கட்டியெழுப்ப"
+  },
+  "questions/g4-2025-043": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 43,
+   "options": [
+    "(2) and (3) are incorrect",
+    "(1) and (4) are incorrect",
+    "Only (2) is incorrect",
+    "(1) and (3) are incorrect"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following statements are incorrect?\n(1) The play “The Tempest” was written between 1610 and 1611.\n(2) “The Tempest” was not based on any actual incident.\n(3) Shakespeare had penned 10 sonnets.\n(4) Prospero dismissed Ariel from his service before he left the island."
+  },
+  "questions/g4-2025-044": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 44,
+   "options": [
+    "a-3, b-4, c-2, d-1",
+    "a-4, b-3, c-1, d-2",
+    "a-2, b-1, c-4, d-3",
+    "a-1, b-2, c-3, d-4"
+   ],
+   "paperId": "g4-2025",
+   "q": "Match the categories in Column A with the words in Column B:\n(a) Abbreviations — 1. Bat, Bat\n(b) Acronyms — 2. Aloud, Allowed\n(c) Homonyms — 3. WHO, PAN\n(d) Homophones — 4. ATM, CEO"
+  },
+  "questions/g4-2025-045": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "National Science Day (28 February) marks the discovery of the Raman Effect, not his birthday.",
+   "n": 45,
+   "options": [
+    "(1) only",
+    "(1) and (3) only",
+    "(1) and (2) only",
+    "(2) and (3) only"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following statements are true about Sir C.V. Raman?\n(1) Sir C.V. Raman was an Indian physicist.\n(2) Sir C.V. Raman was honoured with the Bharat Ratna Award.\n(3) Sir C.V. Raman’s birthday is celebrated as “National Science Day”."
+  },
+  "questions/g4-2025-046": {
+   "answer": 3,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 46,
+   "options": [
+    "(1) and (2)",
+    "(2) only",
+    "(1) and (3)",
+    "(2) and (4)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Choose the correct option:\nWhat did the young seagull do, when his parents beckoned to him?\n(1) He began to swoop\n(2) He screamed with fright and attempted to rise again\n(3) He answered with another scream\n(4) He sank his feet into the green sea"
+  },
+  "questions/g4-2025-047": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 47,
+   "options": [
+    "Epithet",
+    "Contrast",
+    "Anaphora",
+    "Oxymoron"
+   ],
+   "paperId": "g4-2025",
+   "q": "Identify the figure of speech in the following poetic line:\n‘They growl at the rain and they growl at the sun’."
+  },
+  "questions/g4-2025-048": {
+   "answer": 3,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 48,
+   "options": [
+    "Mars",
+    "Saturn",
+    "Uranus",
+    "Jupiter"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which is the largest planet in the Solar system?"
+  },
+  "questions/g4-2025-049": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 49,
+   "options": [
+    "a-1, b-2, c-3, d-4",
+    "a-3, b-1, c-4, d-2",
+    "a-2, b-3, c-1, d-4",
+    "a-4, b-2, c-1, d-3"
+   ],
+   "paperId": "g4-2025",
+   "q": "Choose the correct synonym by matching Column A and Column B:\n(a) strife — 1. futile\n(b) endure — 2. disagreement\n(c) vain — 3. undergo\n(d) accents — 4. emphasise"
+  },
+  "questions/g4-2025-050": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 50,
+   "options": [
+    "Anaphora",
+    "Alliteration",
+    "Assonance",
+    "Consonance"
+   ],
+   "paperId": "g4-2025",
+   "q": "Identify the figure of speech employed in the following line.\nBorn of despair with a sudden spring."
+  },
+  "questions/g4-2025-051": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 51,
+   "options": [
+    "(ii) only",
+    "(ii) and (iii) only",
+    "(i) and (iii) only",
+    "(i) and (iv) only"
+   ],
+   "paperId": "g4-2025",
+   "q": "Choose the correct answers.\nR.L. Stevenson’s famous works are\n(i) Treasure Island\n(ii) ‘The Lamb’ and ‘The Tiger’\n(iii) Kidnapped\n(iv) The Jungle Book"
+  },
+  "questions/g4-2025-052": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 52,
+   "options": [
+    "(a)",
+    "(b)",
+    "(c)",
+    "(d)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Choose the suitable answer:\nIf a writer uses a word or phrase in a special way, he/she can write it in\n(a) Parentheses\n(b) Quotation marks\n(c) Square brackets\n(d) Dash"
+  },
+  "questions/g4-2025-053": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 53,
+   "options": [
+    "(a)",
+    "(b)",
+    "(c)",
+    "(d)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following sentences is a correct synthesis using an appropriate conjunctive adverb?\nSentence 1: The assignment was due last week.\nSentence 2: We did not submit it on time.\n(a) The assignment was due last week; consequently, we did not submit it on time\n(b) The assignment was due last week, so we did not submit it on time\n(c) The assignment was due last week, because we did not submit it on time\n(d) The assignment was due last week and we did not submit it on time"
+  },
+  "questions/g4-2025-054": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 54,
+   "options": [
+    "He was tired and so he could not walk",
+    "He was too tired to walk",
+    "He was so tired that he could not walk",
+    "Being tired, he could not walk"
+   ],
+   "paperId": "g4-2025",
+   "q": "Identify the Complex Sentence:"
+  },
+  "questions/g4-2025-055": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 55,
+   "options": [
+    "(a)",
+    "(b)",
+    "(c)",
+    "(d)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following statements has the correct question tag?\n(a) I needn’t play, needn’t I?\n(b) Let’s play, shall we?\n(c) I am older than you, am I?\n(d) He was asleep, did he?"
+  },
+  "questions/g4-2025-056": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 56,
+   "options": [
+    "Adjective",
+    "Adverb",
+    "Noun",
+    "Preposition"
+   ],
+   "paperId": "g4-2025",
+   "q": "Identify the correct option for the given question:\nA participle is a/an ______ formed from a verb."
+  },
+  "questions/g4-2025-057": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 57,
+   "options": [
+    "(a)",
+    "(b)",
+    "(c)",
+    "(d)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following sentences uses both a main verb and an auxiliary verb?\n(a) She dances beautifully\n(b) They are singing\n(c) She reads fast\n(d) Students eat dinner together."
+  },
+  "questions/g4-2025-058": {
+   "answer": 3,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 58,
+   "options": [
+    "Reviewing your work is essential",
+    "Make sure you review your work thoroughly",
+    "It’s important to review your work",
+    "I value the effort you put into reviewing your work"
+   ],
+   "paperId": "g4-2025",
+   "q": "Choose the correct appreciative statement for the following imperative:\n“Take time to review your work”."
+  },
+  "questions/g4-2025-059": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 59,
+   "options": [
+    "Who will shut the door?",
+    "Who shut the door?",
+    "How the door will shut?",
+    "You shut the door."
+   ],
+   "paperId": "g4-2025",
+   "q": "The interrogative form of ‘Shut the door’ is"
+  },
+  "questions/g4-2025-060": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 60,
+   "options": [
+    "Have pity on my loneliness",
+    "I am lonely",
+    "I have no company",
+    "I have no friends"
+   ],
+   "paperId": "g4-2025",
+   "q": "The imperative form of the statement ‘I am lonely’ is"
+  },
+  "questions/g4-2025-061": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 61,
+   "options": [
+    "Exclamatory sentence",
+    "Assertive sentence",
+    "Negative sentence",
+    "Interrogative sentence"
+   ],
+   "paperId": "g4-2025",
+   "q": "‘What an ugly picture!’ is an"
+  },
+  "questions/g4-2025-062": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 62,
+   "options": [
+    "Affirmative",
+    "Imperative",
+    "Interrogative",
+    "Exclamatory"
+   ],
+   "paperId": "g4-2025",
+   "q": "‘Don’t be angry with us God’ – is an ______ sentence."
+  },
+  "questions/g4-2025-063": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 63,
+   "options": [
+    "I wonder if either of the boys were present",
+    "Much of what you say is correct",
+    "The pool and lotus is a beautiful building",
+    "He is one of those men who hate smoking"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following does not exhibit Subject–Verb Agreement?"
+  },
+  "questions/g4-2025-064": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 64,
+   "options": [
+    "Although it was raining but we decided to go for a walk",
+    "She wanted to go for the concert yet she had to finish her homework fast",
+    "He studied hard for the exam so because he wanted to achieve a high score",
+    "Neither the Manager nor the employees was aware of the changes in policy"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following sentences uses the conjunctions to connect the clauses correctly?"
+  },
+  "questions/g4-2025-065": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 65,
+   "options": [
+    "Paradox",
+    "Personification",
+    "Synecdoche",
+    "Imagery"
+   ],
+   "paperId": "g4-2025",
+   "q": "Identify the figure of speech of the following phrase.\nHe has just got some new wheels."
+  },
+  "questions/g4-2025-066": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 66,
+   "options": [
+    "Only (c)",
+    "Only (b)",
+    "Both (a) and (b)",
+    "Only (a)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following is an action-based and sport related compound word that involves movement?\n(a) Foot print\n(b) Skateboard\n(c) Back pack\n(d) Lifeguard"
+  },
+  "questions/g4-2025-067": {
+   "answer": 3,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 67,
+   "options": [
+    "(1)-B (2)-B (3)-A (4)-A",
+    "(1)-A (2)-C (3)-B (4)-A",
+    "(1)-C (2)-A (3)-A (4)-B",
+    "(1)-A (2)-A (3)-C (4)-B"
+   ],
+   "paperId": "g4-2025",
+   "q": "Choose the correct words given in the options and fill in the blanks.\n(1) The ___ is for more people to work part-time in the future.\n(2) We are having ___ casserole tonight.\n(3) Smoking is not allowed on the ___.\n(4) We discussed the success ___ together.\nOptions:\n(1) A Prognosis, B Prognoses, C Prognosus, D Prognos\n(2) A Tuna, B Tunas, C Tunae, D Tunii\n(3) A Premisis, B Premisus, C Premises, D Premisas\n(4) A Criterion, B Criteria, C Criterius, D Criterian"
+  },
+  "questions/g4-2025-068": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 68,
+   "options": [
+    "Exhilaration",
+    "Exultation",
+    "Exasperation",
+    "Ecstasy"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following words is incorrect in the context of the sentence?\n“After the team’s success, the coach felt a great sense of ______ for his players’ performance”."
+  },
+  "questions/g4-2025-069": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 69,
+   "options": [
+    "Victuals",
+    "Victuls",
+    "Victuels",
+    "Vistuals"
+   ],
+   "paperId": "g4-2025",
+   "q": "Fill in the blank with correct spelling.\n“The restaurant offers a wide variety of delicious ______”"
+  },
+  "questions/g4-2025-070": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 70,
+   "options": [
+    "(a) and (a)",
+    "(b) and (a)",
+    "(b) and (b)",
+    "(d) and (c)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Sathyan knew he had ______ the trail sometime ago, but couldn’t remember exactly when he had ______ it.\n(a) Passed\n(b) Past\n(c) Pause\n(d) Paws"
+  },
+  "questions/g4-2025-071": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 71,
+   "options": [
+    "Cactuse",
+    "Cactuses",
+    "Cacts",
+    "Cactose"
+   ],
+   "paperId": "g4-2025",
+   "q": "What is the plural form of ‘Cactus’ in English? (Not the Latin form)"
+  },
+  "questions/g4-2025-072": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 72,
+   "options": [
+    "a-3, b-4, c-1, d-2",
+    "a-4, b-3, c-2, d-1",
+    "a-1, b-4, c-3, d-2",
+    "a-1, b-2, c-4, d-3"
+   ],
+   "paperId": "g4-2025",
+   "q": "Match the one word substitute in Column A with a suitable explanation in Column B:\n(a) Amnesia — 1. A study of disease\n(b) Insomnia — 2. A continuous talker\n(c) Loquacious — 3. Loss of sleep\n(d) Pathology — 4. Loss of memory"
+  },
+  "questions/g4-2025-073": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 73,
+   "options": [
+    "bathe, mug",
+    "wash, bucket",
+    "bathe, tub",
+    "bath, tub"
+   ],
+   "paperId": "g4-2025",
+   "q": "Fill in the blank with suitable words.\nI ______ my puppy in the ______."
+  },
+  "questions/g4-2025-074": {
+   "answer": 3,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 74,
+   "options": [
+    "(a)",
+    "(b)",
+    "(c)",
+    "(d)"
+   ],
+   "paperId": "g4-2025",
+   "q": "A student wishes to suggest an improvement to the college library resources. The best way to phrase the request to the librarian is:\n(a) The library has no good books\n(b) You should buy more books\n(c) The library is terrible\n(d) I’ve noticed that the library’s collection lacks recent publications in the field of Artificial Intelligence. Would it be possible to expand the collection with my researched list of latest publications?"
+  },
+  "questions/g4-2025-075": {
+   "answer": 3,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 75,
+   "options": [
+    "S1, S, R, Q, P, S6",
+    "S1, P, Q, S, R, S6",
+    "S1, P, R, Q, S, S6",
+    "S1, R, S, P, Q, S6"
+   ],
+   "paperId": "g4-2025",
+   "q": "In the following sentence ordering, the first (S1) and the sixth (S6) sentences are provided. Rearrange P, Q, R and S.\nS1: Once, a renowned writer decided to unravel the secrets of an ancient manuscript.\nP: This, however, exposed that the writer had intentionally modified a few passages, leaving room for multiple interpretations.\nQ: Apparently, the discovery sparked a heated debate among experts.\nR: The manuscript, filled with enigmatic knowledge, had perplexed generations of researchers.\nS: Moreover, the writer delved deeper to unravel the cryptic meaning and symbols.\nS6: Eventually, the writer’s quest for knowledge resonates with the multiple interpretations of experts."
+  },
+  "questions/g4-2025-076": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 76,
+   "options": [
+    "(f), (g), (h), (d), (a), (c), (b), (e)",
+    "(e), (b), (c), (a), (f), (g), (h), (d)",
+    "(d), (h), (g), (c), (a), (f), (b), (e)",
+    "(a), (e), (b), (c), (g), (d), (h), (f)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Write a letter to the editor of a journal about the stagnant rain water issue in your area. Choose the format of the letter.\n(a) Salutation (b) Date (c) Receiver’s address (d) Signature (e) Sender’s address (f) Subject (g) Body of the letter (h) Complimentary close"
+  },
+  "questions/g4-2025-077": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 77,
+   "options": [
+    "(d) only",
+    "(c) only",
+    "(a) and (c)",
+    "(b) only"
+   ],
+   "paperId": "g4-2025",
+   "q": "Scenario: A citizen has sent an email to a government agency requesting information about a public program. The agency’s policy is to respond with official letters.\nQuestion: Which of the following actions best demonstrates adherence to official correspondence procedures?\n(a) Replying to the email with a brief, formal response.\n(b) Calling the citizen to provide the information over the phone.\n(c) Drafting a formal letter on letterhead, including all necessary elements and mailing it to the citizen.\n(d) Forwarding the citizen’s email to another department without a response"
+  },
+  "questions/g4-2025-078": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 78,
+   "options": [
+    "Appropriation",
+    "Bipartisan",
+    "Budget",
+    "Amalgamation"
+   ],
+   "paperId": "g4-2025",
+   "q": "Money set aside by a legislative body for some government expenditure is a/an"
+  },
+  "questions/g4-2025-079": {
+   "answer": 3,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 79,
+   "options": [
+    "a-2, b-1, c-3, d-4",
+    "a-1, b-2, c-4, d-3",
+    "a-4, b-3, c-1, d-2",
+    "a-3, b-4, c-2, d-1"
+   ],
+   "paperId": "g4-2025",
+   "q": "Scenario: A citizen has contacted a Government office seeking clarification on a new policy. Match the general term used by the citizen with the appropriate official term.\n(a) Can you tell me how to fix this form? — 1. Is there a procedure to appeal this decision?\n(b) I need to get a copy of my records — 2. What are the regulations for this program?\n(c) What are the rules for this program? — 3. Can you tell me how to rectify this form?\n(d) Is there a way to appeal this decision? — 4. I need to obtain a copy of my records"
+  },
+  "questions/g4-2025-080": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 80,
+   "options": [
+    "Adhering to laws, regulations and policies",
+    "Adhering the violations",
+    "Denial",
+    "Adhering the differences"
+   ],
+   "paperId": "g4-2025",
+   "q": "The term “Compliance” means"
+  },
+  "questions/g4-2025-081": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 81,
+   "options": [
+    "a-1, b-2, c-4, d-3",
+    "a-4, b-1, c-3, d-2",
+    "a-3, b-4, c-2, d-1",
+    "a-2, b-3, c-4, d-1"
+   ],
+   "paperId": "g4-2025",
+   "q": "Match the term in Column A with its correct definition in Column B:\n(a) Appropriation — 1. a system of government where decisions are made by state officials\n(b) Bureaucracy — 2. a person employed in the public sector\n(c) Jurisdiction — 3. the official power to make legal decisions and judgments\n(d) Public servant — 4. money set aside for a specific purpose"
+  },
+  "questions/g4-2025-082": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 82,
+   "options": [
+    "(a), (b)",
+    "(b), (d)",
+    "(b), (c)",
+    "(a), (d)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Passage: E-governance reduces physical paper work. Online data storage enhances security. This facilitates faster service delivery. Increased digital literacy is essential for widespread adoption.\nQuestion: Which of the following conclusions can be drawn from the passage?\n(a) E-governance increases physical paper work\n(b) Online data storage improves security.\n(c) Increased digital literacy is crucial for e-governance success.\n(d) E-governance slows down service delivery"
+  },
+  "questions/g4-2025-083": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 83,
+   "options": [
+    "(a) and (d)",
+    "(b) and (c)",
+    "(c) and (a)",
+    "(d) and (b)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Passage: NASSCOM and similar global associations both represent tech sectors. NASSCOM focuses on India, others on regional or international markets. Both advocate the growth of the industry. NASSCOM’s influence is primarily within India, others have a broader reach.\nQuestion: Which of the following statements accurately compare NASSCOM and similar associations as described in the passage?\n(a) NASSCOM and global associations represent different sectors\n(b) NASSCOM and global associations represent tech sectors\n(c) NASSCOM’s influence is primarily within India\n(d) Global associations have limited reach"
+  },
+  "questions/g4-2025-084": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 84,
+   "options": [
+    "Wash out",
+    "Ways and Vows",
+    "Ways and Means",
+    "Built in system"
+   ],
+   "paperId": "g4-2025",
+   "q": "Complete the sentence below, choosing the suitable pair from the given options:\nThe ______ are insufficient to implement the new education policy in rural areas."
+  },
+  "questions/g4-2025-085": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 85,
+   "options": [
+    "a-1, b-4, c-3, d-2",
+    "a-4, b-3, c-1, d-2",
+    "a-2, b-1, c-4, d-3",
+    "a-3, b-1, c-2, d-4"
+   ],
+   "paperId": "g4-2025",
+   "q": "Passage: The bustling market place was a symphony of sounds and smells: vendors called out their wares, a mix of spices filled the air and the chatter of customers created a lively hum. Colourful textiles hung from stalls and fresh produce was piled high.\nMatch the aspects of the market place in Column A with their purpose in Column B:\n(a) Vendors calling out their wares — 1. creates a lively hum\n(b) Spices filling the air with their smell — 2. appeals to the sense of sight\n(c) Chatter of customers — 3. appeals to the sense of smell\n(d) Colourful textiles hanging from stalls — 4. indicates commerce and trade"
+  },
+  "questions/g4-2025-086": {
+   "answer": 3,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 86,
+   "options": [
+    "What colours are chosen for the decorations in the city?",
+    "What time do the fireworks start?",
+    "What is the name of the annual festival being celebrated?",
+    "What type of food is being sold at the food stalls in the festival?"
+   ],
+   "paperId": "g4-2025",
+   "q": "The vibrant city streets were alive with the sounds of laughter and music as people celebrated the annual festival. Colourful decorations adorned the buildings and food stalls offered a variety of delicious treats from different cultures.\nWhich question is most suitable based on the given passage?"
+  },
+  "questions/g4-2025-087": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 87,
+   "options": [
+    "(1) and (3)",
+    "(2) and (5)",
+    "(3) and (5)",
+    "(2) and (4)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following questions cannot be categorised under the type “weak questions”?\n(1) Are you sure you are okay?\n(2) What is your biggest weakness?\n(3) Ever had a crush?\n(4) Does she have a qualifying degree for this job?\n(5) How will you repay your loan, without a job?"
+  },
+  "questions/g4-2025-088": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 88,
+   "options": [
+    "What type of boats are commonly used for fishing in the ocean?",
+    "Why is protecting the ocean ecosystem vital for the health of our planet?",
+    "What is the name of the deepest part of the ocean?",
+    "Which ocean is known for having most shipwrecks?"
+   ],
+   "paperId": "g4-2025",
+   "q": "The ocean is a vast mysterious place, home to countless species of marine life. From colourful coral reefs to deep sea creatures, the underwater world is full of wonders waiting to be explored. As we learn more about the ocean, it becomes clear that protecting this vital ecosystem is essential for the health of our planet.\nWhich question is related to the given passage?"
+  },
+  "questions/g4-2025-089": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 89,
+   "options": [
+    "Pumpkin carving contests",
+    "Hayrides",
+    "A talent show",
+    "A petting zoo"
+   ],
+   "paperId": "g4-2025",
+   "q": "A small town of Brooksville is famous for its annual harvest festival, which celebrates the local farming community. The festival features pumpkin carving contests, hayrides and a petting zoo.\nWhich of the following activities is NOT mentioned as part of the festival?"
+  },
+  "questions/g4-2025-090": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 90,
+   "options": [
+    "Required for intercellular cement collagen",
+    "Required for everyday activity",
+    "Required for digestion",
+    "Required for metabolism"
+   ],
+   "paperId": "g4-2025",
+   "q": "Passage (Q. 90–92): Vitamin C is an essential ingredient for human beings. It is required for the synthesis of intercellular cement “collagen” which is responsible for keeping various cells of the human body together. As an oxidant, it acts like a cop in the body, apprehending the rowdy molecules called free radicals. The richest source of Vitamin C is amla. The other sources are lemon, orange, papaya, pineapple, cabbage, cauliflower, green peas and tomato. While cooking above 70°C Vitamin C gets destroyed.\n\nVitamin C is important for us because it is"
+  },
+  "questions/g4-2025-091": {
+   "answer": 3,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 91,
+   "options": [
+    "Doctor",
+    "Nurse",
+    "Nutritionist",
+    "Police"
+   ],
+   "paperId": "g4-2025",
+   "q": "Passage (Q. 90–92): Vitamin C is an essential ingredient for human beings. It is required for the synthesis of intercellular cement “collagen” which is responsible for keeping various cells of the human body together. As an oxidant, it acts like a cop in the body, apprehending the rowdy molecules called free radicals. The richest source of Vitamin C is amla. The other sources are lemon, orange, papaya, pineapple, cabbage, cauliflower, green peas and tomato. While cooking above 70°C Vitamin C gets destroyed.\n\nWhat does the word ‘cop’ mean in the given context?"
+  },
+  "questions/g4-2025-092": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 92,
+   "options": [
+    "Vitamin A",
+    "Vitamin B",
+    "Vitamin C",
+    "Vitamin D"
+   ],
+   "paperId": "g4-2025",
+   "q": "Passage (Q. 90–92): Vitamin C is an essential ingredient for human beings. It is required for the synthesis of intercellular cement “collagen” which is responsible for keeping various cells of the human body together. As an oxidant, it acts like a cop in the body, apprehending the rowdy molecules called free radicals. The richest source of Vitamin C is amla. The other sources are lemon, orange, papaya, pineapple, cabbage, cauliflower, green peas and tomato. While cooking above 70°C Vitamin C gets destroyed.\n\nWhat is amla rich in?"
+  },
+  "questions/g4-2025-093": {
+   "answer": 0,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 93,
+   "options": [
+    "I will be playing cricket between 6 pm and 7 pm tomorrow evening.",
+    "I am playing cricket between 6 pm and 7 pm tomorrow evening.",
+    "I will have been playing cricket 6 pm to 7 pm tomorrow evening.",
+    "I would have been playing cricket between 6 pm and 7 pm tomorrow evening."
+   ],
+   "paperId": "g4-2025",
+   "q": "நாளை மாலை 6 மணி முதல் 7 மணி வரை நான் கிரிக்கெட் விளையாடிக் கொண்டிருப்பேன்.\nChoose the correct translation of the sentence given from the options listed."
+  },
+  "questions/g4-2025-094": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 94,
+   "options": [
+    "80%",
+    "100%",
+    "85%",
+    "96%"
+   ],
+   "paperId": "g4-2025",
+   "q": "How much will be the accuracy level of real-time language translation within five seconds of receiving the input?"
+  },
+  "questions/g4-2025-095": {
+   "answer": 3,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 95,
+   "options": [
+    "(5), (3), (2), (1), (4)",
+    "(2), (5), (3), (4), (1)",
+    "(3), (5), (1), (4), (2)",
+    "(3), (1), (5), (2), (4)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Fill in the blanks using the suitable words given in the options.\nThe old man had been suffering with a severe nervous disorder. He ___(1)___ in pain and ___(2)___. However ___(3)___ while walking. On seeing his old friend he was ___(4)___ and ___(5)___ him with hope to get some help.\n(1) tottered over (2) startled (3) grunted (4) approached (5) stumbled"
+  },
+  "questions/g4-2025-096": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 96,
+   "options": [
+    "(1) only",
+    "(2) and (3) only",
+    "(1) and (3) only",
+    "(1) and (2) only"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following statements are true about ‘Turtles’?\n(1) Sea turtles live their life entirely in the ocean.\n(2) There are six species of turtles in the world.\n(3) Turtles come ashore to lay eggs."
+  },
+  "questions/g4-2025-097": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 97,
+   "options": [
+    "(1), (2), (4), (3)",
+    "(2), (1), (4), (3)",
+    "(3), (2), (1), (4)",
+    "(4), (2), (1), (3)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Fill in the blanks using the words given in the options.\nSachin often tried to ______ the mannerisms of his favourite players. He wanted to ______ cricket seriously. He had to take the remarks in his ______. On the whole, he could admire Achrekar Sir’s ______.\n(1) Pursue (2) Emulate (3) Farsightedness (4) Stride"
+  },
+  "questions/g4-2025-098": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 98,
+   "options": [
+    "(1) and (3) are correct",
+    "(1) and (2) are correct",
+    "(2) and (3) are correct",
+    "(3) and (4) are correct"
+   ],
+   "paperId": "g4-2025",
+   "q": "Choose the right matches among these:\n(1) Lechal Shoes — A.P.J. Abdul Kalam\n(2) Blee Watch — Nupura Kirloskar\n(3) IGEST — Anil Prabhakar\n(4) Light Weight Prosthetic Shoes — Krispian Lawrence"
+  },
+  "questions/g4-2025-099": {
+   "answer": 1,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 99,
+   "options": [
+    "Assonance",
+    "Consonance",
+    "Alliteration",
+    "Anaphora"
+   ],
+   "paperId": "g4-2025",
+   "q": "Identify the figure of speech in the poetic lines given below:\nDown in the hill sat the little doggie Nell\nThere she dillied and she dallied all\nDay, Day, Day"
+  },
+  "questions/g4-2025-100": {
+   "answer": 2,
+   "category": "General English (Part A)",
+   "explanation": "",
+   "n": 100,
+   "options": [
+    "Consonance",
+    "Assonance",
+    "Anaphora",
+    "Personification"
+   ],
+   "paperId": "g4-2025",
+   "q": "Identify the figure of speech in the lines given below:\nNo time to see, when woods we pass,\nWhere squirrels hide their nuts in grass.\nNo time to see, in broad daylight,\nStreams full of stars, like skies at night.\nNo time to turn at Beauty’s glance,"
+  },
+  "questions/g4-2025-101": {
+   "answer": 2,
+   "category": "Development Administration in Tamil Nadu",
+   "explanation": "",
+   "n": 101,
+   "options": [
+    "a-2, b-3, c-1, d-4",
+    "a-4, b-2, c-3, d-1",
+    "a-3, b-4, c-2, d-1",
+    "a-2, b-4, c-1, d-3"
+   ],
+   "paperId": "g4-2025",
+   "q": "Match the following:\n(a) Financial Assistance to Dependent Children — 1. Between the age group of 18 and 21 years\n(b) Maintenance of Orphan and Destitute Girls — 2. Providing destitute, orphan and unattached children\n(c) Foster Care Services Scheme — 3. Children below the age of 16 years\n(d) State After-Care Home for Boys — 4. Children between the age of 6 and 16 years"
+  },
+  "questions/g4-2025-102": {
+   "answer": 0,
+   "category": "Development Administration in Tamil Nadu",
+   "explanation": "",
+   "n": 102,
+   "options": [
+    "(1) (2) (3)",
+    "(3) (2) (1)",
+    "(2) (1) (3)",
+    "(3) (1) (2)"
+   ],
+   "paperId": "g4-2025",
+   "q": "As per the Tamil Nadu Economic Survey 2024-2025, arrange the following in ascending order based on productivity.\n(1) Paddy productivity\n(2) Maize productivity\n(3) Oil seeds, Groundnut and Sugarcane productivity"
+  },
+  "questions/g4-2025-103": {
+   "answer": 2,
+   "category": "Development Administration in Tamil Nadu",
+   "explanation": "",
+   "n": 103,
+   "options": [
+    "(i) and (iii) only",
+    "(ii) and (iii) only",
+    "(ii) and (iv) only",
+    "(ii) only"
+   ],
+   "paperId": "g4-2025",
+   "q": "Find out the incorrect statement(s) about the Tamil Nadu Health System Reform Program (TNHSRP).\n(i) This program was supported by the World Bank.\n(ii) This program is sponsored by the Central and State Government in the ratio of 60 : 40.\n(iii) It is implemented by the Department of Health and Family Welfare of Tamil Nadu on Program for Results basis.\n(iv) This program aims to achieve the goal of SDG 9."
+  },
+  "questions/g4-2025-104": {
+   "answer": 0,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "",
+   "n": 104,
+   "options": [
+    "[A] is true, [R] is false",
+    "Both [A] and [R] are true and [R] is the correct explanation of [A]",
+    "[A] is false, [R] is true",
+    "Both [A] and [R] are true but [R] is not the correct explanation of [A]"
+   ],
+   "paperId": "g4-2025",
+   "q": "Assertion [A]: In 1892, the Tremenheere report was accepted by the Government to allot the poramboke land to the downtrodden community.\nReason [R]: In Chengalpet, the Panchamar Schools were run by philanthropic individuals in Panchami Land for promoting education for downtrodden community people."
+  },
+  "questions/g4-2025-105": {
+   "answer": 1,
+   "category": "Indian Polity",
+   "explanation": "",
+   "n": 105,
+   "options": [
+    "(1) and (3)",
+    "(2) and (4)",
+    "(3) and (4)",
+    "(4) and (1)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Identify the incorrectly paired matches:\n(1) Lokpal and Lokayuktas Act came into force — January 16th, 2014\n(2) Tamil declared as Classical Language — Oct 10, 2004\n(3) Election Commission of India — Article 324\n(4) National Integration Council in India — 1960"
+  },
+  "questions/g4-2025-106": {
+   "answer": 0,
+   "category": "Current Affairs",
+   "explanation": "",
+   "n": 106,
+   "options": [
+    "Installing rooftop solar",
+    "Providing houses to the poor",
+    "Insurance to old age people",
+    "Financing to small industries"
+   ],
+   "paperId": "g4-2025",
+   "q": "The purpose of “Surya Ghar Muft Bijli Yojana” is"
+  },
+  "questions/g4-2025-107": {
+   "answer": 3,
+   "category": "History & Culture of India",
+   "explanation": "",
+   "n": 107,
+   "options": [
+    "[A] is true, [R] is false",
+    "[A] is false, [R] is true",
+    "Both [A] and [R] are false",
+    "Both [A] and [R] are true, and [R] is the correct explanation of [A]"
+   ],
+   "paperId": "g4-2025",
+   "q": "Assertion [A]: Zamindari system was created by the East India Company when in 1793 Lord Cornwallis entered into Permanent Settlement.\nReason [R]: Under the settlement, the landlords were declared full proprietors of large areas of land."
+  },
+  "questions/g4-2025-108": {
+   "answer": 1,
+   "category": "Indian Economy",
+   "explanation": "",
+   "n": 108,
+   "options": [
+    "[A] is true, but [R] is false",
+    "Both [A] and [R] are true and [R] is the correct explanation of [A]",
+    "[A] is false, [R] is true",
+    "Both [A] and [R] are true, but [R] is not the correct explanation of [A]"
+   ],
+   "paperId": "g4-2025",
+   "q": "Assertion [A]: Goods and Services Tax in India is a comprehensive, multistage, destination-based tax that is levied on every value addition.\nReason [R]: The motto is ‘One Tax, One Market, One Nation’."
+  },
+  "questions/g4-2025-109": {
+   "answer": 2,
+   "category": "Development Administration in Tamil Nadu",
+   "explanation": "",
+   "n": 109,
+   "options": [
+    "1 2 3 4",
+    "4 3 2 1",
+    "2 1 3 4",
+    "1 4 2 3"
+   ],
+   "paperId": "g4-2025",
+   "q": "Arrange the following Finance Ministers of Tamil Nadu according to the Budget Year (chronological order):\n1. Mr. Panneerselvam\n2. Dr. Nedunchezhiyan\n3. Mr. Palanivel Thiagarajan\n4. Mr. Thangam Thennarasu"
+  },
+  "questions/g4-2025-110": {
+   "answer": 2,
+   "category": "Indian Economy",
+   "explanation": "",
+   "n": 110,
+   "options": [
+    "[A] is true, [R] is false",
+    "Both [A] and [R] are true, but [R] is not a correct explanation of [A]",
+    "Both [A] and [R] are true, and [R] is the correct explanation of [A]",
+    "[A] is false, [R] is true"
+   ],
+   "paperId": "g4-2025",
+   "q": "Assertion [A]: The plan period 1966–69 was called “Annual plans or plan holiday”.\nReason [R]: Because of the two major conflicts with China and Pakistan."
+  },
+  "questions/g4-2025-111": {
+   "answer": 3,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "",
+   "n": 111,
+   "options": [
+    "Both Statement and Reason are correct",
+    "Reason is incorrect but Statement is correct",
+    "Both Statement and Reason are incorrect",
+    "Statement is incorrect but Reason is correct"
+   ],
+   "paperId": "g4-2025",
+   "q": "Statement: Thiruvalluvar has captured certain features like pride and administration of the Three Great Kings (Moovendhar) in his couplets.\nReason: Thiruvalluvar wanted to portray the administrative skills of Kings."
+  },
+  "questions/g4-2025-112": {
+   "answer": 1,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "Confirm the chapter number against the official TNPSC key.",
+   "n": 112,
+   "options": [
+    "18",
+    "13",
+    "12",
+    "16"
+   ],
+   "paperId": "g4-2025",
+   "q": "Give the chapter number in Thirukkural that talks about Ascetic Virtues."
+  },
+  "questions/g4-2025-113": {
+   "answer": 1,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "",
+   "n": 113,
+   "options": [
+    "Tamilannal",
+    "Ki.Aa.Pe. Viswanatham",
+    "Ra.Pi. Sethupillai",
+    "Thiru.Vi. Kalyanasundaram"
+   ],
+   "paperId": "g4-2025",
+   "q": "Who is the author of “Valluvarum Kuralum”?"
+  },
+  "questions/g4-2025-114": {
+   "answer": 1,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "",
+   "n": 114,
+   "options": [
+    "Venkata Krishna Pandithar",
+    "Venugopala Sharma",
+    "Saminatha Sharma",
+    "Vannacharaba Dheetchithar"
+   ],
+   "paperId": "g4-2025",
+   "q": "Who was the first to draw the portrait of Thiruvalluvar?"
+  },
+  "questions/g4-2025-115": {
+   "answer": 1,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "",
+   "n": 115,
+   "options": [
+    "(1) and (2) are correct",
+    "(2) and (3) are correct",
+    "(3) and (4) are correct",
+    "(1) and (4) are correct"
+   ],
+   "paperId": "g4-2025",
+   "q": "Choose the right matches.\n(1) New India — Bharathi\n(2) Desabakthan — V.V. Subramanian\n(3) Nava Sakthi — Thiru. V. Kalyanasundaram\n(4) The Hindu — G. Subramaniam"
+  },
+  "questions/g4-2025-116": {
+   "answer": 2,
+   "category": "Indian National Movement",
+   "explanation": "",
+   "n": 116,
+   "options": [
+    "(i) and (ii)",
+    "(ii) and (iii)",
+    "(i) and (iii)",
+    "(iii) only"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following statements are true about the Theosophical Movement?\n(i) The Theosophical Society was founded by Madam Blavatsky and Col. H.S. Olcott in New York.\n(ii) In 1888 Mrs. Annie Besant joined the society in India.\n(iii) The headquarters of the society is in Adyar."
+  },
+  "questions/g4-2025-117": {
+   "answer": 0,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "",
+   "n": 117,
+   "options": [
+    "[A] is true, [R] is false",
+    "Both [A] and [R] are true and [R] is the correct explanation of [A]",
+    "[A] is false, [R] is true",
+    "Both [A] and [R] are true but [R] is not the correct explanation of [A]"
+   ],
+   "paperId": "g4-2025",
+   "q": "Assertion [A]: E.V.R. Periyar started the Self-Respect Movement in 1925.\nReason [R]: New India was the official newspaper of the Self-Respect Movement."
+  },
+  "questions/g4-2025-118": {
+   "answer": 2,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "",
+   "n": 118,
+   "options": [
+    "(1) is wrong",
+    "(2) is wrong",
+    "(1) and (3) are wrong",
+    "(2) and (4) are wrong"
+   ],
+   "paperId": "g4-2025",
+   "q": "Consider the following statements and identify the wrong ones:\n(1) On 1st September 1798 Major Bannerman served an ultimatum directing Kattabomman to see him at Palayamkottai.\n(2) Kattabomman’s Fort, 500 feet long and 300 feet broad, was constructed entirely of mud.\n(3) On September 16, 1799 Veerapandiya Kattabomman was tried before an assembly of Palayakkarars at Kayathar.\n(4) On 1st June 1799 Kattabomman, attended by 500 men, proceeded to Sivagangai."
+  },
+  "questions/g4-2025-119": {
+   "answer": 3,
+   "category": "Indian National Movement",
+   "explanation": "",
+   "n": 119,
+   "options": [
+    "(1), (4) are correct",
+    "(1), (2) are correct",
+    "(1), (3) are correct",
+    "(1), (2), (3) are correct"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following statements are true?\n(1) Congress boycotted the election which was held in 1923 in Chennai.\n(2) Swaraj Party won 11 seats.\n(3) Justice Party formed Ministry in Chennai.\n(4) Kamaraj led the Non-Co-operation movement in Chennai."
+  },
+  "questions/g4-2025-120": {
+   "answer": 2,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "",
+   "n": 120,
+   "options": [
+    "a-2, b-3, c-1, d-4",
+    "a-3, b-1, c-2, d-4",
+    "a-4, b-3, c-2, d-1",
+    "a-1, b-2, c-3, d-4"
+   ],
+   "paperId": "g4-2025",
+   "q": "Match the following:\n(a) Karaikkal Ammaiyar — 1. Thiruvanthadi\n(b) Andal — 2. Kachhikalambagam\n(c) Aranganadha Mudaliyar — 3. Pavaippattu\n(d) Seraman Perumal Nayanar — 4. Moothathiruppathigangal"
+  },
+  "questions/g4-2025-121": {
+   "answer": 2,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "",
+   "n": 121,
+   "options": [
+    "(i) only",
+    "(i) and (iii) only",
+    "(i) and (ii) only",
+    "(iii) only"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following statements are true about the Sivakalai excavation?\n(i) Sivakalai excavation is located on the north shore of the river Thamiraparani.\n(ii) Tamil society that lived in Sivakalai is considered very ancient.\n(iii) Copper and gold goods are found."
+  },
+  "questions/g4-2025-122": {
+   "answer": 2,
+   "category": "General Science",
+   "explanation": "",
+   "n": 122,
+   "options": [
+    "Encode for proteins",
+    "Replication",
+    "Gene regulation",
+    "Carbohydrate synthesis"
+   ],
+   "paperId": "g4-2025",
+   "q": "What is the crucial role played by non-coding RNAs?"
+  },
+  "questions/g4-2025-123": {
+   "answer": 1,
+   "category": "General Science",
+   "explanation": "",
+   "n": 123,
+   "options": [
+    "(1) only correct",
+    "(1), (2) and (4) are correct",
+    "(1) and (2) are correct",
+    "(1), (2) and (3) are correct"
+   ],
+   "paperId": "g4-2025",
+   "q": "Choose the right matches among the following:\n(1) Five Kingdom System — R.H. Whittaker\n(2) Six Kingdom System — Carl Woese et al.\n(3) Four Kingdom System — Carl Linnaeus\n(4) Three Kingdom System — Ernst Haeckel"
+  },
+  "questions/g4-2025-124": {
+   "answer": 2,
+   "category": "General Science",
+   "explanation": "Ka = Cα² = 0.10 × (0.012)² = 1.44 × 10⁻⁵.",
+   "n": 124,
+   "options": [
+    "1.44 × 10⁵",
+    "1.44 × 10⁻⁴",
+    "1.44 × 10⁻⁵",
+    "1.44 × 10⁴"
+   ],
+   "paperId": "g4-2025",
+   "q": "0.10 M of a weak acid is found to be dissociated to the extent of 1.20% at 25°C. Its dissociation constant is"
+  },
+  "questions/g4-2025-125": {
+   "answer": 0,
+   "category": "Current Affairs",
+   "explanation": "",
+   "n": 125,
+   "options": [
+    "January 29, 2025",
+    "March 08, 2025",
+    "January 29, 2024",
+    "March 08, 2024"
+   ],
+   "paperId": "g4-2025",
+   "q": "The GSLV-F15 was launched on ______ by ISRO."
+  },
+  "questions/g4-2025-126": {
+   "answer": 2,
+   "category": "Geography",
+   "explanation": "Statement (2) also looks wrong (the Trans-Caspian line does not reach Japan); confirm against the official TNPSC key.",
+   "n": 126,
+   "options": [
+    "(1) only",
+    "(2) only",
+    "(3) only",
+    "(4) only"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following is incorrectly matched?\n(1) Trans-Siberian Railway — connects Baltic Sea and Pacific Ocean\n(2) Trans-Caspian Railway — connects Central Asia and Japan\n(3) Canadian Pacific Railway — connects Atlantic Ocean and Indian Ocean\n(4) Trans-Continental Railway — connects Buenos Aires with Valparaiso"
+  },
+  "questions/g4-2025-127": {
+   "answer": 2,
+   "category": "Indian Polity",
+   "explanation": "",
+   "n": 127,
+   "options": [
+    "Jawaharlal Nehru",
+    "V.P. Singh",
+    "Indira Gandhi",
+    "Morarji Desai"
+   ],
+   "paperId": "g4-2025",
+   "q": "Who among the following was the Indian Prime Minister when the 42nd Amendment Act was passed?"
+  },
+  "questions/g4-2025-128": {
+   "answer": 2,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "",
+   "n": 128,
+   "options": [
+    "[A] true, but [R] false",
+    "[A] false, but [R] true",
+    "Both [A] and [R] are true",
+    "Both [A] and [R] are false"
+   ],
+   "paperId": "g4-2025",
+   "q": "Assertion [A]: The Pallavas constructed the cave temples without brick, wood, metal and sudhai.\nReason [R]: Stones kept one upon another and not bound with plaster are known as “Katraligal”."
+  },
+  "questions/g4-2025-129": {
+   "answer": 1,
+   "category": "History & Culture of India",
+   "explanation": "",
+   "n": 129,
+   "options": [
+    "(1)",
+    "(2)",
+    "(3)",
+    "(4)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Choose the wrong pair:\n(1) South Dravidian Language — Malayalam\n(2) East Dravidian Language — Munda\n(3) Central Dravidian Language — Telugu\n(4) North Dravidian Language — Kurukh"
+  },
+  "questions/g4-2025-130": {
+   "answer": 1,
+   "category": "Indian National Movement",
+   "explanation": "",
+   "n": 130,
+   "options": [
+    "[A] is true, [R] is false",
+    "Both [A] and [R] are true and [R] is the correct explanation of [A]",
+    "[A] is false, [R] is true",
+    "Both [A] and [R] are true but [R] is not the correct explanation of [A]"
+   ],
+   "paperId": "g4-2025",
+   "q": "Assertion [A]: Rabindranath Tagore surrendered his knighthood.\nReason [R]: On 13 April 1919 the Jallianwala Bagh Massacre occurred in Amritsar."
+  },
+  "questions/g4-2025-131": {
+   "answer": 3,
+   "category": "Indian National Movement",
+   "explanation": "",
+   "n": 131,
+   "options": [
+    "[A] is true, [R] is false",
+    "Both [A] and [R] are true and [R] is the correct explanation of [A]",
+    "[A] is false, [R] is true",
+    "Both [A] and [R] are true but [R] is not the correct explanation of [A]"
+   ],
+   "paperId": "g4-2025",
+   "q": "Assertion [A]: The Indian National Congress first conference convened on 28th December 1885 in Bombay.\nReason [R]: 21 members represented and attended from the Tamil Nadu region."
+  },
+  "questions/g4-2025-132": {
+   "answer": 3,
+   "category": "History & Culture of India",
+   "explanation": "",
+   "n": 132,
+   "options": [
+    "(i) and (ii) only",
+    "(i) and (iii) only",
+    "(ii) and (iii) only",
+    "(ii) and (iv) only"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following statements are true about the Indus Civilisation?\n(i) In the 1920s Mortimer Wheeler excavated the Harappan sites.\n(ii) The longest text has about twenty-six signs.\n(iii) The term “Meluhha” in the Prakrit inscriptions refers to the Indus region.\n(iv) The “Priest King” of steatite was discovered in Mohenjo-Daro."
+  },
+  "questions/g4-2025-133": {
+   "answer": 1,
+   "category": "Current Affairs",
+   "explanation": "",
+   "n": 133,
+   "options": [
+    "(i) only",
+    "(i) and (iii) only",
+    "(i) and (ii) only",
+    "(ii) and (iii) only"
+   ],
+   "paperId": "g4-2025",
+   "q": "The correct statements on the new Chief Election Commissioner of India are:\n(i) Gyanesh Kumar took charge as the 26th Chief Election Commissioner of India on February 19th, 2025.\n(ii) He is a Kerala cadre officer of the Indian Administrative Service of the 1989 batch.\n(iii) He has been responsible for handling various departments as secretary to the government of Kerala."
+  },
+  "questions/g4-2025-134": {
+   "answer": 0,
+   "category": "Indian Economy",
+   "explanation": "",
+   "n": 134,
+   "options": [
+    "a-2, b-3, c-4, d-1",
+    "a-3, b-1, c-2, d-4",
+    "a-1, b-3, c-4, d-2",
+    "a-4, b-1, c-2, d-3"
+   ],
+   "paperId": "g4-2025",
+   "q": "Match the following:\n(a) Consumer Protection Rules — 1. 1930\n(b) Drug Control Act — 2. 1987\n(c) The Monopolies and Restrictive Trade Practices Act — 3. 1950\n(d) Goods and Services Sales Act — 4. 1969"
+  },
+  "questions/g4-2025-135": {
+   "answer": 2,
+   "category": "Indian Polity",
+   "explanation": "",
+   "n": 135,
+   "options": [
+    "Both [A] and [R] are true and [R] is the correct explanation of [A]",
+    "Both [A] and [R] are true but [R] is not a correct explanation of [A]",
+    "[A] is true but [R] is false",
+    "[A] is false but [R] is true"
+   ],
+   "paperId": "g4-2025",
+   "q": "Assertion [A]: Supreme Court judges are to be appointed by the President.\nReason [R]: In the case of appointment of the Judges the Law Minister of India shall always be consulted."
+  },
+  "questions/g4-2025-136": {
+   "answer": 3,
+   "category": "Indian Polity",
+   "explanation": "",
+   "n": 136,
+   "options": [
+    "(3), (4), (2), (1)",
+    "(2), (1), (4), (3)",
+    "(2), (4), (3), (1)",
+    "(2), (3), (4), (1)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Arrange in chronological order (commissions on Centre–State relations / Inter-State Council):\n(1) Punchhi Commission\n(2) Rajamannar Commission\n(3) Sarkaria Commission\n(4) Venkatachaliah Commission"
+  },
+  "questions/g4-2025-137": {
+   "answer": 2,
+   "category": "Indian Polity",
+   "explanation": "",
+   "n": 137,
+   "options": [
+    "(1) and (3) are correct",
+    "(1) and (2) are correct",
+    "(2) and (3) are correct",
+    "(3) and (4) are correct"
+   ],
+   "paperId": "g4-2025",
+   "q": "Choose the right match:\n(1) Retirement age of a Supreme Court Judge — 60 years\n(2) Minimum age for contesting for President of India — 35 years\n(3) Minimum age for becoming a Rajya Sabha member — 30 years\n(4) Minimum age for becoming a Lok Sabha member — 21 years"
+  },
+  "questions/g4-2025-138": {
+   "answer": 1,
+   "category": "Indian Polity",
+   "explanation": "",
+   "n": 138,
+   "options": [
+    "2, 3, 1, 4",
+    "1, 2, 4, 3",
+    "4, 3, 2, 1",
+    "3, 1, 4, 2"
+   ],
+   "paperId": "g4-2025",
+   "q": "Arrange the following in chronological order:\n1. Bharat Ratna\n2. Padma Vibhushan\n3. Padma Sri\n4. Padma Bhushan"
+  },
+  "questions/g4-2025-139": {
+   "answer": 0,
+   "category": "Indian Polity",
+   "explanation": "",
+   "n": 139,
+   "options": [
+    "a-4, b-3, c-1, d-2",
+    "a-2, b-4, c-1, d-3",
+    "a-3, b-1, c-2, d-4",
+    "a-1, b-2, c-4, d-3"
+   ],
+   "paperId": "g4-2025",
+   "q": "Match the following (original classification of States):\n(a) Himachal Pradesh — 1. Part A\n(b) Rajasthan — 2. Part D\n(c) West Bengal — 3. Part B\n(d) The Andaman and Nicobar Islands — 4. Part C"
+  },
+  "questions/g4-2025-140": {
+   "answer": 2,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "P’s 8 days = 8/20 = 2/5. The remaining 3/5 was done together at 3/40 per day = 8 days.",
+   "n": 140,
+   "options": [
+    "9 days",
+    "10 days",
+    "8 days",
+    "11 days"
+   ],
+   "paperId": "g4-2025",
+   "q": "P and Q can do a piece of work in 20 days and 40 days respectively. They started the work together and Q left after some days of work, and P finished the remaining work in 8 days. After how many days from the start did Q leave?"
+  },
+  "questions/g4-2025-141": {
+   "answer": 3,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "A/B = (1.04)² = 676/625, so B = 2602 × 625/1301 = 1250.",
+   "n": 141,
+   "options": [
+    "Rs. 1,300, Rs. 1,252",
+    "Rs. 1,452, Rs. 1,150",
+    "Rs. 1,302, Rs. 1,300",
+    "Rs. 1,352, Rs. 1,250"
+   ],
+   "paperId": "g4-2025",
+   "q": "Divide Rs. 2,602 between A and B so that the amount of A at the end of 6 years is equal to the amount of B at the end of 8 years, compound interest being at 4% per annum."
+  },
+  "questions/g4-2025-142": {
+   "answer": 0,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "68000 × (1/6) × (9/12) = 8500.",
+   "n": 142,
+   "options": [
+    "Rs. 8,500",
+    "Rs. 8,000",
+    "Rs. 9,400",
+    "Rs. 9,100"
+   ],
+   "paperId": "g4-2025",
+   "q": "Find the simple interest on Rs. 68,000 at 16⅔% per annum for 9 months."
+  },
+  "questions/g4-2025-143": {
+   "answer": 3,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "",
+   "n": 143,
+   "options": [
+    "1 : 2",
+    "3 : 6",
+    "6 : 7",
+    "2 : 1"
+   ],
+   "paperId": "g4-2025",
+   "q": "If a : b = 3 : 7 and b : c = 7 : 6, then find the ratio between c and a."
+  },
+  "questions/g4-2025-144": {
+   "answer": 0,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "",
+   "n": 144,
+   "options": [
+    "48",
+    "38",
+    "58",
+    "68"
+   ],
+   "paperId": "g4-2025",
+   "q": "The ratio of two numbers is 3 : 4 and their H.C.F. is 4. Their L.C.M. is"
+  },
+  "questions/g4-2025-145": {
+   "answer": 0,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "LCM(16, 24, 32) = 96; 96k + 6 divisible by 13 first at k = 4: 390.",
+   "n": 145,
+   "options": [
+    "390",
+    "391",
+    "389",
+    "392"
+   ],
+   "paperId": "g4-2025",
+   "q": "A number x is divisible by 13. When this number is divided by 16, 24 and 32 it leaves a remainder 6 in each case. The least value of x is"
+  },
+  "questions/g4-2025-146": {
+   "answer": 1,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "",
+   "n": 146,
+   "options": [
+    "10",
+    "60",
+    "30",
+    "25"
+   ],
+   "paperId": "g4-2025",
+   "q": "There are 80 students in a class. If 25% are absent on a particular day, find the number of students present in the class."
+  },
+  "questions/g4-2025-147": {
+   "answer": 0,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "",
+   "n": 147,
+   "options": [
+    "87%",
+    "13%",
+    "84%",
+    "92%"
+   ],
+   "paperId": "g4-2025",
+   "q": "The ratio of boys and girls in a class is 5 : 3. If 16% of boys and 8% of girls failed in an examination, find the percentage of passed students."
+  },
+  "questions/g4-2025-148": {
+   "answer": 1,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "28 odd numbers, so the sum is 28² = 784.",
+   "n": 148,
+   "options": [
+    "700",
+    "784",
+    "555",
+    "550"
+   ],
+   "paperId": "g4-2025",
+   "q": "Find the sum of 1 + 3 + 5 + … + 55."
+  },
+  "questions/g4-2025-149": {
+   "answer": 1,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "nⁿ − n: 6⁶ − 6 = 46650.",
+   "n": 149,
+   "options": [
+    "42450",
+    "46650",
+    "38450",
+    "44650"
+   ],
+   "paperId": "g4-2025",
+   "q": "The next term in the sequence 0, 2, 24, 252, 3120, ___ is"
+  },
+  "questions/g4-2025-150": {
+   "answer": 2,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "",
+   "n": 150,
+   "options": [
+    "One",
+    "Two",
+    "Three",
+    "Four"
+   ],
+   "paperId": "g4-2025",
+   "q": "In the series 6 4 1 2 2 8 7 4 2 1 5 3 8, how many pairs of successive numbers have a difference of 2 each?"
+  },
+  "questions/g4-2025-151": {
+   "answer": 0,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "3, 5, 1 and 6 all appear next to 2, so 4 is opposite.",
+   "n": 151,
+   "options": [
+    "4",
+    "5",
+    "6",
+    "3"
+   ],
+   "paperId": "g4-2025",
+   "q": "A dice is thrown four times and its four different positions are shown (top face; two visible side faces):\nPosition 1: top 2, sides 3 and 5\nPosition 2: top 1, sides 2 and 3\nPosition 3: top 3, sides 4 and 5\nPosition 4: top 6, sides 2 and 5\nFind the number on the face opposite the face showing 2."
+  },
+  "questions/g4-2025-152": {
+   "answer": 2,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "",
+   "n": 152,
+   "options": [
+    "50",
+    "45",
+    "48",
+    "63"
+   ],
+   "paperId": "g4-2025",
+   "q": "Find the missing term of the sequence: 7, 12, 19, 24, 43, ___, 91"
+  },
+  "questions/g4-2025-153": {
+   "answer": 2,
+   "category": "Current Affairs",
+   "explanation": "",
+   "n": 153,
+   "options": [
+    "Both [A] and [R] are correct and [R] is the correct explanation for [A]",
+    "Both [A] and [R] are correct, but [R] is not the correct explanation for [A]",
+    "[A] is correct but [R] is wrong",
+    "[A] is wrong but [R] is correct"
+   ],
+   "paperId": "g4-2025",
+   "q": "Identify the correct answer.\nAssertion [A]: Space MAITRI is a collaborative space mission between India and Australia.\nReason [R]: India aims to lower the cost of access to space through this mission."
+  },
+  "questions/g4-2025-154": {
+   "answer": 3,
+   "category": "Development Administration in Tamil Nadu",
+   "explanation": "",
+   "n": 154,
+   "options": [
+    "(i) only",
+    "(i) and (iii) only",
+    "(i) and (ii) only",
+    "(ii) and (iii) only"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following statement(s) is/are true about agricultural cultivation in 2021-2022 in Tamil Nadu?\n(i) Mayiladuthurai District had the most paddy cultivation in Tamil Nadu.\n(ii) Perambalur District had the most maize cultivation in Tamil Nadu.\n(iii) Kallakurichi had the most sugarcane cultivation in Tamil Nadu."
+  },
+  "questions/g4-2025-155": {
+   "answer": 1,
+   "category": "Development Administration in Tamil Nadu",
+   "explanation": "",
+   "n": 155,
+   "options": [
+    "[A] is true, [R] is false",
+    "Both [A] and [R] are true and [R] is the correct explanation of [A]",
+    "[A] is false, [R] is true",
+    "Both [A] and [R] are true but [R] is not the correct explanation of [A]"
+   ],
+   "paperId": "g4-2025",
+   "q": "Assertion [A]: As per the Economic Survey of Tamil Nadu 2024-2025, urban inflation in Tamil Nadu is coming down from 6% in 2019-2020 to 4.5% in 2024-2025, while rural inflation is static at 5.4%.\nReason [R]: It is mainly due to the Government’s policy on the Tamil Nadu Public Distribution System and other income support schemes like Kalaignar Magalir Urimai Thittam and the hundred days employment guarantee scheme."
+  },
+  "questions/g4-2025-156": {
+   "answer": 0,
+   "category": "Development Administration in Tamil Nadu",
+   "explanation": "",
+   "n": 156,
+   "options": [
+    "Both [A] and [R] are true and [R] is the correct explanation of [A]",
+    "Both [A] and [R] are true but [R] is not the correct explanation of [A]",
+    "[A] is true but [R] is false",
+    "[A] is false but [R] is true"
+   ],
+   "paperId": "g4-2025",
+   "q": "Assertion [A]: The “Illam Thedi Kalvi” scheme in Tamil Nadu aims to bridge learning gaps among school students caused by the Covid-19 pandemic.\nReason [R]: The scheme involves volunteers providing remedial education to students at their homes."
+  },
+  "questions/g4-2025-157": {
+   "answer": 1,
+   "category": "Indian Polity",
+   "explanation": "",
+   "n": 157,
+   "options": [
+    "(i) only",
+    "(i) and (iii) only",
+    "(i) and (ii) only",
+    "(ii) and (iii) only"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following statement(s) is/are true about “The Mandal Commission Report”?\n(i) The commission used three indicators, i.e. Social, Educational and Economic.\n(ii) In the social indicator there were five criteria and in the educational indicator there were two criteria.\n(iii) In the economic indicator there were four criteria. Thus there were 11 criteria used in the Mandal Commission Report."
+  },
+  "questions/g4-2025-158": {
+   "answer": 1,
+   "category": "Indian Economy",
+   "explanation": "",
+   "n": 158,
+   "options": [
+    "High demand",
+    "Weakened rupee against the dollar",
+    "Low production",
+    "Low money supply"
+   ],
+   "paperId": "g4-2025",
+   "q": "What was the cause for high inflation in India?"
+  },
+  "questions/g4-2025-159": {
+   "answer": 2,
+   "category": "Indian Economy",
+   "explanation": "",
+   "n": 159,
+   "options": [
+    "1 2 4 3",
+    "3 1 4 2",
+    "3 2 1 4",
+    "2 3 4 1"
+   ],
+   "paperId": "g4-2025",
+   "q": "Arrange the poverty eradication schemes in chronological order.\n1. National Rural Livelihood Mission\n2. Rajiv Awas Yojana\n3. Bharat Nirman Yojana\n4. National Food Security Scheme"
+  },
+  "questions/g4-2025-160": {
+   "answer": 2,
+   "category": "Indian Economy",
+   "explanation": "",
+   "n": 160,
+   "options": [
+    "(1) and (2)",
+    "(1) and (3)",
+    "(3) and (4)",
+    "(2) and (3)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following is incorrectly paired?\n(1) MFAL — Marginal Farmers and Agricultural Labourers Development Agency\n(2) DPAP — Drought Prone Area Programme\n(3) DDP — District Development Programme\n(4) HDA — Hills Development Agencies"
+  },
+  "questions/g4-2025-161": {
+   "answer": 3,
+   "category": "Development Administration in Tamil Nadu",
+   "explanation": "",
+   "n": 161,
+   "options": [
+    "(1), (2), (3) and (4)",
+    "(1), (2) and (3)",
+    "(1), (2) and (4)",
+    "(4) only"
+   ],
+   "paperId": "g4-2025",
+   "q": "Identify the incorrect acronym:\n(1) TSC — Total Sanitation Campaign\n(2) NIC — National Information Centre\n(3) MIS — Management Information System\n(4) IMIS — Integrated Management Infrastructure System"
+  },
+  "questions/g4-2025-162": {
+   "answer": 2,
+   "category": "Indian Economy",
+   "explanation": "The Bombay Plan is usually dated 1944, so confirm this answer against the official TNPSC key.",
+   "n": 162,
+   "options": [
+    "2 and 3 are correct",
+    "1 and 2 are correct",
+    "1 and 4 are correct",
+    "2 and 4 are correct"
+   ],
+   "paperId": "g4-2025",
+   "q": "Choose the correct pair:\n1. Bombay Plan — 1940\n2. Gandhian Plan — 1945\n3. People’s Plan — 1944\n4. Sarvodaya Plan — 1950"
+  },
+  "questions/g4-2025-163": {
+   "answer": 2,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "",
+   "n": 163,
+   "options": [
+    "(1) Right (2) Wrong (3) Wrong (4) Wrong",
+    "(1) Wrong (2) Right (3) Right (4) Wrong",
+    "(1) Wrong (2) Right (3) Wrong (4) Right",
+    "(1) Right (2) Wrong (3) Right (4) Right"
+   ],
+   "paperId": "g4-2025",
+   "q": "“Kokkokka Koompum Paruvaththu Matradhan\nKuththokka Seerththa Itaththu”\n(As heron with folded wing, so wait in waiting hour; as heron snaps its prey, when fortune smiles, put forth your power.)\n(1) To act like a heron is incorrect.\n(2) You must wait till the time ripens.\n(3) This Kural appears in the chapter titled “Therinthu Thelithal”.\n(4) “Vaadiyirukkumaam Kokku” is the phrase best suited to this Thirukkural."
+  },
+  "questions/g4-2025-164": {
+   "answer": 0,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "",
+   "n": 164,
+   "options": [
+    "Statement 1 — Correct",
+    "Statement 2 — Correct",
+    "Statements 1 and 2 — Correct",
+    "Statements 1 and 2 — Incorrect"
+   ],
+   "paperId": "g4-2025",
+   "q": "“Manaththodu vaaimai mozhiyin thavaththodu\nThaananj Seiyvaarin Thalai”.\nStatement 1: Those who speak the TRUTH are always more superior than those who practice charity or penance.\nStatement 2: Those who practice charity and penance are far better than those who speak the TRUTH."
+  },
+  "questions/g4-2025-165": {
+   "answer": 1,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "",
+   "n": 165,
+   "options": [
+    "a-1, b-2, c-3, d-4",
+    "a-4, b-3, c-2, d-1",
+    "a-4, b-3, c-1, d-2",
+    "a-1, b-2, c-4, d-3"
+   ],
+   "paperId": "g4-2025",
+   "q": "Match the following:\n(a) Iyothee Thass Pandithar — 1. Tahdhib-ul-Akhlaq\n(b) Ramalinga Adigal — 2. Gulamgiri\n(c) Jotiba Phule — 3. Thiruvarutpa\n(d) Syed Ahmed Khan — 4. Oru Paisa Tamilan"
+  },
+  "questions/g4-2025-166": {
+   "answer": 1,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "",
+   "n": 166,
+   "options": [
+    "[A] is true, [R] is false",
+    "Both [A] and [R] are true and [R] is the correct explanation of [A]",
+    "[A] is false, [R] is true",
+    "Both [A] and [R] are true but [R] is not the correct explanation of [A]"
+   ],
+   "paperId": "g4-2025",
+   "q": "Assertion [A]: K.M. Balasubramanian, author of South Indian Celebrities, compared Dr. C. Natesa Mudaliar to Mahatma Gandhi.\nReason [R]: He was the epitome of love, character, tolerance and compromise, and he was the heart of the Justice Party."
+  },
+  "questions/g4-2025-167": {
+   "answer": 1,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "",
+   "n": 167,
+   "options": [
+    "(i) only",
+    "(i) and (iii) only",
+    "(i) and (ii) only",
+    "(ii) and (iii) only"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following statements are true about Ramalinga Adigal?\n(i) He said that apart from musical instruments the mind should unite.\n(ii) He started night schools for farmers.\n(iii) He said that through human charity one should get full benefit in life and be one with God."
+  },
+  "questions/g4-2025-168": {
+   "answer": 2,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "",
+   "n": 168,
+   "options": [
+    "[A] is true but [R] is false",
+    "[A] is false but [R] is true",
+    "Both [A] and [R] are true and [R] is the correct explanation of [A]",
+    "Both [A] and [R] are true but [R] is not the correct explanation of [A]"
+   ],
+   "paperId": "g4-2025",
+   "q": "Assertion [A]: In 1930 Muthulakshmi Ammaiyar introduced in the Madras Legislative Council a Bill on the prevention of the dedication of women to Hindu temples in the Presidency of Madras.\nReason [R]: The Bill, which later became the Devadasi Abolition Act, declared the “Pottukattu Ceremony” illegal."
+  },
+  "questions/g4-2025-169": {
+   "answer": 2,
+   "category": "Indian National Movement",
+   "explanation": "",
+   "n": 169,
+   "options": [
+    "[A] is true, [R] is false",
+    "Both [A] and [R] are true and [R] is the correct explanation of [A]",
+    "[A] is false, [R] is true",
+    "Both [A] and [R] are true but [R] is not the correct explanation of [A]"
+   ],
+   "paperId": "g4-2025",
+   "q": "Assertion [A]: Under the leadership of Rajaji, Congress decided to boycott the Simon Commission in Chennai.\nReason [R]: The Simon Commission had only white men as members, that is, no Indians."
+  },
+  "questions/g4-2025-170": {
+   "answer": 2,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "",
+   "n": 170,
+   "options": [
+    "a-1, b-3, c-4, d-2",
+    "a-1, b-4, c-2, d-3",
+    "a-3, b-4, c-2, d-1",
+    "a-3, b-4, c-1, d-2"
+   ],
+   "paperId": "g4-2025",
+   "q": "Match the works with their authors:\n(a) Vetrivelkai — 1. Avvaiyar\n(b) Nanneri — 2. Kumaraguruparar\n(c) Neethineri Vilakkam — 3. Athiveerarama Pandiyar\n(d) Nalvazhi — 4. Duraimangalam Sivaprakasar"
+  },
+  "questions/g4-2025-171": {
+   "answer": 3,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "",
+   "n": 171,
+   "options": [
+    "a-1, b-4, c-3, d-2",
+    "a-4, b-2, c-3, d-1",
+    "a-3, b-1, c-2, d-4",
+    "a-4, b-3, c-2, d-1"
+   ],
+   "paperId": "g4-2025",
+   "q": "Match the excavated places with their corresponding districts.\n(a) Azhagankulam — 1. Sivagangai\n(b) Vasavasamudram — 2. Erode\n(c) Kodumanal — 3. Kanchipuram\n(d) Keezhadi — 4. Ramanathapuram"
+  },
+  "questions/g4-2025-172": {
+   "answer": 0,
+   "category": "General Science",
+   "explanation": "",
+   "n": 172,
+   "options": [
+    "a-2, b-1, c-4, d-3",
+    "a-2, b-1, c-3, d-4",
+    "a-2, b-4, c-3, d-1",
+    "a-1, b-3, c-2, d-4"
+   ],
+   "paperId": "g4-2025",
+   "q": "Match the diseases in Column I with the site of infection in Column II:\n(a) Dengue — 1. Intestine, Brain\n(b) Poliomyelitis — 2. Skin and Blood\n(c) Measles — 3. Respiratory tract and Nervous system\n(d) Chicken Pox — 4. Skin and Respiratory tract"
+  },
+  "questions/g4-2025-173": {
+   "answer": 0,
+   "category": "General Science",
+   "explanation": "",
+   "n": 173,
+   "options": [
+    "Both [A] and [R] are correct and [R] is a correct explanation of [A]",
+    "Both [A] and [R] are correct but [R] is not a correct explanation of [A]",
+    "[A] is correct but [R] is incorrect",
+    "Both [A] and [R] are incorrect"
+   ],
+   "paperId": "g4-2025",
+   "q": "Assertion [A]: Cobalt-60 is useful in cancer therapy.\nReason [R]: Cobalt-60 is a source of γ-radiation capable of killing cancerous cells."
+  },
+  "questions/g4-2025-174": {
+   "answer": 0,
+   "category": "Development Administration in Tamil Nadu",
+   "explanation": "",
+   "n": 174,
+   "options": [
+    "May 2021",
+    "December 2021",
+    "March 2022",
+    "October 2021"
+   ],
+   "paperId": "g4-2025",
+   "q": "In Tamil Nadu, the Vidiyal Payanam Scheme was introduced in the month of"
+  },
+  "questions/g4-2025-175": {
+   "answer": 0,
+   "category": "Geography",
+   "explanation": "",
+   "n": 175,
+   "options": [
+    "[A] is true, but [R] is false",
+    "[A] is false, but [R] is true",
+    "Both [A] and [R] are true, and [R] is the correct explanation of [A]",
+    "Both [A] and [R] are true, but [R] is not the correct explanation of [A]"
+   ],
+   "paperId": "g4-2025",
+   "q": "Assertion [A]: Climate, relief, soil and natural resources influence the distribution of population.\nReason [R]: Birth and death rates do not affect the distribution of population."
+  },
+  "questions/g4-2025-176": {
+   "answer": 0,
+   "category": "Geography",
+   "explanation": "",
+   "n": 176,
+   "options": [
+    "a-1, b-4, c-3, d-2",
+    "a-3, b-4, c-1, d-2",
+    "a-4, b-2, c-3, d-1",
+    "a-2, b-3, c-4, d-1"
+   ],
+   "paperId": "g4-2025",
+   "q": "Match the following (shifting cultivation — region):\n(a) Ladang — 1. Malaysia\n(b) Milpa — 2. Vietnam\n(c) Roca — 3. Brazil\n(d) Ray — 4. Mexico"
+  },
+  "questions/g4-2025-177": {
+   "answer": 1,
+   "category": "History & Culture of India",
+   "explanation": "",
+   "n": 177,
+   "options": [
+    "a-2, b-4, c-3, d-1",
+    "a-2, b-4, c-1, d-3",
+    "a-2, b-3, c-4, d-1",
+    "a-2, b-3, c-1, d-4"
+   ],
+   "paperId": "g4-2025",
+   "q": "Match the following (author — work):\n(a) Amoghavarsha — 1. Mahapurana\n(b) Jinasena — 2. Kavirajamarga\n(c) Gunabhadra — 3. Kadambari\n(d) Bana — 4. Adipurana"
+  },
+  "questions/g4-2025-178": {
+   "answer": 0,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "",
+   "n": 178,
+   "options": [
+    "(ii) only",
+    "(i) and (iii)",
+    "(i) and (ii)",
+    "(ii) and (iii)"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following statements are true about Velu Nachiyar?\n(i) Velu Nachiyar was the daughter of Chellamuthu Sethupathi, King of Sivagangai.\n(ii) Velu Nachiyar’s husband was assassinated by the Nawab’s army; to attack the Nawab and the British, she joined with Gopala Nayakkar and Hyder Ali.\n(iii) In 1790, she died due to illness."
+  },
+  "questions/g4-2025-179": {
+   "answer": 1,
+   "category": "Indian National Movement",
+   "explanation": "",
+   "n": 179,
+   "options": [
+    "(i) and (ii) only",
+    "(i) and (iii) only",
+    "(ii) and (iii) only",
+    "(ii) and (iv) only"
+   ],
+   "paperId": "g4-2025",
+   "q": "Which of the following points were accepted in the Gandhi–Irwin Pact?\n(i) People allowed to make salt for their consumption.\n(ii) Not releasing the political prisoners who had not indulged in violence.\n(iii) Permitted picketing of foreign cloth shops.\n(iv) Reduced the death sentence of Bhagat Singh and his comrades."
+  },
+  "questions/g4-2025-180": {
+   "answer": 2,
+   "category": "Indian National Movement",
+   "explanation": "",
+   "n": 180,
+   "options": [
+    "(1) only",
+    "(2) only",
+    "(1), (3) and (4) only",
+    "(1), (2) and (3) only"
+   ],
+   "paperId": "g4-2025",
+   "q": "Consider the following statements and identify the correct answer:\n(1) In 1918, the Madurai Harvey Mill labour strike happened.\n(2) B.P. Wadia was the labour union leader of Madurai Harvey Mill.\n(3) Dr. P. Varadharajulu’s speech was an eye opener to the government.\n(4) Dr. P. Varadharajulu was the author of the “Prapancha Mitran” magazine."
+  },
+  "questions/g4-2025-181": {
+   "answer": 3,
+   "category": "Indian National Movement",
+   "explanation": "He was born in Cuttack, Odisha, and 23 January is not a national holiday.",
+   "n": 181,
+   "options": [
+    "(iii) only",
+    "(i) and (ii) only",
+    "(ii) and (iii) only",
+    "(i) and (iii) only"
+   ],
+   "paperId": "g4-2025",
+   "q": "False statements about Subhas Chandra Bose are:\n(i) Subhas Chandra Bose was born on 23rd January 1897 in Calcutta, West Bengal.\n(ii) The Government of India has declared his birthday, 23rd January, as “Parakram Diwas”.\n(iii) To honour Subhas Chandra Bose’s legacy, 23rd January is a national holiday."
+  },
+  "questions/g4-2025-182": {
+   "answer": 1,
+   "category": "Current Affairs",
+   "explanation": "",
+   "n": 182,
+   "options": [
+    "a-1, b-4, c-3, d-2",
+    "a-2, b-3, c-4, d-1",
+    "a-3, b-4, c-1, d-2",
+    "a-4, b-2, c-3, d-1"
+   ],
+   "paperId": "g4-2025",
+   "q": "Match the Presidents with the chief guests who attended the Republic Day celebrations held under their leadership.\n(a) Droupadi Murmu — 1. Cyril Ramaphosa\n(b) A.P.J. Abdul Kalam — 2. Prabowo Subianto\n(c) Pranab Mukherjee — 3. Vladimir Putin\n(d) Ram Nath Kovind — 4. Barack Obama"
+  },
+  "questions/g4-2025-183": {
+   "answer": 1,
+   "category": "Development Administration in Tamil Nadu",
+   "explanation": "",
+   "n": 183,
+   "options": [
+    "(4)",
+    "(2)",
+    "(1)",
+    "(3)"
+   ],
+   "paperId": "g4-2025",
+   "q": "The toll-free numbers of the Directorate of Vigilance and Anti-Corruption, Tamil Nadu are:\n(1) 1062 and 1963\n(2) 1064 and 1965\n(3) 1066 and 1967\n(4) 1068 and 1969"
+  },
+  "questions/g4-2025-184": {
+   "answer": 2,
+   "category": "Indian Polity",
+   "explanation": "",
+   "n": 184,
+   "options": [
+    "(i) only",
+    "(i) and (iii) only",
+    "(i) and (ii) only",
+    "(ii) and (iii) only"
+   ],
+   "paperId": "g4-2025",
+   "q": "Find out the correct statements on elections:\n(i) EVMs were used in elections in all the states in 2003.\n(ii) The commission took a historic decision to use only EVMs for the Lok Sabha election in 2004.\n(iii) Two million EVMs were used in this election."
+  },
+  "questions/g4-2025-185": {
+   "answer": 1,
+   "category": "Indian Polity",
+   "explanation": "",
+   "n": 185,
+   "options": [
+    "(1) and (3) are correct",
+    "(1) and (4) are correct",
+    "(2) and (3) are correct",
+    "(3) and (4) are correct"
+   ],
+   "paperId": "g4-2025",
+   "q": "Choose the right matches (committee — chairman):\n(1) Committee on Panchayat Raj Elections — K. Santhanam\n(2) Committee on Rationalisation of Panchayat Statistics — G. Ramachandran\n(3) Committee on Panchayat Raj Training Centres — V.K. Rao\n(4) Study Team on Panchayat Raj Administration — V. Iswaran"
+  },
+  "questions/g4-2025-186": {
+   "answer": 1,
+   "category": "Indian Polity",
+   "explanation": "",
+   "n": 186,
+   "options": [
+    "(i) only",
+    "(i) and (iii) only",
+    "(i) and (ii) only",
+    "(ii) and (iii) only"
+   ],
+   "paperId": "g4-2025",
+   "q": "The correct statements on the Directive Principles of State Policy are:\n(i) The Directive Principles of State Policy are provided in Articles 36 to 51 of the Constitution.\n(ii) The framers of the Constitution borrowed this idea from the Spanish constitution.\n(iii) The Directive Principles form the soul of the Constitution."
+  },
+  "questions/g4-2025-187": {
+   "answer": 2,
+   "category": "Indian Polity",
+   "explanation": "",
+   "n": 187,
+   "options": [
+    "[A] is false, [R] is true",
+    "Both [A] and [R] are true and [R] is the correct explanation of [A]",
+    "[A] is true, [R] is false",
+    "Both [A] and [R] are true but [R] is not the correct explanation of [A]"
+   ],
+   "paperId": "g4-2025",
+   "q": "Assertion [A]: The Indian Constitution is federal in nature.\nReason [R]: The Indian Constitution provides dual citizenship like the United States of America."
+  },
+  "questions/g4-2025-188": {
+   "answer": 1,
+   "category": "Indian Polity",
+   "explanation": "",
+   "n": 188,
+   "options": [
+    "[A] is true, [R] is false",
+    "Both [A] and [R] are true and [R] is the correct explanation of [A]",
+    "[A] is false, [R] is true",
+    "Both [A] and [R] are true but [R] is not the correct explanation of [A]"
+   ],
+   "paperId": "g4-2025",
+   "q": "Assertion [A]: The Indian Constitution has the qualities of being both rigid and flexible.\nReason [R]: The Constitution was amended more than 100 times without changing the foundations of the Constitution."
+  },
+  "questions/g4-2025-189": {
+   "answer": 0,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "Left: 750 + 1750 + 300 = 2800; right: 2000 + 1750 = 3750; total 6550 m².",
+   "n": 189,
+   "options": [
+    "6550 m²",
+    "7550 m²",
+    "5750 m²",
+    "5650 m²"
+   ],
+   "paperId": "g4-2025",
+   "q": "The readings in a field book are given below (chainage along A to C, in metres):\nFrom A: 50 (offset 30 to E, left), 80 (offset 50 to B, right), 120 (offset 20 to D, left), 150 (to C).\nThe area of the field is"
+  },
+  "questions/g4-2025-190": {
+   "answer": 2,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "Multiply by 60: 20 : 15 : 12 : 10, total 57.",
+   "n": 190,
+   "options": [
+    "23",
+    "55",
+    "57",
+    "65"
+   ],
+   "paperId": "g4-2025",
+   "q": "A person distributes his pens among four friends A, B, C and D in the ratio 1/3 : 1/4 : 1/5 : 1/6. The minimum number of pens that the person should have is"
+  },
+  "questions/g4-2025-191": {
+   "answer": 2,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "",
+   "n": 191,
+   "options": [
+    "50",
+    "10",
+    "8",
+    "4"
+   ],
+   "paperId": "g4-2025",
+   "q": "If the ratios formed using the numbers 2, 5, x, 20 are in proportion in the same order, then the value of x is"
+  },
+  "questions/g4-2025-192": {
+   "answer": 0,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "HCF = 18 = 23x − 51, so x = 3.",
+   "n": 192,
+   "options": [
+    "3",
+    "2",
+    "4",
+    "5"
+   ],
+   "paperId": "g4-2025",
+   "q": "If the HCF of 108 and 234 is expressible in the form 23x − 51, what is the value of x?"
+  },
+  "questions/g4-2025-193": {
+   "answer": 0,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "",
+   "n": 193,
+   "options": [
+    "x² − x + 1",
+    "x² + x − 1",
+    "−7x² + 7x − 7",
+    "7x² − 7x + 7"
+   ],
+   "paperId": "g4-2025",
+   "q": "Find the HCF of the polynomials x³ + x² − x + 2 and 2x³ − 5x² + 5x − 3."
+  },
+  "questions/g4-2025-194": {
+   "answer": 2,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "",
+   "n": 194,
+   "options": [
+    "63/19",
+    "19/63",
+    "21/64",
+    "64/21"
+   ],
+   "paperId": "g4-2025",
+   "q": "Simplify: (4⁻¹ + 4⁻² + 4⁻³)⁰ × (4⁻¹ + 4⁻² + 4⁻³)¹"
+  },
+  "questions/g4-2025-195": {
+   "answer": 1,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "",
+   "n": 195,
+   "options": [
+    "77.32",
+    "79.48",
+    "78.42",
+    "78.24"
+   ],
+   "paperId": "g4-2025",
+   "q": "The average mark of 25 students was found to be 78.4. Later on, it was found that a score of 96 was misread as 69. Find the correct mean of the marks."
+  },
+  "questions/g4-2025-196": {
+   "answer": 0,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "",
+   "n": 196,
+   "options": [
+    "H",
+    "I",
+    "M",
+    "G"
+   ],
+   "paperId": "g4-2025",
+   "q": "D, F, G, H, I and M are sitting in a row. I and M are in the centre, and F and D are at the beginning and at the end. G is sitting on the left of D. Then who is sitting on the right of F?"
+  },
+  "questions/g4-2025-197": {
+   "answer": 2,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "",
+   "n": 197,
+   "options": [
+    "24",
+    "27",
+    "57",
+    "58"
+   ],
+   "paperId": "g4-2025",
+   "q": "If A = 26 and SUN = 27, then CAT = ?"
+  },
+  "questions/g4-2025-198": {
+   "answer": 3,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "",
+   "n": 198,
+   "options": [
+    "b ≠ a ≠ c",
+    "a, b, c are distinct",
+    "a = b = c",
+    "a ≠ c or a = c"
+   ],
+   "paperId": "g4-2025",
+   "q": "If a ≠ b ≠ c is given, which one of the following is correct?"
+  },
+  "questions/g4-2025-199": {
+   "answer": 0,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "",
+   "n": 199,
+   "options": [
+    "34 H 240",
+    "34 H 144",
+    "30 H 100",
+    "30 H 120"
+   ],
+   "paperId": "g4-2025",
+   "q": "The missing term in the given alpha-numeric series is\n2 X 2, 7 T 4, 14 P 12, 23 L 48, ______"
+  },
+  "questions/g4-2025-200": {
+   "answer": 1,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "",
+   "n": 200,
+   "options": [
+    "1/12",
+    "5/36",
+    "1/9",
+    "7/36"
+   ],
+   "paperId": "g4-2025",
+   "q": "Two unbiased dice are rolled once. Find the probability that the product of the face values is 4 or the difference of the face values is 5."
+  },
+  "questions/s01": {
+   "answer": 1,
+   "category": "Indian National Movement",
+   "explanation": "The first session was held in Bombay in 1885 under W.C. Bonnerjee.",
+   "n": 1,
+   "options": [
+    "Dadabhai Naoroji",
+    "W.C. Bonnerjee",
+    "A.O. Hume",
+    "Surendranath Banerjee"
+   ],
+   "paperId": "starter",
+   "q": "Who presided over the first session of the Indian National Congress in 1885?"
+  },
+  "questions/s02": {
+   "answer": 2,
+   "category": "Indian National Movement",
+   "explanation": "Rajaji led the march from Tiruchirappalli to Vedaranyam.",
+   "n": 2,
+   "options": [
+    "K. Kamaraj",
+    "V.O. Chidambaram Pillai",
+    "C. Rajagopalachari",
+    "Subramania Bharati"
+   ],
+   "paperId": "starter",
+   "q": "Who led the Vedaranyam Salt Satyagraha in 1930?"
+  },
+  "questions/s03": {
+   "answer": 0,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "",
+   "n": 3,
+   "options": [
+    "E.V. Ramasamy (Periyar)",
+    "C.N. Annadurai",
+    "Ayothidasa Pandithar",
+    "Rettaimalai Srinivasan"
+   ],
+   "paperId": "starter",
+   "q": "The Self-Respect Movement was started in 1925 by"
+  },
+  "questions/s04": {
+   "answer": 3,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "",
+   "n": 4,
+   "options": [
+    "Rajendra Chola I",
+    "Narasimhavarman I",
+    "Kulothunga Chola I",
+    "Rajaraja Chola I"
+   ],
+   "paperId": "starter",
+   "q": "Who built the Brihadeeswarar Temple at Thanjavur?"
+  },
+  "questions/s05": {
+   "answer": 1,
+   "category": "Indian National Movement",
+   "explanation": "Mountbatten was the first Governor-General; Rajaji was the first and only Indian to hold the post.",
+   "n": 5,
+   "options": [
+    "Lord Mountbatten",
+    "C. Rajagopalachari",
+    "Dr. Rajendra Prasad",
+    "Sardar Vallabhbhai Patel"
+   ],
+   "paperId": "starter",
+   "q": "Who was the first Indian Governor-General of independent India?"
+  },
+  "questions/s06": {
+   "answer": 2,
+   "category": "Indian Polity",
+   "explanation": "",
+   "n": 6,
+   "options": [
+    "Article 14",
+    "Article 19",
+    "Article 21",
+    "Article 32"
+   ],
+   "paperId": "starter",
+   "q": "Which Article of the Indian Constitution guarantees protection of life and personal liberty?"
+  },
+  "questions/s07": {
+   "answer": 0,
+   "category": "Indian Polity",
+   "explanation": "The 42nd Amendment (1976) added Article 51A.",
+   "n": 7,
+   "options": [
+    "42nd Amendment",
+    "44th Amendment",
+    "73rd Amendment",
+    "86th Amendment"
+   ],
+   "paperId": "starter",
+   "q": "Fundamental Duties were added to the Constitution by which amendment?"
+  },
+  "questions/s08": {
+   "answer": 3,
+   "category": "Indian Polity",
+   "explanation": "",
+   "n": 8,
+   "options": [
+    "Chief Minister",
+    "Chief Justice of the High Court",
+    "Speaker of the Assembly",
+    "Governor"
+   ],
+   "paperId": "starter",
+   "q": "Who is the constitutional head of a State?"
+  },
+  "questions/s09": {
+   "answer": 1,
+   "category": "Geography",
+   "explanation": "",
+   "n": 9,
+   "options": [
+    "Vaigai",
+    "Cauvery",
+    "Thamirabarani",
+    "Palar"
+   ],
+   "paperId": "starter",
+   "q": "The longest river in Tamil Nadu is"
+  },
+  "questions/s10": {
+   "answer": 2,
+   "category": "Geography",
+   "explanation": "",
+   "n": 10,
+   "options": [
+    "Gulf of Mannar",
+    "Sundarbans",
+    "Nilgiri",
+    "Nanda Devi"
+   ],
+   "paperId": "starter",
+   "q": "India’s first biosphere reserve, established in 1986, is"
+  },
+  "questions/s11": {
+   "answer": 0,
+   "category": "Geography",
+   "explanation": "",
+   "n": 11,
+   "options": [
+    "Nilgiri Tahr",
+    "Asian Elephant",
+    "Bengal Tiger",
+    "Blackbuck"
+   ],
+   "paperId": "starter",
+   "q": "The state animal of Tamil Nadu is"
+  },
+  "questions/s12": {
+   "answer": 3,
+   "category": "Geography",
+   "explanation": "",
+   "n": 12,
+   "options": [
+    "Neem",
+    "Banyan",
+    "Jackfruit",
+    "Palmyra palm"
+   ],
+   "paperId": "starter",
+   "q": "The state tree of Tamil Nadu is"
+  },
+  "questions/s13": {
+   "answer": 1,
+   "category": "General Science",
+   "explanation": "",
+   "n": 13,
+   "options": [
+    "Rickets",
+    "Scurvy",
+    "Night blindness",
+    "Beriberi"
+   ],
+   "paperId": "starter",
+   "q": "Deficiency of Vitamin C causes"
+  },
+  "questions/s14": {
+   "answer": 2,
+   "category": "General Science",
+   "explanation": "",
+   "n": 14,
+   "options": [
+    "Volt",
+    "Ampere",
+    "Ohm",
+    "Watt"
+   ],
+   "paperId": "starter",
+   "q": "The SI unit of electrical resistance is"
+  },
+  "questions/s15": {
+   "answer": 0,
+   "category": "General Science",
+   "explanation": "",
+   "n": 15,
+   "options": [
+    "Hydrogen",
+    "Helium",
+    "Oxygen",
+    "Nitrogen"
+   ],
+   "paperId": "starter",
+   "q": "The lightest gas is"
+  },
+  "questions/s16": {
+   "answer": 3,
+   "category": "General Science",
+   "explanation": "",
+   "n": 16,
+   "options": [
+    "KCl",
+    "NaHCO3",
+    "CaCO3",
+    "NaCl"
+   ],
+   "paperId": "starter",
+   "q": "The chemical formula of common salt is"
+  },
+  "questions/s17": {
+   "answer": 1,
+   "category": "History, Culture & Heritage of Tamil Nadu",
+   "explanation": "1330 couplets in 133 chapters.",
+   "n": 17,
+   "options": [
+    "1080",
+    "1330",
+    "1440",
+    "1200"
+   ],
+   "paperId": "starter",
+   "q": "How many couplets are there in the Thirukkural?"
+  },
+  "questions/s18": {
+   "answer": 1,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "5000 × 8 × 3 ÷ 100 = 1200.",
+   "n": 18,
+   "options": [
+    "₹1,000",
+    "₹1,200",
+    "₹1,500",
+    "₹1,800"
+   ],
+   "paperId": "starter",
+   "q": "What is the simple interest on ₹5,000 at 8% per annum for 3 years?"
+  },
+  "questions/s19": {
+   "answer": 2,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "12 × 15 ÷ 20 = 9.",
+   "n": 19,
+   "options": [
+    "8 days",
+    "10 days",
+    "9 days",
+    "12 days"
+   ],
+   "paperId": "starter",
+   "q": "12 men can finish a job in 15 days. How many days will 20 men take?"
+  },
+  "questions/s20": {
+   "answer": 1,
+   "category": "Aptitude & Mental Ability",
+   "explanation": "(1 + 10) ÷ 2 = 5.5.",
+   "n": 20,
+   "options": [
+    "5",
+    "5.5",
+    "6",
+    "4.5"
+   ],
+   "paperId": "starter",
+   "q": "The average of the first 10 natural numbers is"
+  }
+ }
+}

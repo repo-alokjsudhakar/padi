@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>படி (Padi): TNPSC Group 4 practice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@500;700;800&family=Mukta+Malar:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F4F3; --surface:#FFFFFF; --ink:#14213D; --ink-2:#4A5568; --line:#D5DBDF;
+  --guide:#C2185B; --guide-soft:#FCE4EC; --pen:#1D3FA8; --pen-ink:#FFFFFF;
+  --ok:#1E7B4F; --ok-soft:#E2F3E9; --bad:#B3261E; --bad-soft:#FBE6E4;
+  --head:"Anek Tamil","Mukta Malar","Noto Sans Tamil",system-ui,sans-serif;
+  --body:"Mukta Malar","Noto Sans Tamil",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1620; --surface:#17202C; --ink:#E6EAF0; --ink-2:#A3AEBD; --line:#2B3747;
+    --guide:#F06292; --guide-soft:#3A1C2A; --pen:#8FA8FF; --pen-ink:#0F1620;
+    --ok:#5CC38E; --ok-soft:#163326; --bad:#F08178; --bad-soft:#3A1D1B; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1620; --surface:#17202C; --ink:#E6EAF0; --ink-2:#A3AEBD; --line:#2B3747;
+  --guide:#F06292; --guide-soft:#3A1C2A; --pen:#8FA8FF; --pen-ink:#0F1620;
+  --ok:#5CC38E; --ok-soft:#163326; --bad:#F08178; --bad-soft:#3A1D1B; color-scheme:dark;
+}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:var(--pen)}
+:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+.top-in{max-width:1000px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.brand{font-family:var(--head);font-weight:800;font-size:1.15rem;letter-spacing:-.01em;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand-sub{font-family:var(--body);font-weight:600;font-size:.82rem;color:var(--ink-2);letter-spacing:0}
+@media (max-width:520px){.brand-sub{display:none}}
+.brand-mark{width:22px;height:22px;border-radius:50%;border:2px solid var(--guide);position:relative}
+.brand-mark::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--pen)}
+nav{display:flex;gap:4px;margin-left:auto}
+nav a{padding:6px 12px;border-radius:8px;text-decoration:none;color:var(--ink-2);font-weight:600}
+nav a[aria-current="page"]{color:var(--ink);background:var(--bg)}
+main{max-width:1000px;margin:0 auto;padding:28px 20px 80px}
+h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0}
+h1{font-size:clamp(1.9rem,4.5vw,2.9rem);font-weight:800;letter-spacing:-.02em;max-width:18ch}
+h2{font-size:1.35rem;font-weight:700;margin-bottom:12px}
+h3{font-size:1.05rem;font-weight:700}
+.lede{color:var(--ink-2);margin:10px 0 0;max-width:60ch}
+.muted{color:var(--ink-2)}
+.small{font-size:.9rem}
+section{margin-top:36px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.setup{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) auto;gap:12px;align-items:end}
+@media (max-width:820px){.setup{grid-template-columns:1fr 1fr}.setup .btn{grid-column:1/-1}}
+label.f{display:flex;flex-direction:column;gap:4px;font-weight:600;font-size:.9rem;color:var(--ink-2)}
+select,input[type=text],input[type=number],textarea{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 10px;width:100%;min-width:0;color:var(--ink)}
+textarea{resize:vertical;line-height:1.5}
+.btn{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:9px;padding:9px 16px;font-weight:700;cursor:pointer;white-space:nowrap}
+.btn:hover{border-color:var(--ink-2)}
+.btn.primary{background:var(--pen);border-color:var(--pen);color:var(--pen-ink)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.danger{color:var(--bad)}
+.btn.link{border:none;background:none;padding:4px 6px;color:var(--pen);font-weight:600}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.spacer{flex:1}
+
+/* subject list */
+.subjects{border-top:1px solid var(--line)}
+.subj{display:grid;grid-template-columns:1fr 200px auto;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.subj.empty .subj-name{color:var(--ink-2)}
+.subj-name{font-weight:700}
+.meter{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.meter > i{display:block;height:100%;background:var(--ok)}
+@media (max-width:640px){.subj{grid-template-columns:1fr auto}.subj .acc{grid-column:1/-1;order:3}}
+
+/* OMR bubbles */
+.q-wrap{max-width:760px}
+.q-meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;color:var(--ink-2);font-size:.9rem}
+.tag{border:1px solid var(--line);border-radius:999px;padding:1px 10px;background:var(--surface)}
+.q-text{font-size:1.3rem;line-height:1.5;margin:18px 0 22px;white-space:pre-wrap;font-weight:600}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{display:flex;gap:14px;align-items:center;text-align:left;width:100%;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;white-space:pre-wrap}
+.opt:hover:not(:disabled){border-color:var(--guide)}
+.opt:disabled{cursor:default}
+.bub{flex:none;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--guide);color:var(--guide);display:grid;place-items:center;font-family:var(--head);font-weight:700;font-size:.95rem;transition:background .15s,color .15s}
+.opt.sel .bub{background:var(--pen);border-color:var(--pen);color:var(--pen-ink)}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.right .bub{background:var(--ok);border-color:var(--ok);color:var(--surface)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt.wrong .bub{background:var(--bad);border-color:var(--bad);color:var(--surface)}
+@media (prefers-reduced-motion:reduce){.bub{transition:none}}
+.verdict{margin-top:16px;padding:12px 14px;border-radius:10px;font-weight:600}
+.verdict.ok{background:var(--ok-soft);color:var(--ok)}
+.verdict.bad{background:var(--bad-soft);color:var(--bad)}
+.verdict p{margin:6px 0 0;font-weight:400;color:var(--ink)}
+.qnav{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.sheet{display:grid;grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:6px;margin-top:28px}
+.sheet button{height:36px;border-radius:8px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:600;font-size:.85rem}
+.sheet button.done{background:var(--pen);border-color:var(--pen);color:var(--pen-ink)}
+.sheet button.cur{outline:2px solid var(--guide);outline-offset:1px}
+.progressbar{height:4px;background:var(--line);border-radius:2px;margin-top:10px;overflow:hidden}
+.progressbar i{display:block;height:100%;background:var(--guide)}
+
+/* results */
+.score{font-family:var(--head);font-weight:800;font-size:clamp(3rem,10vw,5.5rem);line-height:1;letter-spacing:-.03em}
+.score small{font-size:.4em;color:var(--ink-2);font-weight:700;letter-spacing:0}
+.review{display:flex;flex-direction:column;gap:14px;margin-top:16px}
+.rv{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--line);border-radius:10px;padding:14px 16px}
+.rv.ok{border-left-color:var(--ok)}.rv.bad{border-left-color:var(--bad)}
+.rv-q{font-weight:600;white-space:pre-wrap;margin:4px 0 10px}
+.rv ol{margin:0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:4px}
+.rv li{padding:3px 8px;border-radius:6px;white-space:pre-wrap}
+.rv li.right{background:var(--ok-soft);color:var(--ok);font-weight:600}
+.rv li.wrong{background:var(--bad-soft);color:var(--bad);text-decoration:line-through}
+
+/* bank */
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+.qlist{margin-top:12px;border-top:1px solid var(--line)}
+.qitem{padding:10px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:2.2em 1fr auto;gap:8px}
+.qitem .n{color:var(--ink-2);font-weight:700}
+.qitem .t{white-space:pre-wrap}
+.imp-item{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:8px}
+.imp-item.off{opacity:.55}
+.opt-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media (max-width:640px){.opt-grid{grid-template-columns:1fr}}
+.note{background:var(--guide-soft);border-radius:10px;padding:12px 14px;margin-top:12px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-weight:600;max-width:90vw;z-index:20;box-shadow:0 6px 24px rgba(0,0,0,.2)}
+.empty{text-align:left;padding:28px 0}
+.stack > * + *{margin-top:12px}
+.hist{width:100%;border-collapse:collapse;font-size:.95rem}
+.hist td{padding:8px 0;border-bottom:1px solid var(--line)}
+.hist td:last-child{text-align:right;font-weight:700}
+.scroll-x{overflow-x:auto}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true"></span><span lang="ta">படி</span><span class="brand-sub">Padi, TNPSC Group 4 practice</span></a>
+  <nav id="nav"></nav>
+</div></header>
+<main id="app"></main>
+<div id="toast" class="toast" role="status" hidden></div>
+
+<script src="/claude-local.js"></script>
+<script>
+"use strict";
+const CATS = [
+  "History & Culture of India",
+  "Indian National Movement",
+  "Indian Polity",
+  "Geography",
+  "Indian Economy",
+  "General Science",
+  "History, Culture & Heritage of Tamil Nadu",
+  "Development Administration in Tamil Nadu",
+  "Current Affairs",
+  "Aptitude & Mental Ability",
+  "General English (Part A)",
+  "Tamil (Part A)",
+  "Uncategorised"
+];
+const LETTERS = ["A","B","C","D"];
+const LS_BANK = "g4hall:bank:v1", LS_PROG = "g4hall:progress:v1";
+
+const S = {
+  mode: "local", loaded: false, loadNote: "", canEdit: true, uid: null,
+  papers: {}, questions: {},
+  progress: emptyProgress(),
+  setup: { cat: "all", paper: "all", count: "25", mode: "instant" },
+  quiz: null, result: null, wrongOnly: false,
+  bankOpen: {},
+  imp: { paper: "new", newTitle: "", newYear: "", kind: "official", text: "", items: [], busy: false, msg: "" },
+  edit: blankEdit(),
+  sampleOK: false, exportText: ""
+};
+let db = null, userCap = null, sampleCap = null, downloadsCap = null, extractCtl = null, pendingRender = false;
+
+function emptyProgress(){ return { byCat: {}, wrong: [], history: [] }; }
+function blankEdit(){ return { id: null, paperId: "", q: "", options: ["","","",""], answer: "", explanation: "", category: CATS[0] }; }
+function rid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
+function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+function shuffle(a){ a = a.slice(); for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function pct(a, b){ return b ? Math.round(a * 100 / b) : 0; }
+function fmtTime(ms){ const s = Math.max(0, Math.round(ms / 1000)); return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); }
+function toast(msg){ const t = document.getElementById("toast"); t.textContent = msg; t.hidden = false; clearTimeout(toast._t); toast._t = setTimeout(() => t.hidden = true, 4200); }
+
+/* ---------- storage ---------- */
+function lsGet(k){ try { const r = localStorage.getItem(k); return r ? JSON.parse(r) : null; } catch (e) { return null; } }
+function lsSet(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+function saveLocalBank(){ if (S.mode === "local") lsSet(LS_BANK, { papers: S.papers, questions: S.questions }); }
+
+async function putPaper(id, data){
+  if (db) return db.doc("papers/" + id).set(data);
+  S.papers = Object.assign({}, S.papers, { [id]: data }); saveLocalBank();
+}
+async function putQuestion(id, data){
+  if (db) return db.doc("questions/" + id).set(data);
+  S.questions = Object.assign({}, S.questions, { [id]: data }); saveLocalBank();
+}
+async function removePaper(id){
+  if (db) return db.doc("papers/" + id).delete();
+  const p = Object.assign({}, S.papers); delete p[id]; S.papers = p; saveLocalBank();
+}
+async function removeQuestion(id){
+  if (db) return db.doc("questions/" + id).delete();
+  const q = Object.assign({}, S.questions); delete q[id]; S.questions = q; saveLocalBank();
+}
+async function runPool(tasks, n){
+  let i = 0; const errs = [];
+  async function worker(){ while (i < tasks.length){ const t = tasks[i++]; try { await t(); } catch (e) { errs.push(e); if (e && (e.code === "invalid_argument" || e.code === "quota_exceeded")) { i = tasks.length; } } } }
+  await Promise.all(Array.from({ length: Math.min(n, tasks.length) }, worker));
+  if (errs.length) throw errs[0];
+}
+function writeError(e){
+  const code = e && e.code;
+  if (code === "invalid_argument"){ S.canEdit = false; toast("Only the owner or editors of this page can change the question bank."); }
+  else if (code === "quota_exceeded") toast("The question bank is full. Delete an old paper to make room.");
+  else toast("Couldn’t save: " + ((e && e.message) || "unknown error") + ".");
+  render();
+}
+let progChain = Promise.resolve();
+function saveProgress(){
+  const data = JSON.parse(JSON.stringify(S.progress));
+  if (db && S.uid){
+    progChain = progChain.then(() => db.doc("data/users/" + S.uid + "/progress").set(data))
+      .catch(() => { lsSet(LS_PROG, data); toast("Your progress is saved on this device only."); });
+  } else lsSet(LS_PROG, data);
+}
+
+/* ---------- init ---------- */
+function startLocal(){
+  S.mode = "local";
+  const b = lsGet(LS_BANK);
+  if (b){ S.papers = b.papers || {}; S.questions = b.questions || {}; }
+  S.progress = Object.assign(emptyProgress(), lsGet(LS_PROG) || {});
+  S.loaded = true; S.canEdit = true; render();
+}
+async function init(){
+  render();
+  const use = window.claude && typeof window.claude.use === "function" ? (n) => window.claude.use(n).catch(() => null) : null;
+  if (!use){ startLocal(); return; }
+  const [d, u, s, dl] = await Promise.all([use("db"), use("user"), use("sample"), use("downloads")]);
+  userCap = u; sampleCap = s; downloadsCap = dl; S.sampleOK = !!s;
+  if (!d){ startLocal(); return; }
+  db = d; S.mode = "db";
+  S.uid = u ? await u.id() : null;
+  S.canEdit = u ? await u.canEdit() : true;
+  if (S.uid){
+    try { const snap = await db.doc("data/users/" + S.uid + "/progress").get(); if (snap.exists) S.progress = Object.assign(emptyProgress(), JSON.parse(JSON.stringify(snap.data()))); }
+    catch (e) { S.progress = Object.assign(emptyProgress(), lsGet(LS_PROG) || {}); }
+  } else S.progress = Object.assign(emptyProgress(), lsGet(LS_PROG) || {});
+  let gotP = false, gotQ = false;
+  const timer = setTimeout(() => { if (!S.loaded){ S.loadNote = "The question bank is taking longer than usual to load. It will appear as soon as the connection answers."; render(); } }, 10000);
+  const done = () => { if (gotP && gotQ){ clearTimeout(timer); S.loaded = true; S.loadNote = ""; } render(); };
+  const fail = (e) => { clearTimeout(timer); S.loaded = true; S.loadNote = "The question bank couldn’t be reached (" + (e.message || e.code) + "). Reload the page to try again."; render(); };
+  db.collection("papers").onSnapshot(snap => { const m = {}; snap.docs.forEach(x => m[x.id] = x.data()); S.papers = m; gotP = true; done(); }, fail);
+  db.collection("questions").onSnapshot(snap => { const m = {}; snap.docs.forEach(x => m[x.id] = x.data()); S.questions = m; gotQ = true; done(); }, fail);
+}
+
+/* ---------- derived ---------- */
+function allQs(){ return Object.entries(S.questions).map(([id, q]) => Object.assign({ id }, q)); }
+function catCounts(){ const c = {}; allQs().forEach(q => { c[q.category] = (c[q.category] || 0) + 1; }); return c; }
+function paperList(){
+  return Object.entries(S.papers).map(([id, p]) => Object.assign({ id }, p))
+    .sort((a, b) => (Number(b.year) || 0) - (Number(a.year) || 0) || String(a.title).localeCompare(String(b.title)));
+}
+function paperQs(pid){ return allQs().filter(q => q.paperId === pid).sort((a, b) => (a.n || 0) - (b.n || 0)); }
+function paperName(pid){ const p = S.papers[pid]; return p ? (p.title + (p.year ? " (" + p.year + ")" : "")) : "Unfiled"; }
+function pool(cat, paper){
+  let qs = allQs().filter(q => Array.isArray(q.options) && Number.isInteger(q.answer));
+  if (paper !== "all") qs = qs.filter(q => q.paperId === paper);
+  if (cat === "mistakes"){ const w = new Set(S.progress.wrong); qs = qs.filter(q => w.has(q.id)); }
+  else if (cat !== "all") qs = qs.filter(q => q.category === cat);
+  return qs;
+}
+
+/* ---------- routing ---------- */
+const VIEWS = ["home", "quiz", "results", "bank", "add"];
+function view(){ const h = location.hash.slice(1); return VIEWS.includes(h) ? h : "home"; }
+function go(v){ if (view() === v && location.hash.slice(1) === v) { render(); window.scrollTo(0, 0); } else location.hash = v; }
+window.addEventListener("hashchange", () => { render(); window.scrollTo(0, 0); });
+
+/* ---------- quiz ---------- */
+function startQuiz(items, mode, label){
+  if (!items.length){ toast("No questions match that choice yet."); return; }
+  S.quiz = { items: items.map(q => JSON.parse(JSON.stringify(q))), idx: 0, answers: {}, revealed: {}, mode, label, start: Date.now() };
+  S.result = null; go("quiz");
+}
+function startFromSetup(){
+  const st = S.setup; const p = shuffle(pool(st.cat, st.paper));
+  const n = st.count === "all" ? p.length : Math.min(Number(st.count), p.length);
+  const label = (st.cat === "all" ? "All subjects" : st.cat === "mistakes" ? "My mistakes" : st.cat) + (st.paper !== "all" ? ", " + paperName(st.paper) : "");
+  startQuiz(p.slice(0, n), st.mode, label);
+}
+function choose(k){
+  const z = S.quiz; if (!z) return; const i = z.idx;
+  if (z.mode === "instant"){ if (z.revealed[i]) return; z.answers[i] = k; z.revealed[i] = true; }
+  else z.answers[i] = z.answers[i] === k ? undefined : k;
+  render();
+}
+function finishQuiz(){
+  const z = S.quiz; if (!z) return;
+  const rows = z.items.map((q, i) => ({ q, chosen: z.answers[i], correct: z.answers[i] === q.answer }));
+  const answered = rows.filter(r => r.chosen !== undefined);
+  const right = rows.filter(r => r.correct).length;
+  const P = S.progress; const wrong = new Set(P.wrong);
+  answered.forEach(r => {
+    const c = P.byCat[r.q.category] || (P.byCat[r.q.category] = { attempted: 0, correct: 0 });
+    c.attempted++; if (r.correct){ c.correct++; wrong.delete(r.q.id); } else wrong.add(r.q.id);
+  });
+  P.wrong = Array.from(wrong).slice(-800);
+  P.history = [{ at: Date.now(), label: z.label, score: right, total: rows.length }].concat(P.history || []).slice(0, 20);
+  saveProgress();
+  S.result = { rows, right, total: rows.length, answered: answered.length, time: Date.now() - z.start, label: z.label, mode: z.mode };
+  S.quiz = null; S.wrongOnly = false; go("results");
+}
+setInterval(() => { const el = document.getElementById("clock"); if (el && S.quiz) el.textContent = fmtTime(Date.now() - S.quiz.start); }, 1000);
+document.addEventListener("keydown", e => {
+  if (view() !== "quiz" || !S.quiz) return;
+  if (e.target.matches("input,textarea,select")) return;
+  const z = S.quiz; const k = e.key.toLowerCase();
+  const map = { "1": 0, "2": 1, "3": 2, "4": 3, a: 0, b: 1, c: 2, d: 3 };
+  if (k in map && map[k] < (z.items[z.idx].options || []).length){ choose(map[k]); e.preventDefault(); }
+  else if ((k === "arrowright" || k === "enter") && z.idx < z.items.length - 1){ z.idx++; render(); e.preventDefault(); }
+  else if (k === "arrowleft" && z.idx > 0){ z.idx--; render(); e.preventDefault(); }
+});
+
+/* ---------- import / extraction ---------- */
+function normalizeItem(x){
+  if (!x || typeof x !== "object") return null;
+  const q = String(x.q || x.question || "").trim(); if (!q) return null;
+  let opts = Array.isArray(x.options) ? x.options.map(o => String(o).replace(/^\s*\(?[A-Ea-e1-5][\).:]\s*/, "").trim()) : [];
+  opts = opts.filter(o => !/answer not known|விடை தெரியவில்லை/i.test(o));
+  while (opts.length < 4) opts.push("");
+  opts = opts.slice(0, 4);
+  let a = x.answer; if (typeof a === "string"){ const L = a.trim().toUpperCase().replace(/[^A-D0-3]/g, ""); a = "ABCD".indexOf(L) >= 0 ? "ABCD".indexOf(L) : Number(L); }
+  a = Number.isInteger(a) && a >= 0 && a < 4 ? a : "";
+  const cat = CATS.includes(x.category) ? x.category : "Uncategorised";
+  return { include: true, q, options: opts, answer: a, explanation: String(x.explanation || "").trim(), category: cat };
+}
+function extractPrompt(text){
+  return "You convert text copied from a TNPSC Group 4 exam question paper (and possibly its answer key) into structured multiple-choice questions.\n\n" +
+  "Return ONLY a JSON array, no prose and no code fences. Each element must be:\n" +
+  '{"q": string, "options": [exactly 4 strings without the (A)/(B)/(C)/(D) labels], "answer": integer 0-3 or null, "explanation": string, "category": string}\n\n' +
+  "Rules:\n" +
+  "- Keep the original wording and language. If a question appears in both English and Tamil, keep both in the same item: English first, then a newline, then Tamil. Do the same for each option.\n" +
+  "- Drop the fifth option \"Answer not known\" / \"விடை தெரியவில்லை\" if present.\n" +
+  "- Set answer from the answer key or from a marked answer in the text. If the text gives no answer for a question, set answer to null. Do not guess answers.\n" +
+  "- explanation: one short sentence only if the text includes an explanation; otherwise an empty string.\n" +
+  "- category: exactly one of " + JSON.stringify(CATS) + ", chosen from the question’s subject.\n" +
+  "- Skip instructions, headers, page numbers and anything that is not a question.\n\n" +
+  "TEXT:\n" + text;
+}
+async function extract(){
+  const text = S.imp.text.trim();
+  if (!text){ toast("Paste some questions first."); return; }
+  if (text.length > 60000){ toast("That’s a lot at once. Paste about 50 questions at a time."); return; }
+  if (!sampleCap){ toast("Reading pasted papers needs Claude access, which isn’t available here."); return; }
+  extractCtl = new AbortController();
+  S.imp.busy = true; S.imp.msg = "Reading the questions. This usually takes under a minute."; render();
+  try {
+    const val = await sampleCap.json(extractPrompt(text), { signal: extractCtl.signal, modelTier: "default" });
+    const arr = Array.isArray(val) ? val : (val && Array.isArray(val.questions) ? val.questions : []);
+    const items = arr.map(normalizeItem).filter(Boolean);
+    S.imp.items = S.imp.items.concat(items);
+    const noAns = items.filter(i => i.answer === "").length;
+    S.imp.msg = items.length ? ("Found " + items.length + " questions. Check them below, then save." + (noAns ? " " + noAns + " have no answer yet; pick the correct option for those." : "")) : "No questions found in that text. Check the paste and try again.";
+  } catch (e) {
+    const c = e && e.code;
+    S.imp.msg = c === "cancelled" ? "Stopped." :
+      c === "not_granted" ? "Claude access was declined, so reading papers is off for this visit. You can still add questions by hand or import a JSON file." :
+      c === "rate_limited" ? "Too many requests just now. Wait a minute, then try again." :
+      "Couldn’t read those questions. Try pasting a smaller chunk (about 25 to 50 questions).";
+    if (c === "not_granted") S.sampleOK = false;
+  } finally { S.imp.busy = false; extractCtl = null; render(); }
+}
+async function ensurePaper(){
+  const I = S.imp;
+  if (I.paper !== "new"){ if (S.papers[I.paper]) return I.paper; toast("Pick a paper to add these to."); return null; }
+  const title = I.newTitle.trim(); if (!title){ toast("Give the new paper a name, such as “Group 4 2022”."); return null; }
+  const id = rid();
+  await putPaper(id, { title, year: String(I.newYear || "").trim(), kind: I.kind, createdAt: Date.now() });
+  I.paper = id; I.newTitle = ""; I.newYear = "";
+  return id;
+}
+async function saveImported(){
+  const items = S.imp.items.filter(i => i.include);
+  if (!items.length){ toast("Nothing selected to save."); return; }
+  const miss = items.filter(i => i.answer === "" || i.answer == null).length;
+  if (miss){ toast(miss + (miss === 1 ? " question still needs" : " questions still need") + " a correct answer. Pick one, or untick them."); return; }
+  if (items.some(i => !i.q.trim() || i.options.filter(o => o.trim()).length < 2)){ toast("Each question needs its text and at least two options."); return; }
+  S.imp.busy = true; render();
+  try {
+    const pid = await ensurePaper(); if (!pid) return;
+    const base = paperQs(pid).length;
+    await runPool(items.map((it, k) => () => putQuestion(rid(), { paperId: pid, n: base + k + 1, q: it.q.trim(), options: it.options.map(o => o.trim()), answer: Number(it.answer), explanation: it.explanation.trim(), category: it.category })), 3);
+    toast("Saved " + items.length + (items.length === 1 ? " question" : " questions") + " to " + paperName(pid) + ".");
+    S.imp.items = []; S.imp.text = ""; S.imp.msg = "";
+  } catch (e) { writeError(e); }
+  finally { S.imp.busy = false; render(); }
+}
+/* ---------- PDF import ---------- */
+const PDFJS = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";
+const PDFJS_WORKER = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+let pdfjsReady = null, imgLimits = null;
+S.pdf = { file: null, keyFile: null, doc: null, keyDoc: null, from: "", to: "", suggest: true, busy: false, msg: "", stage: "", next: 0, keyNext: 0, pages: [], keyPages: [], items: {}, key: {}, done: false, saved: 0 };
+function loadPdfJs(){
+  if (pdfjsReady) return pdfjsReady;
+  pdfjsReady = new Promise((res, rej) => {
+    const sc = document.createElement("script"); sc.src = PDFJS;
+    sc.onload = () => { try { window.pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_WORKER; res(window.pdfjsLib); } catch (e) { rej(e); } };
+    sc.onerror = () => { pdfjsReady = null; rej(new Error("The PDF reader couldn’t load. Check your connection and try again.")); };
+    document.head.appendChild(sc);
+  });
+  return pdfjsReady;
+}
+async function openPdf(file){
+  const lib = await loadPdfJs();
+  return lib.getDocument({ data: new Uint8Array(await file.arrayBuffer()) }).promise;
+}
+async function pageImage(doc, n){
+  const page = await doc.getPage(n);
+  const v1 = page.getViewport({ scale: 1 });
+  const scale = Math.min(2.5, 1500 / Math.max(v1.width, v1.height));
+  const vp = page.getViewport({ scale });
+  const cv = document.createElement("canvas"); cv.width = Math.round(vp.width); cv.height = Math.round(vp.height);
+  const ctx = cv.getContext("2d"); ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, cv.width, cv.height);
+  await page.render({ canvasContext: ctx, viewport: vp }).promise;
+  page.cleanup();
+  let q = 0.8, blob;
+  for (let t = 0; t < 4; t++){
+    blob = await new Promise(r => cv.toBlob(r, "image/jpeg", q));
+    if (!imgLimits || !imgLimits.maxBytes || blob.size <= imgLimits.maxBytes) break;
+    q -= 0.15;
+  }
+  return blob;
+}
+function pagePrompt(a, b, total){
+  return "These images are pages " + a + " to " + b + " (of " + total + ") of a scanned TNPSC Group 4 exam question paper, in order.\n\n" +
+  "Extract every multiple-choice question that is fully visible on these pages. Reply with ONLY this JSON:\n" +
+  '{"questions":[{"n":12,"q":"question text","options":["A text","B text","C text","D text"],"marked":null,"suggested":2,"category":"Indian Polity"}],"key":{}}\n\n' +
+  "Rules:\n" +
+  "- n is the printed question number.\n" +
+  "- Skip any question whose text or options are cut off at the top or bottom edge of these pages; the neighbouring pages will be read separately.\n" +
+  "- Many pages print each question in English and then again in Tamil. When an English version exists, use only the English. When a question exists only in Tamil, copy the Tamil exactly.\n" +
+  "- Give exactly 4 options, without their (A)/(B)/(C)/(D) labels. Drop the fifth option “Answer not known” / “விடை தெரியவில்லை”.\n" +
+  "- Keep numbered statements, Assertion/Reason lines and matching lists inside q, each on its own line. For match-the-following codes write each option like \"a-2, b-4, c-1, d-3\".\n" +
+  "- If a question relies on a figure or diagram, describe the figure in words inside q so it can be answered without the picture.\n" +
+  "- marked: the index (0-3) of an option that someone has ticked, circled or shaded on the page, otherwise null.\n" +
+  "- suggested: the index (0-3) of the option you believe is correct.\n" +
+  "- category: exactly one of " + JSON.stringify(CATS) + ".\n" +
+  "- key: if these pages contain an answer-key table, put every entry as \"question number\": \"letter\"; otherwise {}.\n" +
+  "If there are no questions on these pages, reply {\"questions\":[],\"key\":{}}.";
+}
+function keyPrompt(a, b){
+  return "These images are pages " + a + " to " + b + " of a TNPSC answer key. Reply with ONLY a JSON object mapping every question number to its answer letter, for example {\"1\":\"B\",\"2\":\"D\"}. Use the letters A, B, C or D only; leave out any question marked as deleted or with no single answer. If these pages contain no answers, reply {}.";
+}
+function mergeKey(obj){
+  if (!obj || typeof obj !== "object") return;
+  Object.entries(obj).forEach(([k, v]) => { const n = parseInt(k, 10); const L = String(v || "").trim().toUpperCase().charAt(0); if (n > 0 && "ABCD".includes(L)) S.pdf.key[n] = "ABCD".indexOf(L); });
+}
+function mergeQuestions(arr){
+  (Array.isArray(arr) ? arr : []).forEach(x => {
+    const n = parseInt(x && x.n, 10); const it = normalizeItem(Object.assign({}, x, { answer: null })); if (!n || !it) return;
+    if (it.options.filter(o => o.trim()).length < 2) return;
+    const mk = Number.isInteger(x.marked) && x.marked >= 0 && x.marked < 4 ? x.marked : null;
+    const sg = Number.isInteger(x.suggested) && x.suggested >= 0 && x.suggested < 4 ? x.suggested : null;
+    const prev = S.pdf.items[n];
+    if (prev && prev.q.length > it.q.length + 40) return;
+    S.pdf.items[n] = { n, q: it.q, options: it.options, category: it.category, marked: mk, suggested: sg };
+  });
+}
+function chunks(from, to, per, overlap){
+  const out = []; const step = Math.max(1, per - (overlap ? 1 : 0));
+  for (let a = from; a <= to; a += step){ const b = Math.min(to, a + per - 1); out.push([a, b]); if (b === to) break; }
+  return out;
+}
+async function pickPdf(file, which){
+  if (!file) return;
+  if (!/\.pdf$/i.test(file.name) && file.type !== "application/pdf"){ toast("Choose a PDF file."); return; }
+  try {
+    S.pdf.busy = true; S.pdf.msg = "Opening " + file.name + "…"; render();
+    const doc = await openPdf(file);
+    if (which === "key"){ S.pdf.keyFile = file; S.pdf.keyDoc = doc; S.pdf.keyNext = 0; S.pdf.key = {}; }
+    else {
+      S.pdf.file = file; S.pdf.doc = doc; S.pdf.next = 0; S.pdf.items = {}; S.pdf.done = false; S.pdf.saved = 0;
+      S.pdf.from = "1"; S.pdf.to = String(doc.numPages);
+      const base = file.name.replace(/\.pdf$/i, "").replace(/[_]+/g, " ").trim();
+      const y = (file.name.match(/(19|20)\d{2}/) || [""])[0];
+      if (S.imp.paper === "new" && !S.imp.newTitle){ S.imp.newTitle = y ? "Group 4 " + y : base; S.imp.newYear = y; }
+    }
+    S.pdf.msg = (which === "key" ? "Answer key" : "Question paper") + " ready: " + doc.numPages + " pages.";
+  } catch (e) { S.pdf.msg = (e && e.message) || "That PDF couldn’t be opened."; }
+  finally { S.pdf.busy = false; render(); }
+}
+let pdfCtl = null;
+async function runPdf(){
+  const P = S.pdf;
+  if (!P.doc){ toast("Choose the question paper PDF first."); return; }
+  if (!sampleCap){ toast("Reading PDFs needs Claude access, which isn’t available here."); return; }
+  if (S.imp.paper === "new" && !S.imp.newTitle.trim()){ toast("Give the paper a name first, such as “Group 4 2022”."); return; }
+  try { imgLimits = (await sampleCap.limits()).images || null; } catch (e) { imgLimits = null; }
+  if (!imgLimits){ toast("This view can’t send page images to Claude. Reload the page and allow images when asked."); return; }
+  const per = Math.max(1, Math.min(3, imgLimits.maxCount || 1));
+  const from = Math.max(1, parseInt(P.from, 10) || 1), to = Math.min(P.doc.numPages, parseInt(P.to, 10) || P.doc.numPages);
+  P.pages = chunks(from, to, per, per > 1);
+  P.keyPages = P.keyDoc ? chunks(1, P.keyDoc.numPages, per, false) : [];
+  pdfCtl = new AbortController(); P.busy = true; P.done = false; render();
+  try {
+    while (P.keyNext < P.keyPages.length){
+      const [a, b] = P.keyPages[P.keyNext];
+      P.stage = "Reading answer key pages " + a + "–" + b + " of " + P.keyDoc.numPages + "…"; render();
+      const imgs = []; for (let i = a; i <= b; i++) imgs.push(await pageImage(P.keyDoc, i));
+      mergeKey(await sampleCap.json(keyPrompt(a, b), { images: imgs, signal: pdfCtl.signal, modelTier: "default" }));
+      P.keyNext++;
+    }
+    while (P.next < P.pages.length){
+      const [a, b] = P.pages[P.next];
+      P.stage = "Reading pages " + a + "–" + b + " of " + to + " (" + Object.keys(P.items).length + " questions found so far)…"; render();
+      const imgs = []; for (let i = a; i <= b; i++) imgs.push(await pageImage(P.doc, i));
+      const res = await sampleCap.json(pagePrompt(a, b, P.doc.numPages), { images: imgs, signal: pdfCtl.signal, modelTier: "default" });
+      mergeQuestions(res && res.questions); mergeKey(res && res.key);
+      P.next++;
+    }
+    P.stage = ""; P.done = true;
+    await savePdfQuestions();
+  } catch (e) {
+    const c = e && e.code;
+    P.stage = "";
+    P.msg = c === "cancelled" ? "Paused. Continue whenever you’re ready; nothing found so far is lost." :
+      c === "not_granted" ? "Claude access was declined, so the PDF can’t be read in this visit." :
+      c === "rate_limited" ? "Claude needs a short break. Wait a minute, then press Continue." :
+      c === "images_unavailable" ? "This view can’t send page images. Reload the page and allow images when asked." :
+      c === "invalid_json" ? "Claude’s answer for those pages couldn’t be read. Press Continue to try those pages again." :
+      "Reading stopped (" + ((e && (e.message || e.code)) || "unknown error") + "). Press Continue to pick up where it left off.";
+  } finally { P.busy = false; pdfCtl = null; render(); }
+}
+async function savePdfQuestions(){
+  const P = S.pdf; const list = Object.values(P.items).sort((x, y) => x.n - y.n);
+  if (!list.length){ P.msg = "No questions were found in that PDF. If it’s a scan, check the pages are readable."; return; }
+  const ready = [], review = [];
+  list.forEach(it => {
+    let ans = null, note = "";
+    if (Number.isInteger(P.key[it.n])){ ans = P.key[it.n]; note = ""; }
+    else if (it.marked !== null){ ans = it.marked; note = "Answer taken from the marks in the uploaded paper; not yet checked against the official key."; }
+    else if (P.suggest && it.suggested !== null){ ans = it.suggested; note = "Answer suggested by Claude; check it against the official TNPSC key."; }
+    if (ans === null) review.push(it); else ready.push(Object.assign({}, it, { answer: ans, explanation: note }));
+  });
+  P.stage = "Saving " + ready.length + " questions…"; render();
+  let pid;
+  try {
+    pid = await ensurePaper(); if (!pid) return;
+    const srcNote = P.keyDoc ? "Imported from PDF with the official answer key." : "Imported from PDF. Answers come from marks on the paper or Claude’s suggestions; check them against the official TNPSC key.";
+    const p = S.papers[pid]; if (p && !p.note){ try { await putPaper(pid, Object.assign({}, p, { note: srcNote })); } catch (e) {} }
+    await runPool(ready.map(it => () => putQuestion(pid + "-" + String(it.n).padStart(3, "0"), { paperId: pid, n: it.n, q: it.q, options: it.options, answer: it.answer, explanation: it.explanation, category: it.category })), 3);
+    P.saved = ready.length;
+    S.imp.items = S.imp.items.concat(review.map(it => ({ include: true, q: it.q, options: it.options, answer: "", explanation: "", category: it.category })));
+    P.msg = "Done. " + ready.length + " questions were added to " + paperName(pid) + " and are ready in Practise." + (review.length ? " " + review.length + " still need an answer; pick one for each below and save them." : "");
+  } catch (e) { writeError(e); P.msg = "Saving stopped partway. Press Save again to retry."; }
+  finally { P.stage = ""; render(); }
+}
+
+async function saveEdit(){
+  const E = S.edit;
+  if (!E.q.trim()){ toast("Write the question first."); return; }
+  if (E.options.filter(o => o.trim()).length < 2){ toast("Add at least two options."); return; }
+  if (E.answer === "" || !E.options[Number(E.answer)] || !E.options[Number(E.answer)].trim()){ toast("Pick which option is correct."); return; }
+  try {
+    let pid = E.paperId;
+    if (!E.id){ S.imp.paper = pid || S.imp.paper; pid = await ensurePaper(); if (!pid) return; }
+    const id = E.id || rid();
+    const prev = E.id ? S.questions[E.id] : null;
+    await putQuestion(id, { paperId: pid, n: prev ? prev.n : paperQs(pid).length + 1, q: E.q.trim(), options: E.options.map(o => o.trim()), answer: Number(E.answer), explanation: E.explanation.trim(), category: E.category });
+    toast(E.id ? "Question updated." : "Question added to " + paperName(pid) + ".");
+    const keepPaper = pid; S.edit = blankEdit(); S.edit.paperId = keepPaper; S.edit.category = E.category;
+    if (E.id) go("bank"); else render();
+  } catch (e) { writeError(e); }
+}
+async function importJSON(file){
+  let data; try { data = JSON.parse(await file.text()); } catch (e) { toast("That file isn’t valid JSON."); return; }
+  try {
+    if (data && data.papers && data.questions){
+      const pids = Object.keys(data.papers), qids = Object.keys(data.questions);
+      await runPool(pids.map(id => () => putPaper(id, data.papers[id])), 3);
+      const tasks = qids.map(id => { const n = normalizeItem(data.questions[id]); const src = data.questions[id]; return n && n.answer !== "" ? () => putQuestion(id, { paperId: src.paperId, n: src.n || 0, q: n.q, options: n.options, answer: n.answer, explanation: n.explanation, category: n.category }) : null; }).filter(Boolean);
+      await runPool(tasks, 3);
+      toast("Imported " + pids.length + " papers and " + tasks.length + " questions.");
+    } else if (Array.isArray(data)){
+      const items = data.map(normalizeItem).filter(Boolean);
+      S.imp.items = S.imp.items.concat(items);
+      S.imp.msg = "Loaded " + items.length + " questions from the file. Check them below, then save.";
+      render();
+    } else toast("That file doesn’t look like a question bank export or a list of questions.");
+  } catch (e) { writeError(e); }
+}
+async function exportJSON(){
+  const data = JSON.stringify({ app: "g4hall", version: 1, exportedAt: new Date().toISOString(), papers: S.papers, questions: S.questions }, null, 1);
+  if (downloadsCap){
+    try { await downloadsCap.save({ filename: "padi-question-bank.json", data }); return; }
+    catch (e) { if (e && e.code === "cancelled") return; }
+  }
+  S.exportText = data; render(); toast("Copy the backup from the box below.");
+}
+
+/* ---------- render ---------- */
+function render(){
+  const ae = document.activeElement;
+  if (ae && ae.matches && ae.matches("input[type=text],input[type=number],textarea") && ae.closest("#app")){ pendingRender = true; return; }
+  pendingRender = false;
+  const v = view();
+  const links = [["home", "Practise"], ["bank", "Question bank"]].concat(S.canEdit ? [["add", "Add questions"]] : []);
+  document.getElementById("nav").innerHTML = links.map(([h, t]) => `<a href="#${h}" ${v === h || (h === "home" && (v === "quiz" || v === "results")) ? 'aria-current="page"' : ""}>${t}</a>`).join("");
+  const app = document.getElementById("app");
+  if (!S.loaded){ app.innerHTML = `<p class="muted">Opening the question bank…</p>${S.loadNote ? `<div class="note">${esc(S.loadNote)}</div>` : ""}`; return; }
+  const note = S.loadNote ? `<div class="note">${esc(S.loadNote)}</div>` : "";
+  let html = "";
+  if (v === "quiz") html = S.quiz ? renderQuiz() : renderHome();
+  else if (v === "results") html = S.result ? renderResults() : renderHome();
+  else if (v === "bank") html = renderBank();
+  else if (v === "add") html = S.canEdit ? renderAdd() : renderBank();
+  else html = renderHome();
+  app.innerHTML = note + html;
+}
+document.addEventListener("focusout", () => setTimeout(() => { if (pendingRender) render(); }, 0));
+
+function renderHome(){
+  const qs = allQs(); const counts = catCounts(); const P = S.progress;
+  const tot = Object.values(P.byCat).reduce((a, c) => [a[0] + c.attempted, a[1] + c.correct], [0, 0]);
+  const papers = paperList();
+  if (!qs.length){
+    return `<h1>Practise past Group 4 questions, subject by subject.</h1>
+      <div class="empty"><p class="lede">The question bank is empty. ${S.canEdit ? "Add a past paper to start practising." : "Questions will appear here once the owner adds papers."}</p>
+      ${S.canEdit ? `<p><a class="btn primary" href="#add" style="text-decoration:none;display:inline-block">Add questions</a></p>` : ""}</div>`;
+  }
+  const st = S.setup;
+  const subjOpts = [["all", "All subjects"]].concat(CATS.filter(c => counts[c]).map(c => [c, c + " (" + counts[c] + ")"])).concat(P.wrong.length ? [["mistakes", "My mistakes (" + P.wrong.length + ")"]] : []);
+  const paperOpts = [["all", "All papers"]].concat(papers.map(p => [p.id, p.title + (p.year ? " (" + p.year + ")" : "")]));
+  const sel = (bind, opts, val) => `<select data-bind="${bind}">${opts.map(([k, t]) => `<option value="${esc(k)}" ${k === val ? "selected" : ""}>${esc(t)}</option>`).join("")}</select>`;
+  return `
+  <h1>Practise past Group 4 questions, subject by subject.</h1>
+  <p class="lede">${qs.length} ${qs.length === 1 ? "question" : "questions"} from ${papers.length} ${papers.length === 1 ? "paper" : "papers"}.${tot[0] ? ` You’ve answered ${tot[0]} so far and got ${pct(tot[1], tot[0])}% right.` : " Pick a subject below or set up a mixed test."}</p>
+  <section class="panel setup" aria-label="Set up a test">
+    <label class="f">Subject${sel("setup.cat", subjOpts, st.cat)}</label>
+    <label class="f">Paper${sel("setup.paper", paperOpts, st.paper)}</label>
+    <label class="f">Questions${sel("setup.count", [["10","10"],["25","25"],["50","50"],["100","100"],["all","All matching"]], st.count)}</label>
+    <label class="f">Checking${sel("setup.mode", [["instant","After each answer"],["exam","At the end, like the exam"]], st.mode)}</label>
+    <button class="btn primary" data-act="start">Start test</button>
+  </section>
+  <section>
+    <h2>Subjects</h2>
+    <div class="subjects">
+      ${CATS.map(c => {
+        const n = counts[c] || 0; const p = P.byCat[c];
+        if (!n && c === "Uncategorised") return "";
+        return `<div class="subj ${n ? "" : "empty"}">
+          <div><div class="subj-name">${esc(c)}</div><div class="muted small">${n ? n + (n === 1 ? " question" : " questions") : "No questions yet"}</div></div>
+          <div class="acc">${p && p.attempted ? `<div class="meter" role="img" aria-label="${pct(p.correct, p.attempted)}% correct"><i style="width:${pct(p.correct, p.attempted)}%"></i></div><div class="muted small">${pct(p.correct, p.attempted)}% right of ${p.attempted} answered</div>` : `<div class="muted small">${n ? "Not attempted" : ""}</div>`}</div>
+          <div><button class="btn" data-act="quick" data-cat="${esc(c)}" ${n ? "" : "disabled"}>Practise</button></div>
+        </div>`;
+      }).join("")}
+      ${P.wrong.length ? `<div class="subj"><div><div class="subj-name">My mistakes</div><div class="muted small">${P.wrong.length} questions you got wrong last time</div></div><div class="acc"></div><div><button class="btn" data-act="quick" data-cat="mistakes">Revise</button></div></div>` : ""}
+    </div>
+  </section>
+  ${(P.history || []).length ? `<section><h2>Recent tests</h2><div class="scroll-x"><table class="hist"><tbody>${P.history.slice(0, 8).map(h => `<tr><td>${esc(h.label)}<div class="muted small">${new Date(h.at).toLocaleString()}</div></td><td>${h.score}/${h.total}</td></tr>`).join("")}</tbody></table></div></section>` : ""}
+  `;
+}
+
+function renderQuiz(){
+  const z = S.quiz; const q = z.items[z.idx]; const i = z.idx;
+  const chosen = z.answers[i]; const shown = z.mode === "instant" && z.revealed[i];
+  const answered = Object.values(z.answers).filter(x => x !== undefined).length;
+  const opts = (q.options || []).map((o, k) => {
+    if (!String(o).trim()) return "";
+    let cls = "";
+    if (shown){ if (k === q.answer) cls = "right"; else if (k === chosen) cls = "wrong"; }
+    else if (k === chosen) cls = "sel";
+    return `<button class="opt ${cls}" data-act="choose" data-k="${k}" ${shown ? "disabled" : ""} aria-pressed="${k === chosen}"><span class="bub">${LETTERS[k]}</span><span>${esc(o)}</span></button>`;
+  }).join("");
+  const verdict = shown ? `<div class="verdict ${chosen === q.answer ? "ok" : "bad"}" role="status">${chosen === q.answer ? "Correct." : "Not quite. The answer is " + LETTERS[q.answer] + ": " + esc(q.options[q.answer]) + "."}${q.explanation ? `<p>${esc(q.explanation)}</p>` : ""}</div>` : "";
+  const last = i === z.items.length - 1;
+  return `<div class="q-wrap">
+    <div class="q-meta"><strong style="color:var(--ink)">Question ${i + 1} of ${z.items.length}</strong><span class="tag">${esc(q.category)}</span><span class="tag">${esc(paperName(q.paperId))}</span><span class="spacer"></span><span aria-label="Time taken">⏱ <span id="clock">${fmtTime(Date.now() - z.start)}</span></span></div>
+    <div class="progressbar"><i style="width:${pct(answered, z.items.length)}%"></i></div>
+    <div class="q-text">${esc(q.q)}</div>
+    <div class="opts">${opts}</div>
+    ${verdict}
+    <div class="qnav">
+      <button class="btn" data-act="prev" ${i === 0 ? "disabled" : ""}>Previous</button>
+      ${last ? "" : `<button class="btn ${shown ? "primary" : ""}" data-act="next">Next question</button>`}
+      <span class="spacer"></span>
+      <button class="btn ${last ? "primary" : ""}" data-act="finish">${z.mode === "exam" ? "Submit test" : "Finish and see score"}</button>
+    </div>
+    ${z.mode === "exam" ? `<div class="sheet" aria-label="Answer sheet">${z.items.map((_, k) => `<button data-act="jump" data-k="${k}" class="${z.answers[k] !== undefined ? "done" : ""} ${k === i ? "cur" : ""}" aria-label="Question ${k + 1}">${k + 1}</button>`).join("")}</div><p class="muted small">${answered} of ${z.items.length} answered. Keys 1–4 or A–D pick an option; arrow keys move between questions.</p>` : `<p class="muted small" style="margin-top:20px">Keys 1–4 or A–D pick an option; Enter goes to the next question.</p>`}
+  </div>`;
+}
+
+function renderResults(){
+  const R = S.result;
+  const byCat = {}; R.rows.forEach(r => { const c = byCat[r.q.category] || (byCat[r.q.category] = { n: 0, ok: 0 }); c.n++; if (r.correct) c.ok++; });
+  const wrongRows = R.rows.filter(r => !r.correct);
+  const rows = S.wrongOnly ? wrongRows : R.rows;
+  return `
+  <p class="muted">${esc(R.label)}</p>
+  <div class="score">${R.right}<small> / ${R.total}</small></div>
+  <p class="lede">${pct(R.right, R.total)}% correct in ${fmtTime(R.time)}.${R.answered < R.total ? " " + (R.total - R.answered) + " left unanswered." : ""}</p>
+  <div class="row" style="margin-top:16px">
+    ${wrongRows.length ? `<button class="btn primary" data-act="retrywrong">Retry the ${wrongRows.length} I missed</button>` : ""}
+    <a class="btn" href="#home" style="text-decoration:none">Back to subjects</a>
+  </div>
+  <section><h2>By subject</h2><div class="subjects">${Object.entries(byCat).map(([c, v]) => `<div class="subj"><div class="subj-name">${esc(c)}</div><div class="acc"><div class="meter"><i style="width:${pct(v.ok, v.n)}%"></i></div></div><div><strong>${v.ok}/${v.n}</strong></div></div>`).join("")}</div></section>
+  <section>
+    <div class="row"><h2 style="margin:0">Review answers</h2><span class="spacer"></span>
+      <label class="row small"><input type="checkbox" data-bind="wrongOnly" ${S.wrongOnly ? "checked" : ""}> Show only the ones I missed</label></div>
+    <div class="review">${rows.map(r => {
+      const idx = R.rows.indexOf(r) + 1;
+      return `<article class="rv ${r.correct ? "ok" : "bad"}">
+        <div class="muted small">Question ${idx}, ${esc(r.q.category)}${r.chosen === undefined ? ", not answered" : ""}</div>
+        <div class="rv-q">${esc(r.q.q)}</div>
+        <ol>${r.q.options.map((o, k) => o.trim() ? `<li class="${k === r.q.answer ? "right" : k === r.chosen ? "wrong" : ""}">${LETTERS[k]}. ${esc(o)}</li>` : "").join("")}</ol>
+        ${r.q.explanation ? `<p class="small muted" style="margin:8px 0 0">${esc(r.q.explanation)}</p>` : ""}
+      </article>`;
+    }).join("") || `<p class="muted">You got every question right.</p>`}</div>
+  </section>`;
+}
+
+function renderBank(){
+  const papers = paperList(); const orphans = allQs().filter(q => !S.papers[q.paperId]);
+  const block = (id, title, meta, qs) => {
+    const open = !!S.bankOpen[id];
+    return `<div class="paper">
+      <div class="row"><div><h3>${esc(title)}</h3><div class="muted small">${meta}</div></div><span class="spacer"></span>
+        <button class="btn" data-act="practisepaper" data-id="${esc(id)}" ${qs.length ? "" : "disabled"}>Practise</button>
+        <button class="btn link" data-act="togglepaper" data-id="${esc(id)}" aria-expanded="${open}">${open ? "Hide questions" : "Show questions"}</button>
+        ${S.canEdit && id !== "_unfiled" ? `<button class="btn link danger" data-act="delpaper" data-id="${esc(id)}">Delete paper</button>` : ""}
+      </div>
+      ${open ? `<div class="qlist">${qs.map((q, k) => `<div class="qitem"><span class="n">${k + 1}.</span><div><div class="t">${esc(q.q)}</div><div class="small muted">Answer: ${Number.isInteger(q.answer) ? LETTERS[q.answer] + ". " + esc(q.options[q.answer]) : "not set"}, ${esc(q.category)}</div></div>
+        <div>${S.canEdit ? `<button class="btn link" data-act="editq" data-id="${esc(q.id)}">Edit</button><button class="btn link danger" data-act="delq" data-id="${esc(q.id)}">Delete</button>` : ""}</div></div>`).join("") || `<p class="muted">No questions in this paper yet.</p>`}</div>` : ""}
+    </div>`;
+  };
+  return `<h1 style="max-width:none">Question bank</h1>
+  <p class="lede">Every paper and the questions inside it. ${S.canEdit ? "Use Add questions to paste in another paper." : ""}</p>
+  <section>${papers.map(p => { const qs = paperQs(p.id); return block(p.id, p.title, [p.year, p.kind === "practice" ? "Practice set" : "Past paper", qs.length + (qs.length === 1 ? " question" : " questions")].filter(Boolean).join(", ") + (p.note ? "<br>" + esc(p.note) : ""), qs); }).join("")}
+  ${orphans.length ? block("_unfiled", "Unfiled questions", orphans.length + " questions", orphans) : ""}
+  ${!papers.length && !orphans.length ? `<p class="muted">No papers yet.</p>` : ""}</section>
+  ${S.canEdit ? `<section><h2>Back up</h2><p class="muted">Save the whole bank as a JSON file, or load one from Add questions.</p><button class="btn" data-act="export">Download backup</button>${S.exportText ? `<textarea readonly rows="6" style="margin-top:10px">${esc(S.exportText)}</textarea>` : ""}</section>` : ""}`;
+}
+
+function paperPicker(prefix, val){
+  const papers = paperList(); const I = S.imp;
+  return `<div class="row" style="align-items:end">
+    <label class="f" style="flex:1 1 220px">Add to paper<select data-bind="${prefix}">
+      ${papers.map(p => `<option value="${esc(p.id)}" ${val === p.id ? "selected" : ""}>${esc(p.title)}${p.year ? " (" + esc(p.year) + ")" : ""}</option>`).join("")}
+      <option value="new" ${val === "new" || !papers.length ? "selected" : ""}>New paper…</option></select></label>
+    ${val === "new" || !papers.length ? `
+      <label class="f" style="flex:2 1 220px">Paper name<input type="text" data-bind="imp.newTitle" value="${esc(I.newTitle)}" placeholder="Group 4 (CCSE-IV) 2022"></label>
+      <label class="f" style="flex:0 1 110px">Year<input type="text" inputmode="numeric" data-bind="imp.newYear" value="${esc(I.newYear)}" placeholder="2022"></label>
+      <label class="f" style="flex:1 1 160px">Type<select data-bind="imp.kind"><option value="official" ${I.kind === "official" ? "selected" : ""}>Past paper</option><option value="practice" ${I.kind === "practice" ? "selected" : ""}>Practice set</option></select></label>` : ""}
+  </div>`;
+}
+function catSelect(bind, val){ return `<select data-bind="${bind}">${CATS.map(c => `<option ${c === val ? "selected" : ""}>${esc(c)}</option>`).join("")}</select>`; }
+function ansSelect(bind, val, opts){ return `<select data-bind="${bind}" data-num="1"><option value="" ${val === "" ? "selected" : ""}>Pick the correct option</option>${LETTERS.map((L, k) => `<option value="${k}" ${val === k ? "selected" : ""}>${L}${opts && opts[k] ? ". " + esc(String(opts[k]).slice(0, 40)) : ""}</option>`).join("")}</select>`; }
+
+function renderPdfPanel(){
+  const P = S.pdf; const run = P.busy && !!pdfCtl;
+  const started = P.next > 0 || P.keyNext > 0;
+  const left = P.pages.length ? P.pages.length - P.next : 0;
+  return `<section class="panel stack">
+    <h2>Upload a question paper PDF</h2>
+    ${paperPicker("imp.paper", S.imp.paper)}
+    <div class="opt-grid">
+      <label class="f">Question paper PDF<input type="file" accept="application/pdf,.pdf" data-act="pdffile" ${P.busy ? "disabled" : ""}><span class="small">${P.file ? esc(P.file.name) + (P.doc ? ", " + P.doc.numPages + " pages" : "") : "Required"}</span></label>
+      <label class="f">Answer key PDF (optional)<input type="file" accept="application/pdf,.pdf" data-act="keyfile" ${P.busy ? "disabled" : ""}><span class="small">${P.keyFile ? esc(P.keyFile.name) + (P.keyDoc ? ", " + P.keyDoc.numPages + " pages" : "") : "Gives the official answers"}</span></label>
+    </div>
+    ${P.doc ? `<div class="row" style="align-items:end">
+      <label class="f" style="flex:0 1 120px">From page<input type="number" min="1" max="${P.doc.numPages}" data-bind="pdf.from" value="${esc(P.from)}" ${P.busy || started ? "disabled" : ""}></label>
+      <label class="f" style="flex:0 1 120px">To page<input type="number" min="1" max="${P.doc.numPages}" data-bind="pdf.to" value="${esc(P.to)}" ${P.busy || started ? "disabled" : ""}></label>
+      <label class="row small" style="flex:1 1 260px"><input type="checkbox" data-bind="pdf.suggest" ${P.suggest ? "checked" : ""}> When a question has no key or marked answer, let Claude suggest one (flagged in the explanation)</label>
+    </div>` : ""}
+    <div class="row">
+      ${run ? `<button class="btn" data-act="pdfstop">Pause</button>` :
+        P.done ? `<button class="btn primary" data-act="pdfsave">Save again</button>` :
+        `<button class="btn primary" data-act="pdfrun" ${!P.doc || P.busy || !S.sampleOK ? "disabled" : ""}>${started ? "Continue (" + left + " steps left)" : "Read the PDF and add questions"}</button>`}
+      ${started && !run && !P.done && Object.keys(P.items).length ? `<button class="btn" data-act="pdfsavenow">Save the ${Object.keys(P.items).length} found so far</button>` : ""}
+      <span class="muted small">Large scanned papers take a while (roughly 30 minutes for 120 pages). Keep this tab open; each step uses your Anthropic API credits.</span>
+    </div>
+    ${P.pages.length ? `<div class="progressbar" aria-hidden="true"><i style="width:${pct(P.next, P.pages.length)}%"></i></div>` : ""}
+    ${P.stage ? `<div class="note" role="status">${esc(P.stage)}</div>` : P.msg ? `<div class="note" role="status">${esc(P.msg)}</div>` : ""}
+    ${!S.sampleOK ? `<div class="note">Reading PDFs needs Claude access, which isn’t available in this view.</div>` : ""}
+  </section>`;
+}
+function renderAdd(){
+  const I = S.imp, E = S.edit;
+  if (!E.id && !E.paperId) E.paperId = I.paper;
+  const sel = I.items.filter(x => x.include).length;
+  return `<h1 style="max-width:none">${E.id ? "Edit question" : "Add questions"}</h1>
+  ${E.id ? "" : `<p class="lede">Download a past paper (and its answer key, if you have it) from tnpsc.gov.in and upload the PDFs here. Claude reads every page, scanned or not, and the questions go straight into Practise.</p>
+  ${renderPdfPanel()}
+  <section class="panel stack">
+    <h2>Or paste text from a question paper</h2>
+    ${paperPicker("imp.paper", I.paper)}
+    <label class="f">Question paper text, with the answer key if you have it
+      <textarea rows="10" data-bind="imp.text" placeholder="1. Who presided over the first session of the Indian National Congress?&#10;(A) Dadabhai Naoroji (B) W.C. Bonnerjee (C) A.O. Hume (D) Surendranath Banerjee&#10;…&#10;Answer key: 1-B, 2-A, …">${esc(I.text)}</textarea></label>
+    <div class="row">
+      <button class="btn primary" data-act="extract" ${I.busy || !S.sampleOK ? "disabled" : ""}>Find questions</button>
+      ${I.busy && extractCtl ? `<button class="btn" data-act="stopextract">Stop</button>` : ""}
+      <span class="muted small">Works best with 25 to 50 questions at a time.</span>
+    </div>
+    ${!S.sampleOK ? `<div class="note">Reading pasted papers needs Claude access, which isn’t available in this view. You can still add questions one by one below, or import a JSON file.</div>` : ""}
+    ${I.msg ? `<div class="note" role="status">${esc(I.msg)}</div>` : ""}
+  </section>
+  ${I.items.length ? `<section>
+    <div class="row"><h2 style="margin:0">Check ${I.items.length} questions</h2><span class="spacer"></span><button class="btn link danger" data-act="clearimp">Discard all</button></div>
+    <div class="stack" style="margin-top:12px">${I.items.map((it, k) => `<div class="imp-item ${it.include ? "" : "off"}">
+      <div class="row"><label class="row"><input type="checkbox" data-bind="imp.items.${k}.include" ${it.include ? "checked" : ""}> <strong>Question ${k + 1}</strong></label><span class="spacer"></span>${it.answer === "" ? `<span class="small" style="color:var(--bad);font-weight:700">Needs an answer</span>` : ""}</div>
+      <textarea rows="2" data-bind="imp.items.${k}.q">${esc(it.q)}</textarea>
+      <div class="opt-grid">${it.options.map((o, j) => `<label class="f">${LETTERS[j]}<input type="text" data-bind="imp.items.${k}.options.${j}" value="${esc(o)}"></label>`).join("")}</div>
+      <div class="opt-grid"><label class="f">Correct answer${ansSelect("imp.items." + k + ".answer", it.answer)}</label><label class="f">Subject${catSelect("imp.items." + k + ".category", it.category)}</label></div>
+    </div>`).join("")}</div>
+    <div class="row" style="margin-top:16px"><button class="btn primary" data-act="saveimp" ${I.busy ? "disabled" : ""}>Save ${sel} ${sel === 1 ? "question" : "questions"}</button><span class="muted small">to ${I.paper === "new" ? "a new paper" : esc(paperName(I.paper))}</span></div>
+  </section>` : ""}`}
+  <section class="panel stack">
+    <h2>${E.id ? "Question" : "Add one question"}</h2>
+    ${E.id ? `<p class="muted small" style="margin:0">In ${esc(paperName(E.paperId))}</p>` : paperPicker("edit.paperId", E.paperId)}
+    <label class="f">Question<textarea rows="3" data-bind="edit.q">${esc(E.q)}</textarea></label>
+    <div class="opt-grid">${E.options.map((o, j) => `<label class="f">Option ${LETTERS[j]}<input type="text" data-bind="edit.options.${j}" value="${esc(o)}"></label>`).join("")}</div>
+    <div class="opt-grid"><label class="f">Correct answer${ansSelect("edit.answer", E.answer)}</label><label class="f">Subject${catSelect("edit.category", E.category)}</label></div>
+    <label class="f">Explanation (optional)<input type="text" data-bind="edit.explanation" value="${esc(E.explanation)}"></label>
+    <div class="row"><button class="btn primary" data-act="saveedit">${E.id ? "Save changes" : "Add question"}</button>${E.id ? `<button class="btn" data-act="canceledit">Cancel</button>` : ""}</div>
+  </section>
+  ${E.id ? "" : `<section class="panel stack">
+    <h2>Import a JSON file</h2>
+    <p class="muted" style="margin:0">Load a backup made with Download backup, or a list of questions shaped like <code>{"q", "options", "answer", "category"}</code>. A plain list goes into the review area above.</p>
+    <input type="file" accept="application/json,.json" data-act="importfile">
+  </section>`}`;
+}
+
+/* ---------- events ---------- */
+function setPath(path, val){
+  const parts = path.split("."); let o = S;
+  for (let i = 0; i < parts.length - 1; i++) o = o[parts[i]];
+  o[parts[parts.length - 1]] = val;
+}
+document.addEventListener("input", e => {
+  const el = e.target; const b = el.dataset && el.dataset.bind; if (!b) return;
+  let v = el.type === "checkbox" ? el.checked : el.value;
+  if (el.dataset.num) v = v === "" ? "" : Number(v);
+  setPath(b, v);
+  if (el.tagName === "SELECT" || el.type === "checkbox") render();
+});
+document.addEventListener("change", e => {
+  const el = e.target;
+  if (el.dataset && el.dataset.act === "importfile" && el.files && el.files[0]) importJSON(el.files[0]);
+  if (el.dataset && el.dataset.act === "pdffile" && el.files && el.files[0]) pickPdf(el.files[0], "paper");
+  if (el.dataset && el.dataset.act === "keyfile" && el.files && el.files[0]) pickPdf(el.files[0], "key");
+});
+document.addEventListener("click", async e => {
+  const el = e.target.closest("[data-act]"); if (!el || el.tagName === "INPUT") return;
+  const act = el.dataset.act; const z = S.quiz;
+  switch (act){
+    case "start": startFromSetup(); break;
+    case "quick": { const p = shuffle(pool(el.dataset.cat, "all")); startQuiz(p.slice(0, 25), "instant", el.dataset.cat === "mistakes" ? "My mistakes" : el.dataset.cat); break; }
+    case "practisepaper": { const id = el.dataset.id; const qs = id === "_unfiled" ? allQs().filter(q => !S.papers[q.paperId]) : paperQs(id); startQuiz(qs.filter(q => Number.isInteger(q.answer)), "exam", paperName(id)); break; }
+    case "choose": choose(Number(el.dataset.k)); break;
+    case "next": if (z && z.idx < z.items.length - 1){ z.idx++; render(); window.scrollTo(0, 0); } break;
+    case "prev": if (z && z.idx > 0){ z.idx--; render(); } break;
+    case "jump": if (z){ z.idx = Number(el.dataset.k); render(); } break;
+    case "finish": {
+      if (z && z.mode === "exam"){ const left = z.items.length - Object.values(z.answers).filter(x => x !== undefined).length; if (left && !confirm(left + " questions are unanswered. Submit anyway?")) break; }
+      finishQuiz(); break;
+    }
+    case "retrywrong": { const R = S.result; startQuiz(R.rows.filter(r => !r.correct).map(r => r.q), R.mode, "Retry: " + R.label); break; }
+    case "togglepaper": S.bankOpen[el.dataset.id] = !S.bankOpen[el.dataset.id]; render(); break;
+    case "delpaper": {
+      const id = el.dataset.id; const qs = paperQs(id);
+      if (!confirm("Delete “" + paperName(id) + "” and its " + qs.length + " questions? This can’t be undone.")) break;
+      try { await runPool(qs.map(q => () => removeQuestion(q.id)), 3); await removePaper(id); toast("Paper deleted."); } catch (err) { writeError(err); }
+      render(); break;
+    }
+    case "delq": if (confirm("Delete this question?")){ try { await removeQuestion(el.dataset.id); toast("Question deleted."); } catch (err) { writeError(err); } render(); } break;
+    case "editq": { const q = S.questions[el.dataset.id]; if (!q) break; S.edit = { id: el.dataset.id, paperId: q.paperId, q: q.q, options: (q.options || []).concat(["","","",""]).slice(0, 4), answer: Number.isInteger(q.answer) ? q.answer : "", explanation: q.explanation || "", category: q.category || CATS[0] }; go("add"); break; }
+    case "canceledit": S.edit = blankEdit(); go("bank"); break;
+    case "saveedit": saveEdit(); break;
+    case "extract": extract(); break;
+    case "stopextract": if (extractCtl) extractCtl.abort(); break;
+    case "saveimp": saveImported(); break;
+    case "clearimp": if (confirm("Discard these questions without saving?")){ S.imp.items = []; S.imp.msg = ""; render(); } break;
+    case "export": exportJSON(); break;
+    case "pdfrun": runPdf(); break;
+    case "pdfstop": if (pdfCtl) pdfCtl.abort(); break;
+    case "pdfsave": savePdfQuestions(); break;
+    case "pdfsavenow": savePdfQuestions(); break;
+  }
+});
+init();
+</script>
+</body>
+</html>
