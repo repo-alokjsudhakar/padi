@@ -276,6 +276,22 @@ input[type=email],input[type=password]{background:var(--bg);border:1px solid var
 .auth-reason{background:var(--guide-soft);color:var(--ink);border-radius:10px;padding:10px 12px;font-weight:600;font-size:.95rem}
 .guest-bar{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;background:var(--guide-soft);border-radius:10px;padding:8px 12px;margin:0 0 14px;font-size:.92rem;font-weight:600}
 .guest-bar .btn.link{padding:0;font-size:inherit}
+.gate{background:var(--surface);border:2px solid var(--guide);border-radius:22px;padding:34px 30px;margin-top:8px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;box-shadow:0 18px 50px rgba(194,24,91,.12)}
+.gate h2{font-size:clamp(1.6rem,4vw,2.2rem);margin:6px 0 0;max-width:20ch}
+.gate-lede{margin:0;max-width:46ch;color:var(--ink-2);font-size:1.05rem}
+.gate-stairs i.on{background:var(--guide);animation:none}
+.gate-perks{list-style:none;padding:0;margin:4px 0;display:flex;flex-direction:column;gap:8px;text-align:left}
+.gate-perks li{position:relative;padding-left:28px;font-weight:600}
+.gate-perks li::before{content:"";position:absolute;left:0;top:.35em;width:16px;height:16px;border-radius:50%;background:var(--ok-soft);border:2px solid var(--ok)}
+.gate-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:6px}
+.gate .center{margin:0}
+.expl{color:var(--ink);font-weight:400;margin-top:8px;font-size:.97rem;line-height:1.6}
+.expl p{margin:0 0 8px}
+.expl ul,.expl ol{margin:0 0 8px;padding-left:22px}
+.expl li{margin:2px 0}
+.expl strong{font-weight:700}
+.expl-more{margin-top:8px}
+.expl-more summary{cursor:pointer;font-weight:600;color:var(--pen);font-size:.92rem}
 </style>
 </head>
 <body>
@@ -306,7 +322,7 @@ const TOPICS = {
   "Geography": ["Earth & Universe","Physical Geography of India","Climate, Soils & Agriculture","Resources & Industry","Transport & Communication","Population","Environment & Disasters","Geography of Tamil Nadu","World Geography"],
   "Indian Economy": ["Planning & Five-Year Plans","Agriculture","Industry & Infrastructure","Money, Banking & Inflation","Taxation & Public Finance","Poverty, Employment & Welfare","Rural Development"],
   "General Science": ["Scientific Knowledge & Scientific Temper","Power of Reasoning","Rote & Conceptual Learning","Science as a Tool: Past, Present & Future","Physics","Chemistry","Biology","Health & Diseases","Science & Technology"],
-  "Physics": ["Nature of Universe","General Scientific Laws","Mechanics"],
+  "Physics": ["Nature of Universe","General Scientific Laws","Mechanics","Properties of Matter","Everyday Application of the Basic Principles of Mechanics","Motion and Energy","Force","Electricity"],
   "History, Culture & Heritage of Tamil Nadu": ["Thirukkural","Sangam Age & Archaeology","Tamil Literature","Social Reform Movements","Palayakkarars & Early Resistance","Dynasties & Temples","Personalities of Tamil Nadu"],
   "Development Administration in Tamil Nadu": ["Social Welfare Schemes","Education & Health","Economy & Agriculture of TN","e-Governance","Social Justice & Reservation","Administration & Vigilance"],
   "Current Affairs": ["National","Tamil Nadu","International","Science & Technology","Awards & Persons","Sports","Schemes & Welfare"],
@@ -439,13 +455,17 @@ function pool(cat, paper, topic){
 const VIEWS = ["home", "quiz", "results", "bank", "add"];
 function view(){ const h = location.hash.slice(1); return VIEWS.includes(h) ? h : "home"; }
 function go(v){ if (view() === v && location.hash.slice(1) === v) { render(); window.scrollTo(0, 0); } else location.hash = v; }
-window.addEventListener("hashchange", () => { render(); window.scrollTo(0, 0); });
+window.addEventListener("hashchange", () => { if (view() !== "quiz") S.gate = false; render(); window.scrollTo(0, 0); });
 
 /* ---------- quiz ---------- */
 function startQuiz(items, mode, label){
   if (!items.length){ toast("No questions match that choice yet."); return; }
-  if (isGuest() && guestLeft() <= 0){ askToSignIn(); return; }
-  S.quiz = { items: items.map(q => JSON.parse(JSON.stringify(q))), idx: 0, answers: {}, revealed: {}, mode, label, start: Date.now() };
+  let guest = false;
+  if (isGuest()){
+    if (guestLeft() <= 0){ S.quiz = null; S.gate = true; go("quiz"); return; }
+    items = items.slice(0, guestLeft()); guest = true; // a guest test only holds the free questions left
+  }
+  S.quiz = { items: items.map(q => JSON.parse(JSON.stringify(q))), idx: 0, answers: {}, revealed: {}, mode, label, start: Date.now(), guest, seen: {} };
   S.result = null; go("quiz");
 }
 function startFromSetup(){
@@ -461,14 +481,16 @@ function guestUsed(){ try { return Number(localStorage.getItem("padi:guest-answe
 function guestCount(){ try { localStorage.setItem("padi:guest-answered", String(guestUsed() + 1)); } catch (e) {} }
 function guestLeft(){ return Math.max(0, GUEST_FREE - guestUsed()); }
 function askToSignIn(){ openAuth("signup", "You’ve used your " + GUEST_FREE + " free questions. Create a free account, or sign in, to keep practising. It only takes a moment."); }
+// Guests can see GUEST_FREE questions in total. A question counts once it’s shown.
+function markSeen(){
+  const z = S.quiz; if (!z || !z.guest || z.seen[z.idx]) return;
+  z.seen[z.idx] = true; guestCount();
+}
 function choose(k){
   const z = S.quiz; if (!z) return; const i = z.idx;
-  const fresh = z.mode === "instant" ? !z.revealed[i] : z.answers[i] === undefined;
-  if (fresh && isGuest()){ if (guestLeft() <= 0){ askToSignIn(); return; } guestCount(); }
   if (z.mode === "instant"){ if (z.revealed[i]) return; z.answers[i] = k; z.revealed[i] = true; }
   else z.answers[i] = z.answers[i] === k ? undefined : k;
   render();
-  if (fresh && isGuest() && guestLeft() === 0 && z.mode === "instant") setTimeout(() => toast("That was your last free question. Sign in to keep going."), 600);
 }
 function finishQuiz(){
   const z = S.quiz; if (!z) return;
@@ -495,6 +517,7 @@ document.addEventListener("keydown", e => {
   const map = { "1": 0, "2": 1, "3": 2, "4": 3, a: 0, b: 1, c: 2, d: 3 };
   if (k in map && map[k] < (z.items[z.idx].options || []).length){ choose(map[k]); e.preventDefault(); }
   else if ((k === "arrowright" || k === "enter") && z.idx < z.items.length - 1){ z.idx++; render(); e.preventDefault(); }
+  else if ((k === "arrowright" || k === "enter") && z.guest && guestLeft() <= 0 && !z.gateShown){ z.gateShown = true; render(); e.preventDefault(); }
   else if (k === "arrowleft" && z.idx > 0){ z.idx--; render(); e.preventDefault(); }
 });
 
@@ -796,7 +819,7 @@ function syllabus(){
   const have = {}; catalogue().forEach(c => have[c.cat] = c);
   return SYLLABUS.map(g => ({ group: g.group, lang: g.lang, cats: g.cats.map(c => have[c] || { cat: c, n: 0, sections: [] }) }));
 }
-const SHORT_SEC = { "Scientific Knowledge & Scientific Temper": "Scientific Temper", "Science as a Tool: Past, Present & Future": "Science as a Tool", "Rote & Conceptual Learning": "Rote & Conceptual", "General Scientific Laws": "Scientific Laws", "Power of Reasoning": "Reasoning" };
+const SHORT_SEC = { "Scientific Knowledge & Scientific Temper": "Scientific Temper", "Science as a Tool: Past, Present & Future": "Science as a Tool", "Rote & Conceptual Learning": "Rote & Conceptual", "General Scientific Laws": "Scientific Laws", "Power of Reasoning": "Reasoning", "Everyday Application of the Basic Principles of Mechanics": "Everyday Mechanics" };
 function statCat(c){ const p = S.progress.byCat[c]; return p && p.attempted ? p : null; }
 function statSec(c, t){ const p = (S.progress.byTopic || {})[c + "|" + t]; return p && p.attempted ? p : null; }
 function plural(n, one, many){ return n + " " + (n === 1 ? one : (many || one + "s")); }
@@ -822,7 +845,7 @@ function render(){
   if (!S.loaded){ app.innerHTML = `<div class="loading"><span class="stairs big" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><p class="muted">Opening the question bank…</p>${S.loadNote ? `<div class="note">${esc(S.loadNote)}</div>` : ""}</div>`; return; }
   const note = S.loadNote ? `<div class="note">${esc(S.loadNote)}</div>` : "";
   let html = "";
-  if (v === "quiz") html = S.quiz ? renderQuiz() : renderHome();
+  if (v === "quiz") html = S.quiz ? renderQuiz() : S.gate ? `<div class="q-wrap">${renderGate(false)}</div>` : renderHome();
   else if (v === "results") html = S.result ? renderResults() : renderHome();
   else if (v === "bank") html = S.canEdit ? renderBank() : renderHome();
   else if (v === "add") html = S.canEdit ? renderAdd() : renderHome();
@@ -908,7 +931,44 @@ function renderHome(){
   `;
 }
 
+function renderGate(inQuiz){
+  return `<div class="gate" role="region" aria-labelledby="gate-h">
+    <span class="stairs big gate-stairs" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    <h2 id="gate-h">${inQuiz ? "That’s your " + GUEST_FREE + " free questions" : "You’ve used your " + GUEST_FREE + " free questions"}</h2>
+    <p class="gate-lede">You’re practising as a guest, so the next question is locked. Create a free account to keep going. It takes less than a minute.</p>
+    <ul class="gate-perks">
+      <li>Every question in every section, with no limit</li>
+      <li>Your scores and mistakes saved, so you can revise what you got wrong</li>
+      <li>Your progress on your phone and computer alike</li>
+    </ul>
+    <div class="gate-actions">
+      <button class="btn primary big" data-act="signup">Create a free account</button>
+      <button class="btn big" data-act="signin">I already have an account</button>
+    </div>
+    ${inQuiz ? `<p class="small muted center"><button class="btn link" data-act="finish">See my score for these questions</button></p>` : `<p class="small muted center"><a class="btn link" href="#home" data-act="gatehome">Back to practice</a></p>`}
+  </div>`;
+}
+// Explanations may use light formatting: **bold**, *italic*, and "* " / "- " / "1. " list lines.
+function fmtExpl(t){
+  const inline = (x) => esc(x).replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>").replace(/(^|[\s(])\*([^*\s][^*]*?)\*(?=[\s.,;:)!?]|$)/g, "$1<em>$2</em>");
+  const out = []; let para = [], list = null, listTag = "";
+  const flushP = () => { if (para.length){ out.push("<p>" + para.map(inline).join("<br>") + "</p>"); para = []; } };
+  const flushL = () => { if (list){ out.push(`<${listTag}>` + list.map(x => "<li>" + inline(x) + "</li>").join("") + `</${listTag}>`); list = null; } };
+  String(t || "").replace(/\r/g, "").split("\n").forEach(line => {
+    const m = line.match(/^\s*([*-]|\d+\.)\s+(.*)$/);
+    if (!line.trim()){ flushP(); flushL(); return; }
+    if (m){ flushP(); const tag = /\d/.test(m[1]) ? "ol" : "ul"; if (list && tag !== listTag) flushL(); if (!list){ list = []; listTag = tag; } list.push(m[2]); }
+    else { flushL(); para.push(line.trim()); }
+  });
+  flushP(); flushL();
+  return out.join("");
+}
 function renderQuiz(){
+  if (S.quiz.gateShown) return `<div class="q-wrap">
+    <div class="q-top"><button class="btn link" data-act="quit">Leave test</button><span class="q-label">${esc(S.quiz.label)}</span><span class="clock" id="clock">${fmtTime(Date.now() - S.quiz.start)}</span></div>
+    <div class="q-progress" aria-hidden="true"><i style="width:100%"></i></div>
+    ${renderGate(true)}</div>`;
+  markSeen();
   const z = S.quiz; const q = z.items[z.idx]; const i = z.idx;
   const chosen = z.answers[i]; const shown = z.mode === "instant" && z.revealed[i];
   const answered = Object.values(z.answers).filter(x => x !== undefined).length;
@@ -919,7 +979,7 @@ function renderQuiz(){
     else if (k === chosen) cls = "sel";
     return `<button class="opt ${cls}" data-act="choose" data-k="${k}" ${shown ? "disabled" : ""} aria-pressed="${k === chosen}"><span class="bub">${LETTERS[k]}</span><span>${esc(o)}</span></button>`;
   }).join("");
-  const verdict = shown ? `<div class="verdict ${chosen === q.answer ? "ok" : "bad"}" role="status">${chosen === q.answer ? "Correct." : "Not quite. The answer is " + LETTERS[q.answer] + ": " + esc(q.options[q.answer]) + "."}${q.explanation ? `<p>${esc(q.explanation)}</p>` : ""}</div>` : "";
+  const verdict = shown ? `<div class="verdict ${chosen === q.answer ? "ok" : "bad"}" role="status">${chosen === q.answer ? "Correct." : "Not quite. The answer is " + LETTERS[q.answer] + ": " + esc(q.options[q.answer]) + "."}${q.explanation ? `<div class="expl">${fmtExpl(q.explanation)}</div>` : ""}</div>` : "";
   const last = i === z.items.length - 1;
   return `<div class="q-wrap">
     <div class="q-top">
@@ -928,14 +988,14 @@ function renderQuiz(){
       <span class="clock" id="clock" aria-label="Time taken">${fmtTime(Date.now() - z.start)}</span>
     </div>
     <div class="q-progress" aria-hidden="true"><i style="width:${pct(i + 1, z.items.length)}%"></i></div>
-    ${isGuest() ? `<div class="guest-bar">${guestLeft() ? `<span>${plural(guestLeft(), "free question")} left as a guest.</span>` : `<span>You’ve used your free questions.</span>`} <button class="btn link" data-act="signup">Create a free account</button> to practise without limits.</div>` : ""}
+    ${z.guest ? `<div class="guest-bar"><span>Free question ${GUEST_FREE - guestLeft()} of ${GUEST_FREE}.</span> <button class="btn link" data-act="signup">Create a free account</button> to practise without limits.</div>` : ""}
     <div class="q-meta"><strong>Question ${i + 1} of ${z.items.length}</strong><span class="tag">${esc(q.category)}</span><span class="tag">${esc(sectionOf(q))}</span></div>
     <div class="q-text">${esc(q.q)}</div>
     <div class="opts">${opts}</div>
     ${verdict}
     <div class="qnav">
       <button class="btn" data-act="prev" ${i === 0 ? "disabled" : ""}>Previous</button>
-      ${last ? "" : `<button class="btn ${shown ? "primary" : ""}" data-act="next">Next question</button>`}
+      ${last ? (z.guest && guestLeft() <= 0 ? `<button class="btn ${shown ? "primary" : ""}" data-act="gate">Next question</button>` : "") : `<button class="btn ${shown ? "primary" : ""}" data-act="next">Next question</button>`}
       <span class="spacer"></span>
       <button class="btn ${last ? "primary" : ""}" data-act="finish">${z.mode === "exam" ? "Submit test" : "Finish and see score"}</button>
     </div>
@@ -964,6 +1024,7 @@ function renderResults(){
       </div>
     </div>
   </section>
+  ${isGuest() && guestLeft() <= 0 ? `<section>${renderGate(false).replace("Back to practice", "Back to practice")}</section>` : ""}
   <section><h2>By section</h2><div class="breakdown">${Object.entries(bySec).sort((a, b) => pct(a[1].ok, a[1].n) - pct(b[1].ok, b[1].n)).map(([k, v]) => { const [c, t] = k.split("|"); return `<div class="bd-row"><div><div class="bd-name">${esc(t)}</div><div class="muted small">${esc(c)}</div></div>${stairs({ attempted: v.n, correct: v.ok })}<strong>${v.ok}/${v.n}</strong></div>`; }).join("")}</div><p class="muted small">Weakest sections are listed first.</p></section>
   <section>
     <div class="row"><h2 style="margin:0">Review answers</h2><span class="spacer"></span>
@@ -974,7 +1035,7 @@ function renderResults(){
         <div class="muted small">Question ${idx}, ${esc(r.q.category)}: ${esc(sectionOf(r.q))}${r.chosen === undefined ? ", not answered" : ""}</div>
         <div class="rv-q">${esc(r.q.q)}</div>
         <ol>${r.q.options.map((o, k) => o.trim() ? `<li class="${k === r.q.answer ? "right" : k === r.chosen ? "wrong" : ""}">${LETTERS[k]}. ${esc(o)}</li>` : "").join("")}</ol>
-        ${r.q.explanation ? `<p class="small muted" style="margin:8px 0 0">${esc(r.q.explanation)}</p>` : ""}
+        ${r.q.explanation ? `<details class="expl-more"><summary>Explanation</summary><div class="expl">${fmtExpl(r.q.explanation)}</div></details>` : ""}
       </article>`;
     }).join("") || `<p class="muted">You got every question right.</p>`}</div>
   </section>`;
@@ -1206,6 +1267,8 @@ document.addEventListener("click", async e => {
     case "togglesec": S.bankOpen[el.dataset.key] = !S.bankOpen[el.dataset.key]; render(); break;
     case "signin": openAuth("signin"); break;
     case "signup": openAuth("signup"); break;
+    case "gate": if (S.quiz){ S.quiz.gateShown = true; render(); window.scrollTo(0, 0); } break;
+    case "gatehome": S.gate = false; break;
     case "authswitch": S.authMode = S.authMode === "signup" ? "signin" : "signup"; S.authErr = ""; drawAuth(); break;
     case "authclose": { const d = document.getElementById("authDlg"); if (d) d.close(); break; }
     case "authsubmit": submitAuth(); break;
@@ -1221,6 +1284,7 @@ document.addEventListener("click", async e => {
     case "prev": if (z && z.idx > 0){ z.idx--; render(); } break;
     case "jump": if (z){ z.idx = Number(el.dataset.k); render(); } break;
     case "finish": {
+      if (z && z.gateShown) z.gateShown = false;
       if (z && z.mode === "exam"){ const left = z.items.length - Object.values(z.answers).filter(x => x !== undefined).length; if (left && !confirm(left + " questions are unanswered. Submit anyway?")) break; }
       finishQuiz(); break;
     }
