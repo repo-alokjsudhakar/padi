@@ -8,12 +8,12 @@
   const LS = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
                set(k, v) { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch (e) {} } };
 
-  // A random id per browser, so each visitor keeps their own scores.
-  let uid = LS.get("padi:uid");
-  if (!uid) { uid = "u" + Math.random().toString(36).slice(2, 12) + Date.now().toString(36); LS.set("padi:uid", uid); }
+  // Guests get a random id per browser so their scores are kept; signed-in people use their account.
+  let guestId = LS.get("padi:uid");
+  if (!guestId) { guestId = "g" + Math.random().toString(36).slice(2, 12) + Date.now().toString(36); LS.set("padi:uid", guestId); }
+  LS.set("padi:admin", null);
   const headers = (json) => {
-    const h = { "x-padi-user": uid };
-    const k = LS.get("padi:admin"); if (k) h["x-padi-admin"] = k;
+    const h = { "x-padi-user": guestId };
     if (json) h["Content-Type"] = "application/json";
     return h;
   };
@@ -25,7 +25,7 @@
     }
     return r.status === 204 ? null : r.json();
   }
-  const config = fetch("/api/config", { headers: headers(false) }).then((r) => r.json()).catch(() => ({ admin: false, ai: false, images: { maxCount: 2, maxBytes: 1200000 } }));
+  const config = fetch("/api/config", { headers: headers(false) }).then((r) => r.json()).catch(() => ({ admin: false, ai: false, user: null, images: { maxCount: 2, maxBytes: 1200000 } }));
 
   /* ---------- db ---------- */
   const listeners = {}, pending = {};
@@ -66,7 +66,7 @@
 
   /* ---------- user ---------- */
   const user = {
-    id: async () => uid,
+    id: async () => { const c = await config; return c.user ? c.user.id : guestId; },
     canEdit: async () => !!(await config).admin,
     can: async () => !!(await config).admin,
   };
@@ -133,21 +133,19 @@
     },
   };
 
-  /* ---------- owner sign in ---------- */
-  document.addEventListener("DOMContentLoaded", async () => {
-    const c = await config;
-    if (!c.passwordSet) return; // running locally without a password: you are already the owner
-    const link = document.createElement("button");
-    link.type = "button";
-    link.textContent = c.admin ? "Sign out (owner)" : "Owner sign in";
-    link.style.cssText = "position:fixed;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:15;font:600 .8rem var(--body,system-ui);color:var(--ink-2,#555);background:var(--surface,#fff);border:1px solid var(--line,#ccc);border-radius:999px;padding:6px 12px;cursor:pointer;opacity:.85";
-    link.onclick = async () => {
-      if (c.admin) { LS.set("padi:admin", null); location.reload(); return; }
-      const pw = prompt("Owner password");
-      if (!pw) return;
-      const r = await fetch("/api/auth", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ password: pw }) });
-      if (r.ok) { LS.set("padi:admin", pw); location.reload(); } else alert("That password isn’t right.");
-    };
-    document.body.appendChild(link);
-  });
+  /* ---------- accounts ---------- */
+  async function post(url, body) {
+    let r;
+    try { r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(Object.assign({ guestId }, body || {})) }); }
+    catch (e) { return { error: "Couldn’t reach the server. Check your connection." }; }
+    const j = await r.json().catch(() => ({}));
+    return r.ok ? j : { error: j.message || "Something went wrong (" + r.status + ")." };
+  }
+  window.padiAuth = {
+    ready: config.then((c) => ({ user: c.user || null, owner: !!c.admin, googleClientId: c.googleClientId || null, accounts: c.accounts !== false })),
+    signup: (name, email, password) => post("/api/signup", { name, email, password }),
+    login: (email, password) => post("/api/login", { email, password }),
+    google: (credential) => post("/api/google", { credential }),
+    logout: () => post("/api/logout"),
+  };
 })();

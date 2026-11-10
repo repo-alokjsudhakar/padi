@@ -141,12 +141,148 @@ textarea{resize:vertical;line-height:1.5}
 .hist td{padding:8px 0;border-bottom:1px solid var(--line)}
 .hist td:last-child{text-align:right;font-weight:700}
 .scroll-x{overflow-x:auto}
+/* ---------- Padi redesign ---------- */
+a.btn{text-decoration:none;display:inline-flex;align-items:center}
+.btn.big{padding:12px 22px;font-size:1.02rem;border-radius:12px}
+.btn.wide{width:100%;justify-content:center}
+.center{text-align:center}
+.top-in{max-width:1080px}
+main{max-width:1080px}
+#acct{display:flex;align-items:center}
+.acct-btn{padding:7px 14px}
+.acct-wrap{position:relative}
+.avatar{width:38px;height:38px;border-radius:50%;border:2px solid var(--guide);background:var(--pen);color:var(--pen-ink);font-family:var(--head);font-weight:800;font-size:1rem;cursor:pointer;display:grid;place-items:center;overflow:hidden;padding:0}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.acct-menu{position:absolute;right:0;top:46px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;min-width:230px;box-shadow:0 12px 40px rgba(20,33,61,.18);z-index:20;display:flex;flex-direction:column;gap:8px}
+.acct-who{display:flex;flex-direction:column;gap:2px}
+.pill{align-self:flex-start;margin-top:4px;font-size:.75rem;font-weight:700;color:var(--guide);background:var(--guide-soft);border-radius:999px;padding:1px 9px}
+
+/* hero with the climbing staircase */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;align-items:end;padding:26px 0 8px}
+.hero.solo{grid-template-columns:1fr}
+.hello{font-family:var(--head);font-weight:700;color:var(--guide);font-size:1.15rem;margin:0 0 6px}
+.hero h1{font-size:clamp(2.1rem,5vw,3.4rem);max-width:15ch;line-height:1.05}
+.hero-cta{margin-top:22px;gap:12px}
+.nudge{margin:14px 0 0}
+.nudge .btn.link{padding:0;font-size:inherit}
+.climb{display:flex;align-items:flex-end;gap:10px;height:260px;padding:0 4px 0;border-bottom:3px solid var(--ink)}
+.step{flex:1;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;height:100%;min-width:0;position:relative}
+.step-bar{display:block;height:var(--h);background:var(--pen);border-radius:8px 8px 0 0;transform-origin:bottom;animation:rise .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--d);position:relative}
+.step:nth-child(3n+2) .step-bar{background:color-mix(in srgb,var(--pen) 78%,var(--guide))}
+.step:nth-child(3n) .step-bar{background:color-mix(in srgb,var(--pen) 55%,var(--guide))}
+.step-pct{font-family:var(--head);font-weight:800;font-size:1.1rem;text-align:center;margin-bottom:6px}
+.climb-cap{margin:44px 0 0;text-align:right}
+.step-name{position:absolute;left:-4px;right:-4px;bottom:-34px;font-size:.78rem;line-height:1.15;color:var(--ink-2);text-align:center;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+@keyframes rise{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@media (prefers-reduced-motion:reduce){.step-bar{animation:none}}
+@media (max-width:760px){.hero{grid-template-columns:1fr;gap:56px}.climb{height:170px}.climb-cap{text-align:left}}
+@media (max-width:560px){.top-in{flex-wrap:nowrap;gap:8px;padding:10px 14px}nav{gap:0}nav a{padding:6px 8px;font-size:.92rem}.acct-btn{padding:6px 10px;font-size:.92rem}.cat-head{flex-wrap:wrap}}
+
+/* builder */
+.builder{margin-top:64px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
+.builder h2{margin-bottom:14px}
+
+/* mock tests */
+.mocks{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.mock{display:flex;flex-direction:column;gap:4px;text-align:left;background:var(--ink);color:var(--bg);border:0;border-radius:16px;padding:18px 20px;cursor:pointer;position:relative;overflow:hidden}
+.mock .muted{color:color-mix(in srgb,var(--bg) 75%,transparent)}
+.mock-title{font-family:var(--head);font-weight:800;font-size:1.2rem}
+.mock{padding-right:96px}
+.mock::after{content:"";position:absolute;right:-18px;bottom:-18px;width:90px;height:90px;border-radius:50%;border:10px solid var(--guide);opacity:.55}
+.mock:hover{filter:brightness(1.12)}
+
+/* categories and sections */
+.cat{margin-top:44px}
+.cat-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:14px}
+.cat-head h2{font-size:1.7rem;margin:0}
+.cat-head p{margin:4px 0 0}
+.secs{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.sec{display:flex;flex-direction:column;justify-content:space-between;gap:14px;min-height:108px;text-align:left;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--pen);border-radius:12px;padding:14px 16px;cursor:pointer;transition:border-color .15s,transform .15s}
+.sec:hover{border-color:var(--pen);transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){.sec{transition:none}.sec:hover{transform:none}}
+.sec-name{font-weight:700;line-height:1.3}
+.sec-meta{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.stairs{display:inline-flex;align-items:flex-end;gap:3px;height:20px;flex:none}
+.stairs i{width:7px;border-radius:2px;background:var(--line)}
+.stairs i:nth-child(1){height:20%}.stairs i:nth-child(2){height:40%}.stairs i:nth-child(3){height:60%}.stairs i:nth-child(4){height:80%}.stairs i:nth-child(5){height:100%}
+.stairs i.on{background:var(--ok)}
+.stairs.big{height:44px;gap:6px}.stairs.big i{width:14px;background:var(--pen);animation:pulse 1.2s ease-in-out infinite}
+.stairs.big i:nth-child(2){animation-delay:.12s}.stairs.big i:nth-child(3){animation-delay:.24s}.stairs.big i:nth-child(4){animation-delay:.36s}.stairs.big i:nth-child(5){animation-delay:.48s}
+@keyframes pulse{0%,100%{opacity:.25}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.stairs.big i{animation:none}}
+.loading{display:flex;flex-direction:column;align-items:center;gap:14px;padding:80px 0}
+.hist{border-top:1px solid var(--line)}
+.hist-row{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line)}
+
+/* quiz */
+.q-top{display:flex;align-items:center;gap:12px}
+.q-top .btn.link{padding:4px 0}
+.q-label{flex:1;text-align:center;font-weight:700;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.clock{font-variant-numeric:tabular-nums;font-weight:700}
+.q-progress{height:6px;border-radius:3px;background:var(--line);margin:12px 0 18px;overflow:hidden}
+.q-progress i{display:block;height:100%;background:linear-gradient(90deg,var(--pen),var(--guide));transition:width .3s}
+.q-meta strong{color:var(--ink)}
+.q-wrap{max-width:780px;margin:0 auto}
+.keys{margin-top:20px}
+
+/* results */
+.result-hero{display:flex;gap:32px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.result-hero h1{max-width:none}
+.ring{--p:0;width:150px;height:150px;border-radius:50%;flex:none;display:grid;place-items:center;background:conic-gradient(var(--ok) calc(var(--p) * 1%),var(--line) 0);position:relative}
+.ring::before{content:"";position:absolute;inset:14px;border-radius:50%;background:var(--bg)}
+.ring span{position:relative;font-family:var(--head);font-weight:800;font-size:2.2rem}
+.breakdown{border-top:1px solid var(--line)}
+.bd-row{display:grid;grid-template-columns:1fr auto 60px;align-items:center;gap:16px;padding:10px 0;border-bottom:1px solid var(--line)}
+.bd-row strong{text-align:right}
+.bd-name{font-weight:700}
+
+/* question bank */
+.bank-secs{display:flex;flex-direction:column;gap:8px}
+.bank-sec{background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.bank-sec.open{border-color:var(--pen)}
+.bank-sec-head{display:flex;align-items:center;gap:10px;padding:8px 10px 8px 4px}
+.bank-toggle{flex:1;display:flex;align-items:center;gap:12px;background:none;border:0;cursor:pointer;text-align:left;padding:6px 8px}
+.chev{width:9px;height:9px;border-right:2px solid var(--ink-2);border-bottom:2px solid var(--ink-2);transform:rotate(-45deg);transition:transform .15s;flex:none}
+.bank-sec.open .chev{transform:rotate(45deg)}
+.bank-toggle .muted{margin-left:auto}
+.bank-sec .qlist{margin:0 14px 10px}
+.src{margin-left:10px;font-size:.78rem;color:var(--ink-2);border:1px solid var(--line);border-radius:999px;padding:0 8px;white-space:nowrap}
+.qactions{display:flex;gap:2px;align-items:flex-start}
+.sources{border-top:1px solid var(--line)}
+.source{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+
+/* sign-in dialog */
+dialog.auth{border:0;padding:0;border-radius:20px;background:var(--surface);color:var(--ink);width:min(420px,92vw);box-shadow:0 30px 80px rgba(10,20,40,.35)}
+dialog.auth::backdrop{background:rgba(15,22,32,.55);backdrop-filter:blur(3px)}
+.auth-card{padding:24px;display:flex;flex-direction:column;gap:12px}
+.auth-head{display:flex;align-items:center;gap:10px}
+.auth-head h2{margin:0;flex:1;font-size:1.3rem}
+.auth-card .muted.small{margin:-4px 0 4px}
+.gbtn{display:flex;justify-content:center;min-height:44px}
+.or{display:flex;align-items:center;gap:10px;color:var(--ink-2);font-size:.85rem}
+.or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
+.auth-err{background:var(--bad-soft);color:var(--bad);border-radius:10px;padding:10px 12px;font-weight:600}
+.gproto{gap:10px;justify-content:center;background:var(--surface);border:1px solid var(--line)}
+input[type=email],input[type=password]{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 11px;width:100%;color:var(--ink)}
+
+.group{margin-top:56px}
+.group-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:4px}
+.group-head h2{font-size:2rem;margin:0;letter-spacing:-.01em}
+.group .cat{margin-top:22px}
+.cat-head h3{font-size:1.45rem;margin:0}
+.soon-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px;margin-top:22px;align-items:start}
+.soon{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;border:1px dashed var(--line);border-radius:12px;color:var(--ink-2);font-weight:600;line-height:1.3;cursor:not-allowed;background:color-mix(in srgb,var(--surface) 45%,transparent)}
+.soon-pill{flex:none;font-size:.72rem;font-weight:700;color:var(--ink-2);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:2px 9px;white-space:nowrap}
+.auth-reason{background:var(--guide-soft);color:var(--ink);border-radius:10px;padding:10px 12px;font-weight:600;font-size:.95rem}
+.guest-bar{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;background:var(--guide-soft);border-radius:10px;padding:8px 12px;margin:0 0 14px;font-size:.92rem;font-weight:600}
+.guest-bar .btn.link{padding:0;font-size:inherit}
 </style>
 </head>
 <body>
 <header class="top"><div class="top-in">
   <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true"></span><span lang="ta">படி</span><span class="brand-sub">Padi, TNPSC Group 4 practice</span></a>
   <nav id="nav"></nav>
+  <div id="acct"></div>
 </div></header>
 <main id="app"></main>
 <div id="toast" class="toast" role="status" hidden></div>
@@ -154,22 +290,15 @@ textarea{resize:vertical;line-height:1.5}
 <script src="/claude-local.js"></script>
 <script>
 "use strict";
-const CATS = [
-  "History & Culture of India",
-  "Indian National Movement",
-  "Indian Polity",
-  "Geography",
-  "Indian Economy",
-  "General Science",
-  "Physics",
-  "History, Culture & Heritage of Tamil Nadu",
-  "Development Administration in Tamil Nadu",
-  "Current Affairs",
-  "Aptitude & Mental Ability",
-  "General English (Part A)",
-  "Tamil (Part A)",
-  "Uncategorised"
+// The full syllabus, in the order TNPSC lists it. Subjects without questions show as “Coming soon”.
+const SYLLABUS = [
+  { group: "General Studies", cats: ["General Science","Physics","Chemistry","Biology","Geography of India","History and Culture of India","Indian Polity","Indian Economy","Indian National Movement","History, Culture, Heritage and Socio-Political Movements in Tamil Nadu","Development Administration in Tamil Nadu","Aptitude and Mental Ability"] },
+  { group: "பொதுத் தமிழ்", lang: "ta", cats: ["இலக்கணம்","சொல்லகராதி","எழுதும் திறன்","கலைச் சொற்கள்","வாசித்தல் - புரிந்து கொள்ளுதல் திறன்","எளிய மொழி பெயர்ப்பு","இலக்கியம், தமிழ் அறிஞர்கள் மற்றும் தமிழ்த்தொண்டும்"] },
+  { group: "General English", cats: ["Grammar","Vocabulary","Writing Skills","Technical Terms","Reading Comprehension","Translation","Literary Works – Figures of Speech, Appreciation and Analysis of Poetry, Lines of Significance"] }
 ];
+// Older category names used by past-paper questions; kept so those questions still read correctly.
+const LEGACY_CATS = ["History & Culture of India","Geography","History, Culture & Heritage of Tamil Nadu","Aptitude & Mental Ability","Current Affairs","General English (Part A)","Tamil (Part A)"];
+const CATS = SYLLABUS.flatMap(g => g.cats).concat(LEGACY_CATS, ["Uncategorised"]);
 const TOPICS = {
   "History & Culture of India": ["Indus Valley Civilisation","Vedic Age & Religions","Mauryas, Guptas & Harsha","South Indian Dynasties","Delhi Sultanate & Mughals","Vijayanagar & Marathas","European Arrival & British Rule","Indian Culture & Languages"],
   "Indian National Movement": ["Early Revolts & Reform Movements","Rise of Nationalism & Congress","Gandhian Era","Revolutionary & Other Movements","Freedom Struggle in Tamil Nadu","National Leaders","Independence & Partition"],
@@ -262,10 +391,11 @@ function startLocal(){
   const b = lsGet(LS_BANK);
   if (b){ S.papers = b.papers || {}; S.questions = b.questions || {}; }
   S.progress = Object.assign(emptyProgress(), lsGet(LS_PROG) || {});
-  S.loaded = true; S.canEdit = true; render();
+  S.loaded = true; S.canEdit = !(window.padiAuth && window.padiAuth.protoStudent); render();
 }
 async function init(){
   render();
+  if (window.padiAuth){ try { S.auth = await window.padiAuth.ready; } catch (e) { S.auth = null; } }
   const use = window.claude && typeof window.claude.use === "function" ? (n) => window.claude.use(n).catch(() => null) : null;
   if (!use){ startLocal(); return; }
   const [d, u, s, dl] = await Promise.all([use("db"), use("user"), use("sample"), use("downloads")]);
@@ -298,9 +428,10 @@ function paperName(pid){ const p = S.papers[pid]; return p ? (p.title + (p.year 
 function pool(cat, paper, topic){
   let qs = allQs().filter(q => Array.isArray(q.options) && Number.isInteger(q.answer));
   if (paper !== "all") qs = qs.filter(q => q.paperId === paper);
+  else if (cat !== "mistakes") qs = qs.filter(q => !isPastPaper(q));
   if (cat === "mistakes"){ const w = new Set(S.progress.wrong); qs = qs.filter(q => w.has(q.id)); }
   else if (cat !== "all") qs = qs.filter(q => q.category === cat);
-  if (topic && topic !== "all" && cat !== "all" && cat !== "mistakes") qs = qs.filter(q => q.topic === topic);
+  if (topic && topic !== "all" && cat !== "all" && cat !== "mistakes") qs = qs.filter(q => topic === "Other questions" ? !q.topic : q.topic === topic);
   return qs;
 }
 
@@ -313,20 +444,31 @@ window.addEventListener("hashchange", () => { render(); window.scrollTo(0, 0); }
 /* ---------- quiz ---------- */
 function startQuiz(items, mode, label){
   if (!items.length){ toast("No questions match that choice yet."); return; }
+  if (isGuest() && guestLeft() <= 0){ askToSignIn(); return; }
   S.quiz = { items: items.map(q => JSON.parse(JSON.stringify(q))), idx: 0, answers: {}, revealed: {}, mode, label, start: Date.now() };
   S.result = null; go("quiz");
 }
 function startFromSetup(){
   const st = S.setup; const p = shuffle(pool(st.cat, st.paper, st.topic));
   const n = st.count === "all" ? p.length : Math.min(Number(st.count), p.length);
-  const label = (st.cat === "all" ? "All subjects" : st.cat === "mistakes" ? "My mistakes" : st.cat) + (st.topic && st.topic !== "all" && st.cat !== "all" && st.cat !== "mistakes" ? ": " + st.topic : "") + (st.paper !== "all" ? ", " + paperName(st.paper) : "");
+  const label = (st.cat === "all" ? "All categories" : st.cat === "mistakes" ? "My mistakes" : st.cat) + (st.topic && st.topic !== "all" && st.cat !== "all" && st.cat !== "mistakes" ? " → " + st.topic : "") + (st.paper !== "all" ? ", " + paperName(st.paper) : "");
   startQuiz(p.slice(0, n), st.mode, label);
 }
+/* ---------- free questions for guests ---------- */
+const GUEST_FREE = 5;
+function isGuest(){ return !!(window.padiAuth && S.auth && S.auth.accounts && !S.auth.user && !S.canEdit); }
+function guestUsed(){ try { return Number(localStorage.getItem("padi:guest-answered") || 0); } catch (e) { return 0; } }
+function guestCount(){ try { localStorage.setItem("padi:guest-answered", String(guestUsed() + 1)); } catch (e) {} }
+function guestLeft(){ return Math.max(0, GUEST_FREE - guestUsed()); }
+function askToSignIn(){ openAuth("signup", "You’ve used your " + GUEST_FREE + " free questions. Create a free account, or sign in, to keep practising. It only takes a moment."); }
 function choose(k){
   const z = S.quiz; if (!z) return; const i = z.idx;
+  const fresh = z.mode === "instant" ? !z.revealed[i] : z.answers[i] === undefined;
+  if (fresh && isGuest()){ if (guestLeft() <= 0){ askToSignIn(); return; } guestCount(); }
   if (z.mode === "instant"){ if (z.revealed[i]) return; z.answers[i] = k; z.revealed[i] = true; }
   else z.answers[i] = z.answers[i] === k ? undefined : k;
   render();
+  if (fresh && isGuest() && guestLeft() === 0 && z.mode === "instant") setTimeout(() => toast("That was your last free question. Sign in to keep going."), 600);
 }
 function finishQuiz(){
   const z = S.quiz; if (!z) return;
@@ -635,80 +777,137 @@ async function exportJSON(){
   S.exportText = data; render(); toast("Copy the backup from the box below.");
 }
 
+/* ---------- catalogue: what’s actually in the bank ---------- */
+const OTHER = "Other questions";
+function answerable(q){ return Array.isArray(q.options) && Number.isInteger(q.answer); }
+function sectionOf(q){ return q.topic || OTHER; }
+function isPastPaper(q){ const p = S.papers[q.paperId]; return !!(p && p.kind === "official"); }
+function catalogue(){
+  const m = {};
+  allQs().filter(q => answerable(q) && !isPastPaper(q)).forEach(q => { const c = q.category || "Uncategorised"; const t = sectionOf(q); (m[c] = m[c] || {})[t] = (m[c][t] || 0) + 1; });
+  const ci = (c) => { const i = CATS.indexOf(c); return i < 0 ? 999 : i; };
+  return Object.keys(m).sort((a, b) => ci(a) - ci(b) || a.localeCompare(b)).map(c => {
+    const ts = topicsOf(c); const ti = (t) => { const i = ts.indexOf(t); return i < 0 ? 999 : i; };
+    const sections = Object.keys(m[c]).sort((a, b) => ti(a) - ti(b) || a.localeCompare(b)).map(t => ({ name: t, n: m[c][t] }));
+    return { cat: c, n: sections.reduce((s, x) => s + x.n, 0), sections };
+  });
+}
+function syllabus(){
+  const have = {}; catalogue().forEach(c => have[c.cat] = c);
+  return SYLLABUS.map(g => ({ group: g.group, lang: g.lang, cats: g.cats.map(c => have[c] || { cat: c, n: 0, sections: [] }) }));
+}
+const SHORT_SEC = { "Scientific Knowledge & Scientific Temper": "Scientific Temper", "Science as a Tool: Past, Present & Future": "Science as a Tool", "Rote & Conceptual Learning": "Rote & Conceptual", "General Scientific Laws": "Scientific Laws", "Power of Reasoning": "Reasoning" };
+function statCat(c){ const p = S.progress.byCat[c]; return p && p.attempted ? p : null; }
+function statSec(c, t){ const p = (S.progress.byTopic || {})[c + "|" + t]; return p && p.attempted ? p : null; }
+function plural(n, one, many){ return n + " " + (n === 1 ? one : (many || one + "s")); }
+// Five steps, one per 20% accuracy: the Padi (step) motif.
+function stairs(p, label){
+  const lvl = p ? Math.max(1, Math.min(5, Math.round(pct(p.correct, p.attempted) / 20))) : 0;
+  const txt = p ? pct(p.correct, p.attempted) + "% right of " + p.attempted : "Not started";
+  return `<span class="stairs" role="img" aria-label="${esc((label ? label + ": " : "") + txt)}">${[1,2,3,4,5].map(i => `<i class="${i <= lvl ? "on" : ""}"></i>`).join("")}</span>`;
+}
+function firstName(){ const u = S.auth && S.auth.user; return u && u.name ? String(u.name).split(/\s+/)[0] : ""; }
+
 /* ---------- render ---------- */
 function render(){
   const ae = document.activeElement;
-  if (ae && ae.matches && ae.matches("input[type=text],input[type=number],textarea") && ae.closest("#app")){ pendingRender = true; return; }
+  if (ae && ae.matches && ae.matches("input[type=text],input[type=number],input[type=email],input[type=password],textarea") && ae.closest("#app")){ pendingRender = true; return; }
   pendingRender = false;
   const v = view();
-  const links = [["home", "Practise"], ["bank", "Question bank"]].concat(S.canEdit ? [["add", "Add questions"]] : []);
+  // Students see only Practise; the owner also gets the question bank and the tools to add questions.
+  const links = S.canEdit ? [["home", "Practise"], ["bank", "Question bank"], ["add", "Add questions"]] : [["home", "Practise"]];
   document.getElementById("nav").innerHTML = links.map(([h, t]) => `<a href="#${h}" ${v === h || (h === "home" && (v === "quiz" || v === "results")) ? 'aria-current="page"' : ""}>${t}</a>`).join("");
+  renderAccount();
   const app = document.getElementById("app");
-  if (!S.loaded){ app.innerHTML = `<p class="muted">Opening the question bank…</p>${S.loadNote ? `<div class="note">${esc(S.loadNote)}</div>` : ""}`; return; }
+  if (!S.loaded){ app.innerHTML = `<div class="loading"><span class="stairs big" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><p class="muted">Opening the question bank…</p>${S.loadNote ? `<div class="note">${esc(S.loadNote)}</div>` : ""}</div>`; return; }
   const note = S.loadNote ? `<div class="note">${esc(S.loadNote)}</div>` : "";
   let html = "";
   if (v === "quiz") html = S.quiz ? renderQuiz() : renderHome();
   else if (v === "results") html = S.result ? renderResults() : renderHome();
-  else if (v === "bank") html = renderBank();
-  else if (v === "add") html = S.canEdit ? renderAdd() : renderBank();
+  else if (v === "bank") html = S.canEdit ? renderBank() : renderHome();
+  else if (v === "add") html = S.canEdit ? renderAdd() : renderHome();
   else html = renderHome();
   app.innerHTML = note + html;
+  app.dataset.view = v;
 }
 document.addEventListener("focusout", () => setTimeout(() => { if (pendingRender) render(); }, 0));
 
 function renderHome(){
-  const qs = allQs(); const counts = catCounts(); const P = S.progress;
+  const P = S.progress; const cats = catalogue();
+  const total = cats.reduce((s, c) => s + c.n, 0);
   const tot = Object.values(P.byCat).reduce((a, c) => [a[0] + c.attempted, a[1] + c.correct], [0, 0]);
-  const papers = paperList();
-  if (!qs.length){
-    return `<h1>Practise past Group 4 questions, subject by subject.</h1>
-      <div class="empty"><p class="lede">The question bank is empty. ${S.canEdit ? "Add a past paper to start practising." : "Questions will appear here once the owner adds papers."}</p>
-      ${S.canEdit ? `<p><a class="btn primary" href="#add" style="text-decoration:none;display:inline-block">Add questions</a></p>` : ""}</div>`;
+  const name = firstName();
+  if (!total){
+    return `<section class="hero solo"><div><p class="hello" lang="ta">வணக்கம்${name ? ", " + esc(name) : ""}</p>
+      <h1>Your question bank is empty.</h1>
+      <p class="lede">${S.canEdit ? "Add a past paper or a set of questions to start practising." : "Questions will appear here once the owner adds them."}</p>
+      ${S.canEdit ? `<p><a class="btn primary big" href="#add">Add questions</a></p>` : ""}</div></section>`;
   }
+  const mocks = paperList().filter(p => p.kind === "official").map(p => ({ p, n: paperQs(p.id).filter(answerable).length })).filter(x => x.n);
   const st = S.setup;
-  const subjOpts = [["all", "All subjects"]].concat(CATS.filter(c => counts[c]).map(c => [c, c + " (" + counts[c] + ")"])).concat(P.wrong.length ? [["mistakes", "My mistakes (" + P.wrong.length + ")"]] : []);
-  const paperOpts = [["all", "All papers"]].concat(papers.map(p => [p.id, p.title + (p.year ? " (" + p.year + ")" : "")]));
+  const curCat = cats.find(c => c.cat === st.cat);
   const sel = (bind, opts, val) => `<select data-bind="${bind}">${opts.map(([k, t]) => `<option value="${esc(k)}" ${k === val ? "selected" : ""}>${esc(t)}</option>`).join("")}</select>`;
+  const catOpts = [["all", "All categories"]].concat(cats.map(c => [c.cat, c.cat])).concat(P.wrong.length ? [["mistakes", "My mistakes (" + P.wrong.length + ")"]] : []);
+  const secOpts = curCat ? [["all", "All sections"]].concat(curCat.sections.map(s => [s.name, s.name + " (" + s.n + ")"])) : null;
+  const guestNudge = window.padiAuth && S.auth && !S.auth.user && S.auth.accounts;
+  // The staircase: one step per category, rising with accuracy.
+  const steps = cats.flatMap(c => c.sections.map(sec => ({ c, sec }))).sort((a, b) => b.sec.n - a.sec.n).slice(0, 6)
+    .map(x => { const p = statSec(x.c.cat, x.sec.name); return { c: x.c, n: x.sec.n, full: x.c.cat + " → " + x.sec.name, p, a: p ? pct(p.correct, p.attempted) : 0, short: SHORT_SEC[x.sec.name] || x.sec.name }; })
+    .sort((x, y) => (x.p || y.p) ? x.a - y.a : x.n - y.n);
   return `
-  <h1>Practise past Group 4 questions, subject by subject.</h1>
-  <p class="lede">${qs.length} ${qs.length === 1 ? "question" : "questions"} from ${papers.length} ${papers.length === 1 ? "paper" : "papers"}.${tot[0] ? ` You’ve answered ${tot[0]} so far and got ${pct(tot[1], tot[0])}% right.` : " Pick a subject below or set up a mixed test."}</p>
-  <section class="panel setup" aria-label="Set up a test">
-    <label class="f">Subject${sel("setup.cat", subjOpts, st.cat)}</label>
-    ${CATS.includes(st.cat) && topicsOf(st.cat).length ? `<label class="f">Topic${sel("setup.topic", [["all", "All topics"]].concat(topicsOf(st.cat).map(t => [t, t + " (" + qs.filter(q => q.category === st.cat && q.topic === t).length + ")"])), st.topic)}</label>` : ""}
-    <label class="f">Paper${sel("setup.paper", paperOpts, st.paper)}</label>
-    <label class="f">Questions${sel("setup.count", [["10","10"],["25","25"],["50","50"],["100","100"],["all","All matching"]], st.count)}</label>
-    <label class="f">Checking${sel("setup.mode", [["instant","After each answer"],["exam","At the end, like the exam"]], st.mode)}</label>
-    <button class="btn primary" data-act="start">Start test</button>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="hello" lang="ta">வணக்கம்${name ? ", " + esc(name) : ""}</p>
+      <h1>${tot[0] ? "Keep climbing, one step at a time." : "Every step counts towards Group 4."}</h1>
+      <p class="lede">${plural(total, "question")} ready in ${cats.map(c => esc(c.cat)).join(" and ").replace(/ and (?=[^]* and )/g, ", ")}, with ${SYLLABUS.reduce((n, g) => n + g.cats.length, 0) - cats.length} more subjects on the way.${tot[0] ? ` You’ve answered ${tot[0]} so far with ${pct(tot[1], tot[0])}% right.` : " Pick a section below, or start with a quick mixed test."}</p>
+      <div class="row hero-cta">
+        <button class="btn primary big" data-act="quickall">Start a quick 25</button>
+        ${P.wrong.length ? `<button class="btn big" data-act="quick" data-cat="mistakes">Revise ${plural(P.wrong.length, "mistake")}</button>` : ""}
+      </div>
+      ${guestNudge ? `<p class="small muted nudge">${guestLeft() ? `Try ${plural(guestLeft(), "free question")} as a guest, or` : "You’ve used your free questions."} <button class="btn link" data-act="signup">create a free account</button> to practise without limits.</p>` : ""}
+    </div>
+    <div class="climb-wrap"><div class="climb" aria-label="${tot[0] ? "Your accuracy in your biggest sections" : "Questions in your biggest sections"}">
+      ${steps.map((x, i) => `<div class="step" style="--h:${x.p ? 14 + Math.round(x.a * 0.86) : 16 + i * 14}%;--d:${i * 80}ms" title="${esc(x.full)}">
+          <span class="step-pct">${x.p ? x.a + "%" : x.n}</span>
+          <span class="step-bar"></span>
+          <span class="step-name">${esc(x.short)}</span>
+        </div>`).join("")}
+    </div><p class="climb-cap muted small">${tot[0] ? "Your accuracy, section by section. Climb every step to 100%." : "Questions waiting in each section. Your accuracy will build these steps."}</p></div>
   </section>
-  <section>
-    <h2>Subjects</h2>
-    <div class="subjects">
-      ${CATS.map(c => {
-        const n = counts[c] || 0; const p = P.byCat[c];
-        if (!n && c === "Uncategorised") return "";
-        return `<div class="subj ${n ? "" : "empty"}">
-          <div><div class="subj-name">${esc(c)}</div><div class="muted small">${n ? n + (n === 1 ? " question" : " questions") : "No questions yet"}</div></div>
-          <div class="acc">${p && p.attempted ? `<div class="meter" role="img" aria-label="${pct(p.correct, p.attempted)}% correct"><i style="width:${pct(p.correct, p.attempted)}%"></i></div><div class="muted small">${pct(p.correct, p.attempted)}% right of ${p.attempted} answered</div>` : `<div class="muted small">${n ? "Not attempted" : ""}</div>`}</div>
-          <div class="row" style="justify-content:flex-end">${n && topicsOf(c).length ? `<button class="btn link" data-act="toggletopics" data-cat="${esc(c)}" aria-expanded="${!!S.homeOpen[c]}">${S.homeOpen[c] ? "Hide topics" : "Topics"}</button>` : ""}<button class="btn" data-act="quick" data-cat="${esc(c)}" ${n ? "" : "disabled"}>Practise</button></div>
-        </div>${S.homeOpen[c] ? renderTopicRows(c, qs, P) : ""}`;
-      }).join("")}
-      ${P.wrong.length ? `<div class="subj"><div><div class="subj-name">My mistakes</div><div class="muted small">${P.wrong.length} questions you got wrong last time</div></div><div class="acc"></div><div><button class="btn" data-act="quick" data-cat="mistakes">Revise</button></div></div>` : ""}
+
+  <section class="builder" aria-label="Build your own test">
+    <h2>Build your own test</h2>
+    <div class="setup">
+      <label class="f">Category${sel("setup.cat", catOpts, st.cat)}</label>
+      ${secOpts ? `<label class="f">Section${sel("setup.topic", secOpts, st.topic)}</label>` : ""}
+      <label class="f">Questions${sel("setup.count", [["10","10"],["25","25"],["50","50"],["100","100"],["all","All matching"]], st.count)}</label>
+      <label class="f">Checking${sel("setup.mode", [["instant","After each answer"],["exam","At the end, like the exam"]], st.mode)}</label>
+      <button class="btn primary" data-act="start">Start test</button>
     </div>
   </section>
-  ${(P.history || []).length ? `<section><h2>Recent tests</h2><div class="scroll-x"><table class="hist"><tbody>${P.history.slice(0, 8).map(h => `<tr><td>${esc(h.label)}<div class="muted small">${new Date(h.at).toLocaleString()}</div></td><td>${h.score}/${h.total}</td></tr>`).join("")}</tbody></table></div></section>` : ""}
+
+  ${mocks.length ? `<section><h2>Full mock tests</h2><div class="mocks">${mocks.map(({ p, n }) => `<button class="mock" data-act="practisepaper" data-id="${esc(p.id)}">
+      <span class="mock-title">${esc(p.title)}</span><span class="muted small">${plural(n, "question")}, checked at the end like the real exam</span></button>`).join("")}</div></section>` : ""}
+
+  ${syllabus().map(g => { const live = g.cats.filter(c => c.n), soon = g.cats.filter(c => !c.n); return `<section class="group">
+    <div class="group-head"><h2 ${g.lang ? `lang="${g.lang}"` : ""}>${esc(g.group)}</h2><span class="muted small">${live.length} of ${g.cats.length} subjects ready</span></div>
+    ${live.map(c => { const p = statCat(c.cat); return `<div class="cat">
+      <div class="cat-head">
+        <div><h3>${esc(c.cat)}</h3><p class="muted small">${plural(c.n, "question")} in ${plural(c.sections.length, "section")}${p ? `, ${pct(p.correct, p.attempted)}% right so far` : ""}</p></div>
+        <button class="btn" data-act="quick" data-cat="${esc(c.cat)}">Practise all</button>
+      </div>
+      <div class="secs">${c.sections.map(s => `<button class="sec" data-act="quicktopic" data-cat="${esc(c.cat)}" data-topic="${esc(s.name)}">
+          <span class="sec-name">${esc(s.name)}</span>
+          <span class="sec-meta">${stairs(statSec(c.cat, s.name), s.name)}<span class="muted small">${plural(s.n, "question")}</span></span>
+        </button>`).join("")}</div>
+    </div>`; }).join("")}
+    ${soon.length ? `<div class="soon-list" ${g.lang ? `lang="${g.lang}"` : ""}>${soon.map(c => `<div class="soon" aria-disabled="true"><span>${esc(c.cat)}</span><span class="soon-pill">Coming soon</span></div>`).join("")}</div>` : ""}
+  </section>`; }).join("")}
+
+  ${(P.history || []).length ? `<section><h2>Recent tests</h2><div class="hist">${P.history.slice(0, 6).map(h => `<div class="hist-row"><div><div>${esc(h.label)}</div><div class="muted small">${new Date(h.at).toLocaleString()}</div></div><strong>${h.score}/${h.total}</strong></div>`).join("")}</div></section>` : ""}
   `;
 }
 
-function renderTopicRows(c, qs, P){
-  const bt = P.byTopic || {};
-  const untagged = qs.filter(q => q.category === c && !q.topic).length;
-  return `<div class="topics">${topicsOf(c).map(t => {
-    const n = qs.filter(q => q.category === c && q.topic === t).length; const p = bt[c + "|" + t];
-    return `<div class="subj topic ${n ? "" : "empty"}"><div><div class="subj-name">${esc(t)}</div><div class="muted small">${n ? n + (n === 1 ? " question" : " questions") : "No questions yet"}</div></div>
-      <div class="acc">${p && p.attempted ? `<div class="meter"><i style="width:${pct(p.correct, p.attempted)}%"></i></div><div class="muted small">${pct(p.correct, p.attempted)}% right of ${p.attempted}</div>` : ""}</div>
-      <div><button class="btn" data-act="quicktopic" data-cat="${esc(c)}" data-topic="${esc(t)}" ${n ? "" : "disabled"}>Practise</button></div></div>`;
-  }).join("")}${untagged ? `<p class="muted small" style="margin:6px 0 10px 18px">${untagged} ${untagged === 1 ? "question has" : "questions have"} no topic yet.</p>` : ""}</div>`;
-}
 function renderQuiz(){
   const z = S.quiz; const q = z.items[z.idx]; const i = z.idx;
   const chosen = z.answers[i]; const shown = z.mode === "instant" && z.revealed[i];
@@ -723,8 +922,14 @@ function renderQuiz(){
   const verdict = shown ? `<div class="verdict ${chosen === q.answer ? "ok" : "bad"}" role="status">${chosen === q.answer ? "Correct." : "Not quite. The answer is " + LETTERS[q.answer] + ": " + esc(q.options[q.answer]) + "."}${q.explanation ? `<p>${esc(q.explanation)}</p>` : ""}</div>` : "";
   const last = i === z.items.length - 1;
   return `<div class="q-wrap">
-    <div class="q-meta"><strong style="color:var(--ink)">Question ${i + 1} of ${z.items.length}</strong><span class="tag">${esc(q.category)}</span>${q.topic ? `<span class="tag">${esc(q.topic)}</span>` : ""}<span class="tag">${esc(paperName(q.paperId))}</span><span class="spacer"></span><span aria-label="Time taken">⏱ <span id="clock">${fmtTime(Date.now() - z.start)}</span></span></div>
-    <div class="progressbar"><i style="width:${pct(answered, z.items.length)}%"></i></div>
+    <div class="q-top">
+      <button class="btn link" data-act="quit">Leave test</button>
+      <span class="q-label">${esc(z.label)}</span>
+      <span class="clock" id="clock" aria-label="Time taken">${fmtTime(Date.now() - z.start)}</span>
+    </div>
+    <div class="q-progress" aria-hidden="true"><i style="width:${pct(i + 1, z.items.length)}%"></i></div>
+    ${isGuest() ? `<div class="guest-bar">${guestLeft() ? `<span>${plural(guestLeft(), "free question")} left as a guest.</span>` : `<span>You’ve used your free questions.</span>`} <button class="btn link" data-act="signup">Create a free account</button> to practise without limits.</div>` : ""}
+    <div class="q-meta"><strong>Question ${i + 1} of ${z.items.length}</strong><span class="tag">${esc(q.category)}</span><span class="tag">${esc(sectionOf(q))}</span></div>
     <div class="q-text">${esc(q.q)}</div>
     <div class="opts">${opts}</div>
     ${verdict}
@@ -734,33 +939,39 @@ function renderQuiz(){
       <span class="spacer"></span>
       <button class="btn ${last ? "primary" : ""}" data-act="finish">${z.mode === "exam" ? "Submit test" : "Finish and see score"}</button>
     </div>
-    ${z.mode === "exam" ? `<div class="sheet" aria-label="Answer sheet">${z.items.map((_, k) => `<button data-act="jump" data-k="${k}" class="${z.answers[k] !== undefined ? "done" : ""} ${k === i ? "cur" : ""}" aria-label="Question ${k + 1}">${k + 1}</button>`).join("")}</div><p class="muted small">${answered} of ${z.items.length} answered. Keys 1–4 or A–D pick an option; arrow keys move between questions.</p>` : `<p class="muted small" style="margin-top:20px">Keys 1–4 or A–D pick an option; Enter goes to the next question.</p>`}
+    ${z.mode === "exam" ? `<div class="sheet" aria-label="Answer sheet">${z.items.map((_, k) => `<button data-act="jump" data-k="${k}" class="${z.answers[k] !== undefined ? "done" : ""} ${k === i ? "cur" : ""}" aria-label="Question ${k + 1}">${k + 1}</button>`).join("")}</div><p class="muted small">${answered} of ${z.items.length} answered. Keys 1–4 or A–D pick an option; arrow keys move between questions.</p>` : `<p class="muted small keys">Keys 1–4 or A–D pick an option; Enter goes to the next question.</p>`}
   </div>`;
 }
 
 function renderResults(){
   const R = S.result;
   const byCat = {}; R.rows.forEach(r => { const c = byCat[r.q.category] || (byCat[r.q.category] = { n: 0, ok: 0 }); c.n++; if (r.correct) c.ok++; });
-  const byTop = {}; R.rows.forEach(r => { if (!r.q.topic) return; const k = r.q.category + "|" + r.q.topic; const c = byTop[k] || (byTop[k] = { n: 0, ok: 0 }); c.n++; if (r.correct) c.ok++; });
+  const bySec = {}; R.rows.forEach(r => { const k = r.q.category + "|" + sectionOf(r.q); const c = bySec[k] || (bySec[k] = { n: 0, ok: 0 }); c.n++; if (r.correct) c.ok++; });
   const wrongRows = R.rows.filter(r => !r.correct);
   const rows = S.wrongOnly ? wrongRows : R.rows;
+  const score = pct(R.right, R.total);
+  const line = score >= 80 ? "Excellent work. You’re ready for harder sets." : score >= 60 ? "Good climb. A little more revision and you’re there." : score >= 40 ? "Halfway up. Review the misses below and try again." : "Every expert started here. Review the answers and retry.";
   return `
-  <p class="muted">${esc(R.label)}</p>
-  <div class="score">${R.right}<small> / ${R.total}</small></div>
-  <p class="lede">${pct(R.right, R.total)}% correct in ${fmtTime(R.time)}.${R.answered < R.total ? " " + (R.total - R.answered) + " left unanswered." : ""}</p>
-  <div class="row" style="margin-top:16px">
-    ${wrongRows.length ? `<button class="btn primary" data-act="retrywrong">Retry the ${wrongRows.length} I missed</button>` : ""}
-    <a class="btn" href="#home" style="text-decoration:none">Back to subjects</a>
-  </div>
-  <section><h2>By subject</h2><div class="subjects">${Object.entries(byCat).map(([c, v]) => `<div class="subj"><div class="subj-name">${esc(c)}</div><div class="acc"><div class="meter"><i style="width:${pct(v.ok, v.n)}%"></i></div></div><div><strong>${v.ok}/${v.n}</strong></div></div>`).join("")}</div></section>
-  ${Object.keys(byTop).length ? `<section><h2>By topic</h2><div class="subjects">${Object.entries(byTop).sort((a, b) => pct(a[1].ok, a[1].n) - pct(b[1].ok, b[1].n)).map(([k, v]) => { const [c, t] = k.split("|"); return `<div class="subj"><div><div class="subj-name">${esc(t)}</div><div class="muted small">${esc(c)}</div></div><div class="acc"><div class="meter"><i style="width:${pct(v.ok, v.n)}%"></i></div></div><div><strong>${v.ok}/${v.n}</strong></div></div>`; }).join("")}</div><p class="muted small">Weakest topics are listed first.</p></section>` : ""}
+  <section class="result-hero">
+    <div class="ring" style="--p:${score}"><span>${score}%</span></div>
+    <div>
+      <p class="muted">${esc(R.label)}</p>
+      <h1>${R.right} of ${R.total} right</h1>
+      <p class="lede">${line} Time ${fmtTime(R.time)}.${R.answered < R.total ? " " + plural(R.total - R.answered, "question") + " left unanswered." : ""}</p>
+      <div class="row" style="margin-top:16px">
+        ${wrongRows.length ? `<button class="btn primary" data-act="retrywrong">Retry the ${wrongRows.length} I missed</button>` : ""}
+        <a class="btn" href="#home">Back to practice</a>
+      </div>
+    </div>
+  </section>
+  <section><h2>By section</h2><div class="breakdown">${Object.entries(bySec).sort((a, b) => pct(a[1].ok, a[1].n) - pct(b[1].ok, b[1].n)).map(([k, v]) => { const [c, t] = k.split("|"); return `<div class="bd-row"><div><div class="bd-name">${esc(t)}</div><div class="muted small">${esc(c)}</div></div>${stairs({ attempted: v.n, correct: v.ok })}<strong>${v.ok}/${v.n}</strong></div>`; }).join("")}</div><p class="muted small">Weakest sections are listed first.</p></section>
   <section>
     <div class="row"><h2 style="margin:0">Review answers</h2><span class="spacer"></span>
       <label class="row small"><input type="checkbox" data-bind="wrongOnly" ${S.wrongOnly ? "checked" : ""}> Show only the ones I missed</label></div>
     <div class="review">${rows.map(r => {
       const idx = R.rows.indexOf(r) + 1;
       return `<article class="rv ${r.correct ? "ok" : "bad"}">
-        <div class="muted small">Question ${idx}, ${esc(r.q.category)}${r.chosen === undefined ? ", not answered" : ""}</div>
+        <div class="muted small">Question ${idx}, ${esc(r.q.category)}: ${esc(sectionOf(r.q))}${r.chosen === undefined ? ", not answered" : ""}</div>
         <div class="rv-q">${esc(r.q.q)}</div>
         <ol>${r.q.options.map((o, k) => o.trim() ? `<li class="${k === r.q.answer ? "right" : k === r.chosen ? "wrong" : ""}">${LETTERS[k]}. ${esc(o)}</li>` : "").join("")}</ol>
         ${r.q.explanation ? `<p class="small muted" style="margin:8px 0 0">${esc(r.q.explanation)}</p>` : ""}
@@ -770,40 +981,119 @@ function renderResults(){
 }
 
 function renderBank(){
-  const papers = paperList(); const orphans = allQs().filter(q => !S.papers[q.paperId]);
-  const block = (id, title, meta, qs) => {
-    const open = !!S.bankOpen[id];
-    return `<div class="paper">
-      <div class="row"><div><h3>${esc(title)}</h3><div class="muted small">${meta}</div></div><span class="spacer"></span>
-        <button class="btn" data-act="practisepaper" data-id="${esc(id)}" ${qs.length ? "" : "disabled"}>Practise</button>
-        <button class="btn link" data-act="togglepaper" data-id="${esc(id)}" aria-expanded="${open}">${open ? "Hide questions" : "Show questions"}</button>
-        ${S.canEdit && id !== "_unfiled" ? `<button class="btn link danger" data-act="delpaper" data-id="${esc(id)}">Delete paper</button>` : ""}
-      </div>
-      ${open ? `<div class="qlist">${qs.map((q, k) => `<div class="qitem"><span class="n">${k + 1}.</span><div><div class="t">${esc(q.q)}</div><div class="small muted">Answer: ${Number.isInteger(q.answer) ? LETTERS[q.answer] + ". " + esc(q.options[q.answer]) : "not set"}, ${esc(q.category)}${q.topic ? ": " + esc(q.topic) : ""}</div></div>
-        <div>${S.canEdit ? `<button class="btn link" data-act="editq" data-id="${esc(q.id)}">Edit</button><button class="btn link danger" data-act="delq" data-id="${esc(q.id)}">Delete</button>` : ""}</div></div>`).join("") || `<p class="muted">No questions in this paper yet.</p>`}</div>` : ""}
-    </div>`;
-  };
+  const cats = catalogue(); const all = allQs();
+  const qrow = (q, k) => `<div class="qitem"><span class="n">${k + 1}.</span><div><div class="t">${esc(q.q)}</div><div class="small muted">Answer: ${Number.isInteger(q.answer) ? LETTERS[q.answer] + ". " + esc(q.options[q.answer]) : "not set"}<span class="src">${esc(paperName(q.paperId))}</span></div></div>
+    <div class="qactions">${S.canEdit ? `<button class="btn link" data-act="editq" data-id="${esc(q.id)}">Edit</button><button class="btn link danger" data-act="delq" data-id="${esc(q.id)}">Delete</button>` : ""}</div></div>`;
+  const unanswered = all.filter(q => !answerable(q));
   return `<h1 style="max-width:none">Question bank</h1>
-  <p class="lede">Every paper and the questions inside it. ${S.canEdit ? "Use Add questions to paste in another paper." : ""}</p>
-  <section>${papers.map(p => { const qs = paperQs(p.id); return block(p.id, p.title, [p.year, p.kind === "practice" ? "Practice set" : "Past paper", qs.length + (qs.length === 1 ? " question" : " questions")].filter(Boolean).join(", ") + (p.note ? "<br>" + esc(p.note) : ""), qs); }).join("")}
-  ${orphans.length ? block("_unfiled", "Unfiled questions", orphans.length + " questions", orphans) : ""}
-  ${!papers.length && !orphans.length ? `<p class="muted">No papers yet.</p>` : ""}</section>
-  ${S.canEdit ? `<section><h2>Back up</h2><p class="muted">Save the whole bank as a JSON file, or load one from Add questions.</p><button class="btn" data-act="export">Download backup</button>${S.exportText ? `<textarea readonly rows="6" style="margin-top:10px">${esc(S.exportText)}</textarea>` : ""}</section>` : ""}`;
+  <p class="lede">Every question, grouped by subject and section, in syllabus order. Open a section to read its questions and answers.</p>
+  ${syllabus().map(g => { const live = g.cats.filter(c => c.n), soon = g.cats.filter(c => !c.n); return `<section class="group">
+    <div class="group-head"><h2 ${g.lang ? `lang="${g.lang}"` : ""}>${esc(g.group)}</h2><span class="muted small">${live.length} of ${g.cats.length} subjects ready</span></div>
+    ${live.map(c => `<div class="cat">
+      <div class="cat-head"><div><h3>${esc(c.cat)}</h3><p class="muted small">${plural(c.n, "question")} in ${plural(c.sections.length, "section")}</p></div></div>
+      <div class="bank-secs">${c.sections.map(s => { const key = c.cat + "|" + s.name; const open = !!S.bankOpen[key];
+        const qs = open ? all.filter(q => answerable(q) && !isPastPaper(q) && q.category === c.cat && sectionOf(q) === s.name).sort((a, b) => String(a.paperId).localeCompare(String(b.paperId)) || (a.n || 0) - (b.n || 0)) : [];
+        return `<div class="bank-sec ${open ? "open" : ""}">
+          <div class="bank-sec-head">
+            <button class="bank-toggle" data-act="togglesec" data-key="${esc(key)}" aria-expanded="${open}"><span class="chev" aria-hidden="true"></span><span class="sec-name">${esc(c.cat)} → ${esc(s.name)}</span><span class="muted small">${plural(s.n, "question")}</span></button>
+            <button class="btn" data-act="quicktopic" data-cat="${esc(c.cat)}" data-topic="${esc(s.name)}">Practise</button>
+          </div>
+          ${open ? `<div class="qlist">${qs.map(qrow).join("")}</div>` : ""}
+        </div>`; }).join("")}</div>
+    </div>`).join("")}
+    ${soon.length ? `<div class="soon-list" ${g.lang ? `lang="${g.lang}"` : ""}>${soon.map(c => `<div class="soon" aria-disabled="true"><span>${esc(c.cat)}</span><span class="soon-pill">Coming soon</span></div>`).join("")}</div>` : ""}
+  </section>`; }).join("")}
+  ${(() => { const papers = paperList().filter(p => p.kind === "official"); if (!papers.length) return ""; return `<section class="group">
+    <div class="group-head"><h2>Past papers</h2><span class="muted small">Full TNPSC papers, used as mock tests</span></div>
+    <div class="bank-secs">${papers.map(p => { const key = "paper|" + p.id; const open = !!S.bankOpen[key]; const qs = paperQs(p.id);
+      return `<div class="bank-sec ${open ? "open" : ""}">
+        <div class="bank-sec-head">
+          <button class="bank-toggle" data-act="togglesec" data-key="${esc(key)}" aria-expanded="${open}"><span class="chev" aria-hidden="true"></span><span class="sec-name">${esc(p.title)}</span><span class="muted small">${plural(qs.length, "question")}</span></button>
+          <button class="btn" data-act="practisepaper" data-id="${esc(p.id)}">Mock test</button>
+        </div>
+        ${open ? `<div class="qlist">${qs.map(qrow).join("")}</div>` : ""}
+      </div>`; }).join("")}</div></section>`; })()}
+  ${S.canEdit && unanswered.length ? `<section><h2>Questions without an answer</h2><p class="muted small">These don’t appear in tests until an answer is set.</p><div class="qlist">${unanswered.map(qrow).join("")}</div></section>` : ""}
+  ${S.canEdit ? `<section><h2>Sources</h2><p class="muted small">Where the questions came from. Deleting a source deletes its questions.</p>
+    <div class="sources">${paperList().map(p => { const n = paperQs(p.id).length; return `<div class="source"><div><div class="sec-name">${esc(p.title)}</div><div class="muted small">${p.kind === "official" ? "Past paper" : "Practice set"}, ${plural(n, "question")}</div></div>
+      <div class="row">${p.kind === "official" ? `<button class="btn" data-act="practisepaper" data-id="${esc(p.id)}">Mock test</button>` : ""}<button class="btn link danger" data-act="delpaper" data-id="${esc(p.id)}">Delete</button></div></div>`; }).join("")}</div>
+    <h2 style="margin-top:28px">Back up</h2><p class="muted small">Save the whole bank as a JSON file, or load one from Add questions.</p><button class="btn" data-act="export">Download backup</button>${S.exportText ? `<textarea readonly rows="6" style="margin-top:10px">${esc(S.exportText)}</textarea>` : ""}</section>` : ""}`;
+}
+
+/* ---------- account ---------- */
+function renderAccount(){
+  const box = document.getElementById("acct"); if (!box) return;
+  if (!window.padiAuth || !S.auth || !S.auth.accounts){ box.innerHTML = ""; return; }
+  const u = S.auth.user;
+  if (!u){ box.innerHTML = `<button class="btn acct-btn" data-act="signin">Sign in</button>`; return; }
+  const initial = esc(String(u.name || u.email || "?").trim().charAt(0).toUpperCase());
+  box.innerHTML = `<div class="acct-wrap"><button class="avatar" data-act="acctmenu" aria-expanded="${!!S.acctOpen}" aria-label="Your account">${u.picture ? `<img src="${esc(u.picture)}" alt="" referrerpolicy="no-referrer">` : initial}</button>
+    ${S.acctOpen ? `<div class="acct-menu" role="menu"><div class="acct-who"><strong>${esc(u.name || "")}</strong><span class="muted small">${esc(u.email || "")}</span>${u.owner ? `<span class="pill">Owner</span>` : ""}</div><button class="btn link" data-act="signout" role="menuitem">Sign out</button></div>` : ""}</div>`;
+}
+let gisLoading = null;
+function loadGis(){
+  if (gisLoading) return gisLoading;
+  gisLoading = new Promise((res, rej) => { const s = document.createElement("script"); s.src = "https://accounts.google.com/gsi/client"; s.async = true; s.onload = res; s.onerror = () => { gisLoading = null; rej(new Error("Google sign-in couldn’t load.")); }; document.head.appendChild(s); });
+  return gisLoading;
+}
+function openAuth(mode, reason){
+  S.authMode = mode || "signin"; S.authErr = ""; S.authReason = reason || "";
+  let dlg = document.getElementById("authDlg");
+  if (!dlg){ dlg = document.createElement("dialog"); dlg.id = "authDlg"; dlg.className = "auth"; document.body.appendChild(dlg); dlg.addEventListener("close", () => { S.authBusy = false; }); }
+  drawAuth(); if (!dlg.open) dlg.showModal();
+}
+function drawAuth(){
+  const dlg = document.getElementById("authDlg"); if (!dlg) return;
+  const up = S.authMode === "signup"; const gid = S.auth && S.auth.googleClientId;
+  const keep = {}; ["au-name", "au-email"].forEach(id => { const el = document.getElementById(id); if (el) keep[id] = el.value; });
+  dlg.innerHTML = `<form method="dialog" class="auth-card" onsubmit="return false">
+    <div class="auth-head"><span class="brand-mark" aria-hidden="true"></span><h2>${up ? "Create your account" : "Sign in to Padi"}</h2><button class="btn link close" data-act="authclose" aria-label="Close">✕</button></div>
+    ${S.authReason ? `<div class="auth-reason">${esc(S.authReason)}</div>` : `<p class="muted small">Your scores and mistakes follow you to every device.</p>`}
+    ${gid === "prototype" ? `<button class="btn big wide gproto" data-act="authgoogleproto"><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Continue with Google</button><div class="or"><span>or use email</span></div>`
+      : gid ? `<div id="gbtn" class="gbtn"></div><div class="or"><span>or use email</span></div>` : ""}
+    ${up ? `<label class="f">Name<input id="au-name" type="text" autocomplete="name" required></label>` : ""}
+    <label class="f">Email<input id="au-email" type="email" autocomplete="email" required></label>
+    <label class="f">Password<input id="au-pass" type="password" autocomplete="${up ? "new-password" : "current-password"}" minlength="8" required></label>
+    ${S.authErr ? `<div class="auth-err" role="alert">${esc(S.authErr)}</div>` : ""}
+    <button class="btn primary big wide" data-act="authsubmit" ${S.authBusy ? "disabled" : ""}>${S.authBusy ? "Please wait…" : up ? "Create account" : "Sign in"}</button>
+    <p class="small center">${up ? "Already have an account?" : "New to Padi?"} <button class="btn link" data-act="authswitch">${up ? "Sign in" : "Create an account"}</button></p>
+    <p class="small center"><button class="btn link muted" data-act="authclose">Continue as a guest</button></p>
+  </form>`;
+  Object.entries(keep).forEach(([id, val]) => { const el = document.getElementById(id); if (el) el.value = val; });
+  if (gid && gid !== "prototype") loadGis().then(() => {
+    if (!window.google || !google.accounts) return;
+    google.accounts.id.initialize({ client_id: gid, callback: async (r) => { S.authBusy = true; drawAuth(); const out = await window.padiAuth.google(r.credential); afterAuth(out); } });
+    const el = document.getElementById("gbtn"); if (el) google.accounts.id.renderButton(el, { theme: "outline", size: "large", text: up ? "signup_with" : "continue_with", shape: "pill", width: 300 });
+  }).catch(e => { S.authErr = e.message; drawAuth(); });
+}
+function afterAuth(out){
+  S.authBusy = false;
+  if (out && out.user){ location.reload(); return; }
+  S.authErr = (out && out.error) || "That didn’t work. Try again."; drawAuth();
+}
+async function submitAuth(){
+  const v = (id) => { const el = document.getElementById(id); return el ? el.value.trim() : ""; };
+  const up = S.authMode === "signup";
+  if (up && !v("au-name")){ S.authErr = "Enter your name."; return drawAuth(); }
+  if (!v("au-email") || !v("au-pass")){ S.authErr = "Enter your email and password."; return drawAuth(); }
+  const name = v("au-name"), email = v("au-email"), pass = document.getElementById("au-pass").value;
+  S.authBusy = true; S.authErr = ""; drawAuth();
+  afterAuth(up ? await window.padiAuth.signup(name, email, pass) : await window.padiAuth.login(email, pass));
 }
 
 function paperPicker(prefix, val){
   const papers = paperList(); const I = S.imp;
   return `<div class="row" style="align-items:end">
-    <label class="f" style="flex:1 1 220px">Add to paper<select data-bind="${prefix}">
+    <label class="f" style="flex:1 1 220px">Source<select data-bind="${prefix}">
       ${papers.map(p => `<option value="${esc(p.id)}" ${val === p.id ? "selected" : ""}>${esc(p.title)}${p.year ? " (" + esc(p.year) + ")" : ""}</option>`).join("")}
-      <option value="new" ${val === "new" || !papers.length ? "selected" : ""}>New paper…</option></select></label>
+      <option value="new" ${val === "new" || !papers.length ? "selected" : ""}>New source…</option></select></label>
     ${val === "new" || !papers.length ? `
-      <label class="f" style="flex:2 1 220px">Paper name<input type="text" data-bind="imp.newTitle" value="${esc(I.newTitle)}" placeholder="Group 4 (CCSE-IV) 2022"></label>
+      <label class="f" style="flex:2 1 220px">Source name<input type="text" data-bind="imp.newTitle" value="${esc(I.newTitle)}" placeholder="Group 4 (CCSE-IV) 2022"></label>
       <label class="f" style="flex:0 1 110px">Year<input type="text" inputmode="numeric" data-bind="imp.newYear" value="${esc(I.newYear)}" placeholder="2022"></label>
       <label class="f" style="flex:1 1 160px">Type<select data-bind="imp.kind"><option value="official" ${I.kind === "official" ? "selected" : ""}>Past paper</option><option value="practice" ${I.kind === "practice" ? "selected" : ""}>Practice set</option></select></label>` : ""}
   </div>`;
 }
-function topicSelect(bind, cat, val){ const ts = topicsOf(cat); return `<select data-bind="${bind}" ${ts.length ? "" : "disabled"}><option value="" ${!val ? "selected" : ""}>${ts.length ? "No topic" : "No topics for this subject"}</option>${ts.map(t => `<option ${t === val ? "selected" : ""}>${esc(t)}</option>`).join("")}</select>`; }
+function topicSelect(bind, cat, val){ const ts = topicsOf(cat); return `<select data-bind="${bind}" ${ts.length ? "" : "disabled"}><option value="" ${!val ? "selected" : ""}>${ts.length ? "No section" : "No sections for this category"}</option>${ts.map(t => `<option ${t === val ? "selected" : ""}>${esc(t)}</option>`).join("")}</select>`; }
 function catSelect(bind, val){ return `<select data-bind="${bind}">${CATS.map(c => `<option ${c === val ? "selected" : ""}>${esc(c)}</option>`).join("")}</select>`; }
 function ansSelect(bind, val, opts){ return `<select data-bind="${bind}" data-num="1"><option value="" ${val === "" ? "selected" : ""}>Pick the correct option</option>${LETTERS.map((L, k) => `<option value="${k}" ${val === k ? "selected" : ""}>${L}${opts && opts[k] ? ". " + esc(String(opts[k]).slice(0, 40)) : ""}</option>`).join("")}</select>`; }
 
@@ -861,8 +1151,8 @@ function renderAdd(){
       <div class="row"><label class="row"><input type="checkbox" data-bind="imp.items.${k}.include" ${it.include ? "checked" : ""}> <strong>Question ${k + 1}</strong></label><span class="spacer"></span>${it.answer === "" ? `<span class="small" style="color:var(--bad);font-weight:700">Needs an answer</span>` : ""}</div>
       <textarea rows="2" data-bind="imp.items.${k}.q">${esc(it.q)}</textarea>
       <div class="opt-grid">${it.options.map((o, j) => `<label class="f">${LETTERS[j]}<input type="text" data-bind="imp.items.${k}.options.${j}" value="${esc(o)}"></label>`).join("")}</div>
-      <div class="opt-grid"><label class="f">Correct answer${ansSelect("imp.items." + k + ".answer", it.answer)}</label><label class="f">Subject${catSelect("imp.items." + k + ".category", it.category)}</label></div>
-      <label class="f">Topic${topicSelect("imp.items." + k + ".topic", it.category, it.topic)}</label>
+      <div class="opt-grid"><label class="f">Correct answer${ansSelect("imp.items." + k + ".answer", it.answer)}</label><label class="f">Category${catSelect("imp.items." + k + ".category", it.category)}</label></div>
+      <label class="f">Section${topicSelect("imp.items." + k + ".topic", it.category, it.topic)}</label>
     </div>`).join("")}</div>
     <div class="row" style="margin-top:16px"><button class="btn primary" data-act="saveimp" ${I.busy ? "disabled" : ""}>Save ${sel} ${sel === 1 ? "question" : "questions"}</button><span class="muted small">to ${I.paper === "new" ? "a new paper" : esc(paperName(I.paper))}</span></div>
   </section>` : ""}`}
@@ -871,8 +1161,8 @@ function renderAdd(){
     ${E.id ? `<p class="muted small" style="margin:0">In ${esc(paperName(E.paperId))}</p>` : paperPicker("edit.paperId", E.paperId)}
     <label class="f">Question<textarea rows="3" data-bind="edit.q">${esc(E.q)}</textarea></label>
     <div class="opt-grid">${E.options.map((o, j) => `<label class="f">Option ${LETTERS[j]}<input type="text" data-bind="edit.options.${j}" value="${esc(o)}"></label>`).join("")}</div>
-    <div class="opt-grid"><label class="f">Correct answer${ansSelect("edit.answer", E.answer)}</label><label class="f">Subject${catSelect("edit.category", E.category)}</label></div>
-    <label class="f">Topic${topicSelect("edit.topic", E.category, E.topic)}</label>
+    <div class="opt-grid"><label class="f">Correct answer${ansSelect("edit.answer", E.answer)}</label><label class="f">Category${catSelect("edit.category", E.category)}</label></div>
+    <label class="f">Section${topicSelect("edit.topic", E.category, E.topic)}</label>
     <label class="f">Explanation (optional)<input type="text" data-bind="edit.explanation" value="${esc(E.explanation)}"></label>
     <div class="row"><button class="btn primary" data-act="saveedit">${E.id ? "Save changes" : "Add question"}</button>${E.id ? `<button class="btn" data-act="canceledit">Cancel</button>` : ""}</div>
   </section>
@@ -904,13 +1194,26 @@ document.addEventListener("change", e => {
   if (el.dataset && el.dataset.act === "pdffile" && el.files && el.files[0]) pickPdf(el.files[0], "paper");
   if (el.dataset && el.dataset.act === "keyfile" && el.files && el.files[0]) pickPdf(el.files[0], "key");
 });
+document.addEventListener("click", e => { if (S.acctOpen && !e.target.closest(".acct-wrap")){ S.acctOpen = false; renderAccount(); } }, true);
+document.addEventListener("keydown", e => { if (e.key === "Enter" && e.target.closest && e.target.closest("#authDlg") && e.target.tagName === "INPUT"){ e.preventDefault(); submitAuth(); } });
 document.addEventListener("click", async e => {
   const el = e.target.closest("[data-act]"); if (!el || el.tagName === "INPUT") return;
   const act = el.dataset.act; const z = S.quiz;
   switch (act){
     case "start": startFromSetup(); break;
+    case "quickall": { const p = shuffle(pool("all", "all")); startQuiz(p.slice(0, 25), "instant", "Quick mix"); break; }
+    case "quit": if (!S.quiz || confirm("Leave this test? Your answers so far won’t be saved.")){ S.quiz = null; go("home"); } break;
+    case "togglesec": S.bankOpen[el.dataset.key] = !S.bankOpen[el.dataset.key]; render(); break;
+    case "signin": openAuth("signin"); break;
+    case "signup": openAuth("signup"); break;
+    case "authswitch": S.authMode = S.authMode === "signup" ? "signin" : "signup"; S.authErr = ""; drawAuth(); break;
+    case "authclose": { const d = document.getElementById("authDlg"); if (d) d.close(); break; }
+    case "authsubmit": submitAuth(); break;
+    case "authgoogleproto": S.authBusy = true; drawAuth(); afterAuth(await window.padiAuth.google("prototype")); break;
+    case "acctmenu": S.acctOpen = !S.acctOpen; renderAccount(); break;
+    case "signout": await window.padiAuth.logout(); location.reload(); break;
     case "toggletopics": S.homeOpen[el.dataset.cat] = !S.homeOpen[el.dataset.cat]; render(); break;
-    case "quicktopic": { const p = shuffle(pool(el.dataset.cat, "all", el.dataset.topic)); startQuiz(p.slice(0, 25), "instant", el.dataset.cat + ": " + el.dataset.topic); break; }
+    case "quicktopic": { const p = shuffle(pool(el.dataset.cat, "all", el.dataset.topic)); startQuiz(p.slice(0, 25), "instant", el.dataset.cat + " → " + el.dataset.topic); break; }
     case "quick": { const p = shuffle(pool(el.dataset.cat, "all")); startQuiz(p.slice(0, 25), "instant", el.dataset.cat === "mistakes" ? "My mistakes" : el.dataset.cat); break; }
     case "practisepaper": { const id = el.dataset.id; const qs = id === "_unfiled" ? allQs().filter(q => !S.papers[q.paperId]) : paperQs(id); startQuiz(qs.filter(q => Number.isInteger(q.answer)), "exam", paperName(id)); break; }
     case "choose": choose(Number(el.dataset.k)); break;

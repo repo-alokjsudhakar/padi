@@ -1,12 +1,6 @@
 {
  "version": 1,
  "docs": {
-  "papers/starter": {
-   "createdAt": 1762646400000,
-   "kind": "practice",
-   "title": "Starter practice set",
-   "year": ""
-  },
   "papers/g4-2025": {
    "title": "Group 4 (CCSE-IV) 2025",
    "year": "2025",
@@ -3013,306 +3007,6 @@
    "paperId": "g4-2025",
    "q": "Two unbiased dice are rolled once. Find the probability that the product of the face values is 4 or the difference of the face values is 5.",
    "topic": "Probability"
-  },
-  "questions/s01": {
-   "answer": 1,
-   "category": "Indian National Movement",
-   "explanation": "The first session was held in Bombay in 1885 under W.C. Bonnerjee.",
-   "n": 1,
-   "options": [
-    "Dadabhai Naoroji",
-    "W.C. Bonnerjee",
-    "A.O. Hume",
-    "Surendranath Banerjee"
-   ],
-   "paperId": "starter",
-   "q": "Who presided over the first session of the Indian National Congress in 1885?",
-   "topic": "Rise of Nationalism & Congress"
-  },
-  "questions/s02": {
-   "answer": 2,
-   "category": "Indian National Movement",
-   "explanation": "Rajaji led the march from Tiruchirappalli to Vedaranyam.",
-   "n": 2,
-   "options": [
-    "K. Kamaraj",
-    "V.O. Chidambaram Pillai",
-    "C. Rajagopalachari",
-    "Subramania Bharati"
-   ],
-   "paperId": "starter",
-   "q": "Who led the Vedaranyam Salt Satyagraha in 1930?",
-   "topic": "Freedom Struggle in Tamil Nadu"
-  },
-  "questions/s03": {
-   "answer": 0,
-   "category": "History, Culture & Heritage of Tamil Nadu",
-   "explanation": "",
-   "n": 3,
-   "options": [
-    "E.V. Ramasamy (Periyar)",
-    "C.N. Annadurai",
-    "Ayothidasa Pandithar",
-    "Rettaimalai Srinivasan"
-   ],
-   "paperId": "starter",
-   "q": "The Self-Respect Movement was started in 1925 by",
-   "topic": "Social Reform Movements"
-  },
-  "questions/s04": {
-   "answer": 3,
-   "category": "History, Culture & Heritage of Tamil Nadu",
-   "explanation": "",
-   "n": 4,
-   "options": [
-    "Rajendra Chola I",
-    "Narasimhavarman I",
-    "Kulothunga Chola I",
-    "Rajaraja Chola I"
-   ],
-   "paperId": "starter",
-   "q": "Who built the Brihadeeswarar Temple at Thanjavur?",
-   "topic": "Dynasties & Temples"
-  },
-  "questions/s05": {
-   "answer": 1,
-   "category": "Indian National Movement",
-   "explanation": "Mountbatten was the first Governor-General; Rajaji was the first and only Indian to hold the post.",
-   "n": 5,
-   "options": [
-    "Lord Mountbatten",
-    "C. Rajagopalachari",
-    "Dr. Rajendra Prasad",
-    "Sardar Vallabhbhai Patel"
-   ],
-   "paperId": "starter",
-   "q": "Who was the first Indian Governor-General of independent India?",
-   "topic": "Independence & Partition"
-  },
-  "questions/s06": {
-   "answer": 2,
-   "category": "Indian Polity",
-   "explanation": "",
-   "n": 6,
-   "options": [
-    "Article 14",
-    "Article 19",
-    "Article 21",
-    "Article 32"
-   ],
-   "paperId": "starter",
-   "q": "Which Article of the Indian Constitution guarantees protection of life and personal liberty?",
-   "topic": "Fundamental Rights, Duties & DPSP"
-  },
-  "questions/s07": {
-   "answer": 0,
-   "category": "Indian Polity",
-   "explanation": "The 42nd Amendment (1976) added Article 51A.",
-   "n": 7,
-   "options": [
-    "42nd Amendment",
-    "44th Amendment",
-    "73rd Amendment",
-    "86th Amendment"
-   ],
-   "paperId": "starter",
-   "q": "Fundamental Duties were added to the Constitution by which amendment?",
-   "topic": "Fundamental Rights, Duties & DPSP"
-  },
-  "questions/s08": {
-   "answer": 3,
-   "category": "Indian Polity",
-   "explanation": "",
-   "n": 8,
-   "options": [
-    "Chief Minister",
-    "Chief Justice of the High Court",
-    "Speaker of the Assembly",
-    "Governor"
-   ],
-   "paperId": "starter",
-   "q": "Who is the constitutional head of a State?",
-   "topic": "State Government"
-  },
-  "questions/s09": {
-   "answer": 1,
-   "category": "Geography",
-   "explanation": "",
-   "n": 9,
-   "options": [
-    "Vaigai",
-    "Cauvery",
-    "Thamirabarani",
-    "Palar"
-   ],
-   "paperId": "starter",
-   "q": "The longest river in Tamil Nadu is",
-   "topic": "Geography of Tamil Nadu"
-  },
-  "questions/s10": {
-   "answer": 2,
-   "category": "Geography",
-   "explanation": "",
-   "n": 10,
-   "options": [
-    "Gulf of Mannar",
-    "Sundarbans",
-    "Nilgiri",
-    "Nanda Devi"
-   ],
-   "paperId": "starter",
-   "q": "India’s first biosphere reserve, established in 1986, is",
-   "topic": "Environment & Disasters"
-  },
-  "questions/s11": {
-   "answer": 0,
-   "category": "Geography",
-   "explanation": "",
-   "n": 11,
-   "options": [
-    "Nilgiri Tahr",
-    "Asian Elephant",
-    "Bengal Tiger",
-    "Blackbuck"
-   ],
-   "paperId": "starter",
-   "q": "The state animal of Tamil Nadu is",
-   "topic": "Geography of Tamil Nadu"
-  },
-  "questions/s12": {
-   "answer": 3,
-   "category": "Geography",
-   "explanation": "",
-   "n": 12,
-   "options": [
-    "Neem",
-    "Banyan",
-    "Jackfruit",
-    "Palmyra palm"
-   ],
-   "paperId": "starter",
-   "q": "The state tree of Tamil Nadu is",
-   "topic": "Geography of Tamil Nadu"
-  },
-  "questions/s13": {
-   "answer": 1,
-   "category": "General Science",
-   "explanation": "",
-   "n": 13,
-   "options": [
-    "Rickets",
-    "Scurvy",
-    "Night blindness",
-    "Beriberi"
-   ],
-   "paperId": "starter",
-   "q": "Deficiency of Vitamin C causes",
-   "topic": "Health & Diseases"
-  },
-  "questions/s14": {
-   "answer": 2,
-   "category": "General Science",
-   "explanation": "",
-   "n": 14,
-   "options": [
-    "Volt",
-    "Ampere",
-    "Ohm",
-    "Watt"
-   ],
-   "paperId": "starter",
-   "q": "The SI unit of electrical resistance is",
-   "topic": "Physics"
-  },
-  "questions/s15": {
-   "answer": 0,
-   "category": "General Science",
-   "explanation": "",
-   "n": 15,
-   "options": [
-    "Hydrogen",
-    "Helium",
-    "Oxygen",
-    "Nitrogen"
-   ],
-   "paperId": "starter",
-   "q": "The lightest gas is",
-   "topic": "Chemistry"
-  },
-  "questions/s16": {
-   "answer": 3,
-   "category": "General Science",
-   "explanation": "",
-   "n": 16,
-   "options": [
-    "KCl",
-    "NaHCO3",
-    "CaCO3",
-    "NaCl"
-   ],
-   "paperId": "starter",
-   "q": "The chemical formula of common salt is",
-   "topic": "Chemistry"
-  },
-  "questions/s17": {
-   "answer": 1,
-   "category": "History, Culture & Heritage of Tamil Nadu",
-   "explanation": "1330 couplets in 133 chapters.",
-   "n": 17,
-   "options": [
-    "1080",
-    "1330",
-    "1440",
-    "1200"
-   ],
-   "paperId": "starter",
-   "q": "How many couplets are there in the Thirukkural?",
-   "topic": "Thirukkural"
-  },
-  "questions/s18": {
-   "answer": 1,
-   "category": "Aptitude & Mental Ability",
-   "explanation": "5000 × 8 × 3 ÷ 100 = 1200.",
-   "n": 18,
-   "options": [
-    "₹1,000",
-    "₹1,200",
-    "₹1,500",
-    "₹1,800"
-   ],
-   "paperId": "starter",
-   "q": "What is the simple interest on ₹5,000 at 8% per annum for 3 years?",
-   "topic": "Simple & Compound Interest"
-  },
-  "questions/s19": {
-   "answer": 2,
-   "category": "Aptitude & Mental Ability",
-   "explanation": "12 × 15 ÷ 20 = 9.",
-   "n": 19,
-   "options": [
-    "8 days",
-    "10 days",
-    "9 days",
-    "12 days"
-   ],
-   "paperId": "starter",
-   "q": "12 men can finish a job in 15 days. How many days will 20 men take?",
-   "topic": "Time & Work"
-  },
-  "questions/s20": {
-   "answer": 1,
-   "category": "Aptitude & Mental Ability",
-   "explanation": "(1 + 10) ÷ 2 = 5.5.",
-   "n": 20,
-   "options": [
-    "5",
-    "5.5",
-    "6",
-    "4.5"
-   ],
-   "paperId": "starter",
-   "q": "The average of the first 10 natural numbers is",
-   "topic": "Averages"
   },
   "papers/tm-gs-sk": {
    "title": "TNPSC Master: Scientific Knowledge & Scientific Temper",
@@ -12513,5 +12207,28 @@
    "category": "Physics",
    "topic": "Mechanics"
   }
- }
+ },
+ "removed": [
+  "papers/starter",
+  "questions/s01",
+  "questions/s02",
+  "questions/s03",
+  "questions/s04",
+  "questions/s05",
+  "questions/s06",
+  "questions/s07",
+  "questions/s08",
+  "questions/s09",
+  "questions/s10",
+  "questions/s11",
+  "questions/s12",
+  "questions/s13",
+  "questions/s14",
+  "questions/s15",
+  "questions/s16",
+  "questions/s17",
+  "questions/s18",
+  "questions/s19",
+  "questions/s20"
+ ]
 }
