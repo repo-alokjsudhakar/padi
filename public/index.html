@@ -56,7 +56,7 @@ h3{font-size:1.05rem;font-weight:700}
 .small{font-size:.9rem}
 section{margin-top:36px}
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
-.setup{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) auto;gap:12px;align-items:end}
+.setup{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;align-items:end}
 @media (max-width:820px){.setup{grid-template-columns:1fr 1fr}.setup .btn{grid-column:1/-1}}
 label.f{display:flex;flex-direction:column;gap:4px;font-weight:600;font-size:.9rem;color:var(--ink-2)}
 select,input[type=text],input[type=number],textarea{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 10px;width:100%;min-width:0;color:var(--ink)}
@@ -75,6 +75,9 @@ textarea{resize:vertical;line-height:1.5}
 .subjects{border-top:1px solid var(--line)}
 .subj{display:grid;grid-template-columns:1fr 200px auto;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
 .subj.empty .subj-name{color:var(--ink-2)}
+.topics{border-left:3px solid var(--guide-soft);margin-left:4px}
+.subj.topic{padding:10px 0 10px 18px}
+.subj.topic .subj-name{font-weight:600}
 .subj-name{font-weight:700}
 .meter{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
 .meter > i{display:block;height:100%;background:var(--ok)}
@@ -158,6 +161,7 @@ const CATS = [
   "Geography",
   "Indian Economy",
   "General Science",
+  "Physics",
   "History, Culture & Heritage of Tamil Nadu",
   "Development Administration in Tamil Nadu",
   "Current Affairs",
@@ -166,6 +170,24 @@ const CATS = [
   "Tamil (Part A)",
   "Uncategorised"
 ];
+const TOPICS = {
+  "History & Culture of India": ["Indus Valley Civilisation","Vedic Age & Religions","Mauryas, Guptas & Harsha","South Indian Dynasties","Delhi Sultanate & Mughals","Vijayanagar & Marathas","European Arrival & British Rule","Indian Culture & Languages"],
+  "Indian National Movement": ["Early Revolts & Reform Movements","Rise of Nationalism & Congress","Gandhian Era","Revolutionary & Other Movements","Freedom Struggle in Tamil Nadu","National Leaders","Independence & Partition"],
+  "Indian Polity": ["Constitution & Preamble","Fundamental Rights, Duties & DPSP","Union Executive & Parliament","State Government","Judiciary","Local Government","Elections & Constitutional Bodies","Centre–State Relations","Rights & Governance"],
+  "Geography": ["Earth & Universe","Physical Geography of India","Climate, Soils & Agriculture","Resources & Industry","Transport & Communication","Population","Environment & Disasters","Geography of Tamil Nadu","World Geography"],
+  "Indian Economy": ["Planning & Five-Year Plans","Agriculture","Industry & Infrastructure","Money, Banking & Inflation","Taxation & Public Finance","Poverty, Employment & Welfare","Rural Development"],
+  "General Science": ["Scientific Knowledge & Scientific Temper","Power of Reasoning","Rote & Conceptual Learning","Science as a Tool: Past, Present & Future","Physics","Chemistry","Biology","Health & Diseases","Science & Technology"],
+  "Physics": ["Nature of Universe","General Scientific Laws","Mechanics"],
+  "History, Culture & Heritage of Tamil Nadu": ["Thirukkural","Sangam Age & Archaeology","Tamil Literature","Social Reform Movements","Palayakkarars & Early Resistance","Dynasties & Temples","Personalities of Tamil Nadu"],
+  "Development Administration in Tamil Nadu": ["Social Welfare Schemes","Education & Health","Economy & Agriculture of TN","e-Governance","Social Justice & Reservation","Administration & Vigilance"],
+  "Current Affairs": ["National","Tamil Nadu","International","Science & Technology","Awards & Persons","Sports","Schemes & Welfare"],
+  "Aptitude & Mental Ability": ["Simplification & Number System","HCF & LCM","Ratio & Proportion","Percentage","Simple & Compound Interest","Area & Volume","Time & Work","Averages","Probability","Algebra","Series & Number Puzzles","Logical Reasoning","Dice & Visual Reasoning"],
+  "General English (Part A)": ["Grammar","Vocabulary & Word Usage","Sentence Transformation","Reading Comprehension","Literature & Poetry","Letters & Official Writing","Translation","Figures of Speech"],
+  "Tamil (Part A)": ["இலக்கணம் (Grammar)","இலக்கியம் (Literature)","தமிழ் அறிஞர்கள் (Scholars)","பொருள் உணர்தல் (Comprehension)"],
+  "Uncategorised": []
+};
+const topicsOf = (c) => TOPICS[c] || [];
+const validTopic = (c, t) => topicsOf(c).includes(t) ? t : "";
 const LETTERS = ["A","B","C","D"];
 const LS_BANK = "g4hall:bank:v1", LS_PROG = "g4hall:progress:v1";
 
@@ -173,7 +195,7 @@ const S = {
   mode: "local", loaded: false, loadNote: "", canEdit: true, uid: null,
   papers: {}, questions: {},
   progress: emptyProgress(),
-  setup: { cat: "all", paper: "all", count: "25", mode: "instant" },
+  setup: { cat: "all", topic: "all", paper: "all", count: "25", mode: "instant" }, homeOpen: {},
   quiz: null, result: null, wrongOnly: false,
   bankOpen: {},
   imp: { paper: "new", newTitle: "", newYear: "", kind: "official", text: "", items: [], busy: false, msg: "" },
@@ -183,7 +205,7 @@ const S = {
 let db = null, userCap = null, sampleCap = null, downloadsCap = null, extractCtl = null, pendingRender = false;
 
 function emptyProgress(){ return { byCat: {}, wrong: [], history: [] }; }
-function blankEdit(){ return { id: null, paperId: "", q: "", options: ["","","",""], answer: "", explanation: "", category: CATS[0] }; }
+function blankEdit(){ return { id: null, paperId: "", q: "", options: ["","","",""], answer: "", explanation: "", category: CATS[0], topic: "" }; }
 function rid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
 function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
 function shuffle(a){ a = a.slice(); for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
@@ -273,11 +295,12 @@ function paperList(){
 }
 function paperQs(pid){ return allQs().filter(q => q.paperId === pid).sort((a, b) => (a.n || 0) - (b.n || 0)); }
 function paperName(pid){ const p = S.papers[pid]; return p ? (p.title + (p.year ? " (" + p.year + ")" : "")) : "Unfiled"; }
-function pool(cat, paper){
+function pool(cat, paper, topic){
   let qs = allQs().filter(q => Array.isArray(q.options) && Number.isInteger(q.answer));
   if (paper !== "all") qs = qs.filter(q => q.paperId === paper);
   if (cat === "mistakes"){ const w = new Set(S.progress.wrong); qs = qs.filter(q => w.has(q.id)); }
   else if (cat !== "all") qs = qs.filter(q => q.category === cat);
+  if (topic && topic !== "all" && cat !== "all" && cat !== "mistakes") qs = qs.filter(q => q.topic === topic);
   return qs;
 }
 
@@ -294,9 +317,9 @@ function startQuiz(items, mode, label){
   S.result = null; go("quiz");
 }
 function startFromSetup(){
-  const st = S.setup; const p = shuffle(pool(st.cat, st.paper));
+  const st = S.setup; const p = shuffle(pool(st.cat, st.paper, st.topic));
   const n = st.count === "all" ? p.length : Math.min(Number(st.count), p.length);
-  const label = (st.cat === "all" ? "All subjects" : st.cat === "mistakes" ? "My mistakes" : st.cat) + (st.paper !== "all" ? ", " + paperName(st.paper) : "");
+  const label = (st.cat === "all" ? "All subjects" : st.cat === "mistakes" ? "My mistakes" : st.cat) + (st.topic && st.topic !== "all" && st.cat !== "all" && st.cat !== "mistakes" ? ": " + st.topic : "") + (st.paper !== "all" ? ", " + paperName(st.paper) : "");
   startQuiz(p.slice(0, n), st.mode, label);
 }
 function choose(k){
@@ -314,6 +337,7 @@ function finishQuiz(){
   answered.forEach(r => {
     const c = P.byCat[r.q.category] || (P.byCat[r.q.category] = { attempted: 0, correct: 0 });
     c.attempted++; if (r.correct){ c.correct++; wrong.delete(r.q.id); } else wrong.add(r.q.id);
+    if (r.q.topic){ const bt = P.byTopic || (P.byTopic = {}); const tk = r.q.category + "|" + r.q.topic; const t = bt[tk] || (bt[tk] = { attempted: 0, correct: 0 }); t.attempted++; if (r.correct) t.correct++; }
   });
   P.wrong = Array.from(wrong).slice(-800);
   P.history = [{ at: Date.now(), label: z.label, score: right, total: rows.length }].concat(P.history || []).slice(0, 20);
@@ -343,7 +367,7 @@ function normalizeItem(x){
   let a = x.answer; if (typeof a === "string"){ const L = a.trim().toUpperCase().replace(/[^A-D0-3]/g, ""); a = "ABCD".indexOf(L) >= 0 ? "ABCD".indexOf(L) : Number(L); }
   a = Number.isInteger(a) && a >= 0 && a < 4 ? a : "";
   const cat = CATS.includes(x.category) ? x.category : "Uncategorised";
-  return { include: true, q, options: opts, answer: a, explanation: String(x.explanation || "").trim(), category: cat };
+  return { include: true, q, options: opts, answer: a, explanation: String(x.explanation || "").trim(), category: cat, topic: validTopic(cat, x.topic) };
 }
 function extractPrompt(text){
   return "You convert text copied from a TNPSC Group 4 exam question paper (and possibly its answer key) into structured multiple-choice questions.\n\n" +
@@ -355,6 +379,7 @@ function extractPrompt(text){
   "- Set answer from the answer key or from a marked answer in the text. If the text gives no answer for a question, set answer to null. Do not guess answers.\n" +
   "- explanation: one short sentence only if the text includes an explanation; otherwise an empty string.\n" +
   "- category: exactly one of " + JSON.stringify(CATS) + ", chosen from the question’s subject.\n" +
+  "- topic: one of the topics listed for that category in " + JSON.stringify(TOPICS) + ", or \"\" if none fits.\n" +
   "- Skip instructions, headers, page numbers and anything that is not a question.\n\n" +
   "TEXT:\n" + text;
 }
@@ -400,7 +425,7 @@ async function saveImported(){
   try {
     const pid = await ensurePaper(); if (!pid) return;
     const base = paperQs(pid).length;
-    await runPool(items.map((it, k) => () => putQuestion(rid(), { paperId: pid, n: base + k + 1, q: it.q.trim(), options: it.options.map(o => o.trim()), answer: Number(it.answer), explanation: it.explanation.trim(), category: it.category })), 3);
+    await runPool(items.map((it, k) => () => putQuestion(rid(), { paperId: pid, n: base + k + 1, q: it.q.trim(), options: it.options.map(o => o.trim()), answer: Number(it.answer), explanation: it.explanation.trim(), category: it.category, topic: validTopic(it.category, it.topic) })), 3);
     toast("Saved " + items.length + (items.length === 1 ? " question" : " questions") + " to " + paperName(pid) + ".");
     S.imp.items = []; S.imp.text = ""; S.imp.msg = "";
   } catch (e) { writeError(e); }
@@ -445,7 +470,7 @@ async function pageImage(doc, n){
 function pagePrompt(a, b, total){
   return "These images are pages " + a + " to " + b + " (of " + total + ") of a scanned TNPSC Group 4 exam question paper, in order.\n\n" +
   "Extract every multiple-choice question that is fully visible on these pages. Reply with ONLY this JSON:\n" +
-  '{"questions":[{"n":12,"q":"question text","options":["A text","B text","C text","D text"],"marked":null,"suggested":2,"category":"Indian Polity"}],"key":{}}\n\n' +
+  '{"questions":[{"n":12,"q":"question text","options":["A text","B text","C text","D text"],"marked":null,"suggested":2,"category":"Indian Polity","topic":"Judiciary"}],"key":{}}\n\n' +
   "Rules:\n" +
   "- n is the printed question number.\n" +
   "- Skip any question whose text or options are cut off at the top or bottom edge of these pages; the neighbouring pages will be read separately.\n" +
@@ -456,6 +481,7 @@ function pagePrompt(a, b, total){
   "- marked: the index (0-3) of an option that someone has ticked, circled or shaded on the page, otherwise null.\n" +
   "- suggested: the index (0-3) of the option you believe is correct.\n" +
   "- category: exactly one of " + JSON.stringify(CATS) + ".\n" +
+  "- topic: one of the topics listed for that category in " + JSON.stringify(TOPICS) + ", or \"\" if none fits.\n" +
   "- key: if these pages contain an answer-key table, put every entry as \"question number\": \"letter\"; otherwise {}.\n" +
   "If there are no questions on these pages, reply {\"questions\":[],\"key\":{}}.";
 }
@@ -474,7 +500,7 @@ function mergeQuestions(arr){
     const sg = Number.isInteger(x.suggested) && x.suggested >= 0 && x.suggested < 4 ? x.suggested : null;
     const prev = S.pdf.items[n];
     if (prev && prev.q.length > it.q.length + 40) return;
-    S.pdf.items[n] = { n, q: it.q, options: it.options, category: it.category, marked: mk, suggested: sg };
+    S.pdf.items[n] = { n, q: it.q, options: it.options, category: it.category, topic: it.topic, marked: mk, suggested: sg };
   });
 }
 function chunks(from, to, per, overlap){
@@ -559,9 +585,9 @@ async function savePdfQuestions(){
     pid = await ensurePaper(); if (!pid) return;
     const srcNote = P.keyDoc ? "Imported from PDF with the official answer key." : "Imported from PDF. Answers come from marks on the paper or Claude’s suggestions; check them against the official TNPSC key.";
     const p = S.papers[pid]; if (p && !p.note){ try { await putPaper(pid, Object.assign({}, p, { note: srcNote })); } catch (e) {} }
-    await runPool(ready.map(it => () => putQuestion(pid + "-" + String(it.n).padStart(3, "0"), { paperId: pid, n: it.n, q: it.q, options: it.options, answer: it.answer, explanation: it.explanation, category: it.category })), 3);
+    await runPool(ready.map(it => () => putQuestion(pid + "-" + String(it.n).padStart(3, "0"), { paperId: pid, n: it.n, q: it.q, options: it.options, answer: it.answer, explanation: it.explanation, category: it.category, topic: validTopic(it.category, it.topic) })), 3);
     P.saved = ready.length;
-    S.imp.items = S.imp.items.concat(review.map(it => ({ include: true, q: it.q, options: it.options, answer: "", explanation: "", category: it.category })));
+    S.imp.items = S.imp.items.concat(review.map(it => ({ include: true, q: it.q, options: it.options, answer: "", explanation: "", category: it.category, topic: it.topic || "" })));
     P.msg = "Done. " + ready.length + " questions were added to " + paperName(pid) + " and are ready in Practise." + (review.length ? " " + review.length + " still need an answer; pick one for each below and save them." : "");
   } catch (e) { writeError(e); P.msg = "Saving stopped partway. Press Save again to retry."; }
   finally { P.stage = ""; render(); }
@@ -577,9 +603,9 @@ async function saveEdit(){
     if (!E.id){ S.imp.paper = pid || S.imp.paper; pid = await ensurePaper(); if (!pid) return; }
     const id = E.id || rid();
     const prev = E.id ? S.questions[E.id] : null;
-    await putQuestion(id, { paperId: pid, n: prev ? prev.n : paperQs(pid).length + 1, q: E.q.trim(), options: E.options.map(o => o.trim()), answer: Number(E.answer), explanation: E.explanation.trim(), category: E.category });
+    await putQuestion(id, { paperId: pid, n: prev ? prev.n : paperQs(pid).length + 1, q: E.q.trim(), options: E.options.map(o => o.trim()), answer: Number(E.answer), explanation: E.explanation.trim(), category: E.category, topic: validTopic(E.category, E.topic) });
     toast(E.id ? "Question updated." : "Question added to " + paperName(pid) + ".");
-    const keepPaper = pid; S.edit = blankEdit(); S.edit.paperId = keepPaper; S.edit.category = E.category;
+    const keepPaper = pid; S.edit = blankEdit(); S.edit.paperId = keepPaper; S.edit.category = E.category; S.edit.topic = E.topic;
     if (E.id) go("bank"); else render();
   } catch (e) { writeError(e); }
 }
@@ -589,7 +615,7 @@ async function importJSON(file){
     if (data && data.papers && data.questions){
       const pids = Object.keys(data.papers), qids = Object.keys(data.questions);
       await runPool(pids.map(id => () => putPaper(id, data.papers[id])), 3);
-      const tasks = qids.map(id => { const n = normalizeItem(data.questions[id]); const src = data.questions[id]; return n && n.answer !== "" ? () => putQuestion(id, { paperId: src.paperId, n: src.n || 0, q: n.q, options: n.options, answer: n.answer, explanation: n.explanation, category: n.category }) : null; }).filter(Boolean);
+      const tasks = qids.map(id => { const n = normalizeItem(data.questions[id]); const src = data.questions[id]; return n && n.answer !== "" ? () => putQuestion(id, { paperId: src.paperId, n: src.n || 0, q: n.q, options: n.options, answer: n.answer, explanation: n.explanation, category: n.category, topic: n.topic }) : null; }).filter(Boolean);
       await runPool(tasks, 3);
       toast("Imported " + pids.length + " papers and " + tasks.length + " questions.");
     } else if (Array.isArray(data)){
@@ -648,6 +674,7 @@ function renderHome(){
   <p class="lede">${qs.length} ${qs.length === 1 ? "question" : "questions"} from ${papers.length} ${papers.length === 1 ? "paper" : "papers"}.${tot[0] ? ` You’ve answered ${tot[0]} so far and got ${pct(tot[1], tot[0])}% right.` : " Pick a subject below or set up a mixed test."}</p>
   <section class="panel setup" aria-label="Set up a test">
     <label class="f">Subject${sel("setup.cat", subjOpts, st.cat)}</label>
+    ${CATS.includes(st.cat) && topicsOf(st.cat).length ? `<label class="f">Topic${sel("setup.topic", [["all", "All topics"]].concat(topicsOf(st.cat).map(t => [t, t + " (" + qs.filter(q => q.category === st.cat && q.topic === t).length + ")"])), st.topic)}</label>` : ""}
     <label class="f">Paper${sel("setup.paper", paperOpts, st.paper)}</label>
     <label class="f">Questions${sel("setup.count", [["10","10"],["25","25"],["50","50"],["100","100"],["all","All matching"]], st.count)}</label>
     <label class="f">Checking${sel("setup.mode", [["instant","After each answer"],["exam","At the end, like the exam"]], st.mode)}</label>
@@ -662,8 +689,8 @@ function renderHome(){
         return `<div class="subj ${n ? "" : "empty"}">
           <div><div class="subj-name">${esc(c)}</div><div class="muted small">${n ? n + (n === 1 ? " question" : " questions") : "No questions yet"}</div></div>
           <div class="acc">${p && p.attempted ? `<div class="meter" role="img" aria-label="${pct(p.correct, p.attempted)}% correct"><i style="width:${pct(p.correct, p.attempted)}%"></i></div><div class="muted small">${pct(p.correct, p.attempted)}% right of ${p.attempted} answered</div>` : `<div class="muted small">${n ? "Not attempted" : ""}</div>`}</div>
-          <div><button class="btn" data-act="quick" data-cat="${esc(c)}" ${n ? "" : "disabled"}>Practise</button></div>
-        </div>`;
+          <div class="row" style="justify-content:flex-end">${n && topicsOf(c).length ? `<button class="btn link" data-act="toggletopics" data-cat="${esc(c)}" aria-expanded="${!!S.homeOpen[c]}">${S.homeOpen[c] ? "Hide topics" : "Topics"}</button>` : ""}<button class="btn" data-act="quick" data-cat="${esc(c)}" ${n ? "" : "disabled"}>Practise</button></div>
+        </div>${S.homeOpen[c] ? renderTopicRows(c, qs, P) : ""}`;
       }).join("")}
       ${P.wrong.length ? `<div class="subj"><div><div class="subj-name">My mistakes</div><div class="muted small">${P.wrong.length} questions you got wrong last time</div></div><div class="acc"></div><div><button class="btn" data-act="quick" data-cat="mistakes">Revise</button></div></div>` : ""}
     </div>
@@ -672,6 +699,16 @@ function renderHome(){
   `;
 }
 
+function renderTopicRows(c, qs, P){
+  const bt = P.byTopic || {};
+  const untagged = qs.filter(q => q.category === c && !q.topic).length;
+  return `<div class="topics">${topicsOf(c).map(t => {
+    const n = qs.filter(q => q.category === c && q.topic === t).length; const p = bt[c + "|" + t];
+    return `<div class="subj topic ${n ? "" : "empty"}"><div><div class="subj-name">${esc(t)}</div><div class="muted small">${n ? n + (n === 1 ? " question" : " questions") : "No questions yet"}</div></div>
+      <div class="acc">${p && p.attempted ? `<div class="meter"><i style="width:${pct(p.correct, p.attempted)}%"></i></div><div class="muted small">${pct(p.correct, p.attempted)}% right of ${p.attempted}</div>` : ""}</div>
+      <div><button class="btn" data-act="quicktopic" data-cat="${esc(c)}" data-topic="${esc(t)}" ${n ? "" : "disabled"}>Practise</button></div></div>`;
+  }).join("")}${untagged ? `<p class="muted small" style="margin:6px 0 10px 18px">${untagged} ${untagged === 1 ? "question has" : "questions have"} no topic yet.</p>` : ""}</div>`;
+}
 function renderQuiz(){
   const z = S.quiz; const q = z.items[z.idx]; const i = z.idx;
   const chosen = z.answers[i]; const shown = z.mode === "instant" && z.revealed[i];
@@ -686,7 +723,7 @@ function renderQuiz(){
   const verdict = shown ? `<div class="verdict ${chosen === q.answer ? "ok" : "bad"}" role="status">${chosen === q.answer ? "Correct." : "Not quite. The answer is " + LETTERS[q.answer] + ": " + esc(q.options[q.answer]) + "."}${q.explanation ? `<p>${esc(q.explanation)}</p>` : ""}</div>` : "";
   const last = i === z.items.length - 1;
   return `<div class="q-wrap">
-    <div class="q-meta"><strong style="color:var(--ink)">Question ${i + 1} of ${z.items.length}</strong><span class="tag">${esc(q.category)}</span><span class="tag">${esc(paperName(q.paperId))}</span><span class="spacer"></span><span aria-label="Time taken">⏱ <span id="clock">${fmtTime(Date.now() - z.start)}</span></span></div>
+    <div class="q-meta"><strong style="color:var(--ink)">Question ${i + 1} of ${z.items.length}</strong><span class="tag">${esc(q.category)}</span>${q.topic ? `<span class="tag">${esc(q.topic)}</span>` : ""}<span class="tag">${esc(paperName(q.paperId))}</span><span class="spacer"></span><span aria-label="Time taken">⏱ <span id="clock">${fmtTime(Date.now() - z.start)}</span></span></div>
     <div class="progressbar"><i style="width:${pct(answered, z.items.length)}%"></i></div>
     <div class="q-text">${esc(q.q)}</div>
     <div class="opts">${opts}</div>
@@ -704,6 +741,7 @@ function renderQuiz(){
 function renderResults(){
   const R = S.result;
   const byCat = {}; R.rows.forEach(r => { const c = byCat[r.q.category] || (byCat[r.q.category] = { n: 0, ok: 0 }); c.n++; if (r.correct) c.ok++; });
+  const byTop = {}; R.rows.forEach(r => { if (!r.q.topic) return; const k = r.q.category + "|" + r.q.topic; const c = byTop[k] || (byTop[k] = { n: 0, ok: 0 }); c.n++; if (r.correct) c.ok++; });
   const wrongRows = R.rows.filter(r => !r.correct);
   const rows = S.wrongOnly ? wrongRows : R.rows;
   return `
@@ -715,6 +753,7 @@ function renderResults(){
     <a class="btn" href="#home" style="text-decoration:none">Back to subjects</a>
   </div>
   <section><h2>By subject</h2><div class="subjects">${Object.entries(byCat).map(([c, v]) => `<div class="subj"><div class="subj-name">${esc(c)}</div><div class="acc"><div class="meter"><i style="width:${pct(v.ok, v.n)}%"></i></div></div><div><strong>${v.ok}/${v.n}</strong></div></div>`).join("")}</div></section>
+  ${Object.keys(byTop).length ? `<section><h2>By topic</h2><div class="subjects">${Object.entries(byTop).sort((a, b) => pct(a[1].ok, a[1].n) - pct(b[1].ok, b[1].n)).map(([k, v]) => { const [c, t] = k.split("|"); return `<div class="subj"><div><div class="subj-name">${esc(t)}</div><div class="muted small">${esc(c)}</div></div><div class="acc"><div class="meter"><i style="width:${pct(v.ok, v.n)}%"></i></div></div><div><strong>${v.ok}/${v.n}</strong></div></div>`; }).join("")}</div><p class="muted small">Weakest topics are listed first.</p></section>` : ""}
   <section>
     <div class="row"><h2 style="margin:0">Review answers</h2><span class="spacer"></span>
       <label class="row small"><input type="checkbox" data-bind="wrongOnly" ${S.wrongOnly ? "checked" : ""}> Show only the ones I missed</label></div>
@@ -740,7 +779,7 @@ function renderBank(){
         <button class="btn link" data-act="togglepaper" data-id="${esc(id)}" aria-expanded="${open}">${open ? "Hide questions" : "Show questions"}</button>
         ${S.canEdit && id !== "_unfiled" ? `<button class="btn link danger" data-act="delpaper" data-id="${esc(id)}">Delete paper</button>` : ""}
       </div>
-      ${open ? `<div class="qlist">${qs.map((q, k) => `<div class="qitem"><span class="n">${k + 1}.</span><div><div class="t">${esc(q.q)}</div><div class="small muted">Answer: ${Number.isInteger(q.answer) ? LETTERS[q.answer] + ". " + esc(q.options[q.answer]) : "not set"}, ${esc(q.category)}</div></div>
+      ${open ? `<div class="qlist">${qs.map((q, k) => `<div class="qitem"><span class="n">${k + 1}.</span><div><div class="t">${esc(q.q)}</div><div class="small muted">Answer: ${Number.isInteger(q.answer) ? LETTERS[q.answer] + ". " + esc(q.options[q.answer]) : "not set"}, ${esc(q.category)}${q.topic ? ": " + esc(q.topic) : ""}</div></div>
         <div>${S.canEdit ? `<button class="btn link" data-act="editq" data-id="${esc(q.id)}">Edit</button><button class="btn link danger" data-act="delq" data-id="${esc(q.id)}">Delete</button>` : ""}</div></div>`).join("") || `<p class="muted">No questions in this paper yet.</p>`}</div>` : ""}
     </div>`;
   };
@@ -764,6 +803,7 @@ function paperPicker(prefix, val){
       <label class="f" style="flex:1 1 160px">Type<select data-bind="imp.kind"><option value="official" ${I.kind === "official" ? "selected" : ""}>Past paper</option><option value="practice" ${I.kind === "practice" ? "selected" : ""}>Practice set</option></select></label>` : ""}
   </div>`;
 }
+function topicSelect(bind, cat, val){ const ts = topicsOf(cat); return `<select data-bind="${bind}" ${ts.length ? "" : "disabled"}><option value="" ${!val ? "selected" : ""}>${ts.length ? "No topic" : "No topics for this subject"}</option>${ts.map(t => `<option ${t === val ? "selected" : ""}>${esc(t)}</option>`).join("")}</select>`; }
 function catSelect(bind, val){ return `<select data-bind="${bind}">${CATS.map(c => `<option ${c === val ? "selected" : ""}>${esc(c)}</option>`).join("")}</select>`; }
 function ansSelect(bind, val, opts){ return `<select data-bind="${bind}" data-num="1"><option value="" ${val === "" ? "selected" : ""}>Pick the correct option</option>${LETTERS.map((L, k) => `<option value="${k}" ${val === k ? "selected" : ""}>${L}${opts && opts[k] ? ". " + esc(String(opts[k]).slice(0, 40)) : ""}</option>`).join("")}</select>`; }
 
@@ -822,6 +862,7 @@ function renderAdd(){
       <textarea rows="2" data-bind="imp.items.${k}.q">${esc(it.q)}</textarea>
       <div class="opt-grid">${it.options.map((o, j) => `<label class="f">${LETTERS[j]}<input type="text" data-bind="imp.items.${k}.options.${j}" value="${esc(o)}"></label>`).join("")}</div>
       <div class="opt-grid"><label class="f">Correct answer${ansSelect("imp.items." + k + ".answer", it.answer)}</label><label class="f">Subject${catSelect("imp.items." + k + ".category", it.category)}</label></div>
+      <label class="f">Topic${topicSelect("imp.items." + k + ".topic", it.category, it.topic)}</label>
     </div>`).join("")}</div>
     <div class="row" style="margin-top:16px"><button class="btn primary" data-act="saveimp" ${I.busy ? "disabled" : ""}>Save ${sel} ${sel === 1 ? "question" : "questions"}</button><span class="muted small">to ${I.paper === "new" ? "a new paper" : esc(paperName(I.paper))}</span></div>
   </section>` : ""}`}
@@ -831,6 +872,7 @@ function renderAdd(){
     <label class="f">Question<textarea rows="3" data-bind="edit.q">${esc(E.q)}</textarea></label>
     <div class="opt-grid">${E.options.map((o, j) => `<label class="f">Option ${LETTERS[j]}<input type="text" data-bind="edit.options.${j}" value="${esc(o)}"></label>`).join("")}</div>
     <div class="opt-grid"><label class="f">Correct answer${ansSelect("edit.answer", E.answer)}</label><label class="f">Subject${catSelect("edit.category", E.category)}</label></div>
+    <label class="f">Topic${topicSelect("edit.topic", E.category, E.topic)}</label>
     <label class="f">Explanation (optional)<input type="text" data-bind="edit.explanation" value="${esc(E.explanation)}"></label>
     <div class="row"><button class="btn primary" data-act="saveedit">${E.id ? "Save changes" : "Add question"}</button>${E.id ? `<button class="btn" data-act="canceledit">Cancel</button>` : ""}</div>
   </section>
@@ -852,6 +894,8 @@ document.addEventListener("input", e => {
   let v = el.type === "checkbox" ? el.checked : el.value;
   if (el.dataset.num) v = v === "" ? "" : Number(v);
   setPath(b, v);
+  if (b === "setup.cat") S.setup.topic = "all";
+  else if (/\.category$/.test(b)) setPath(b.replace(/category$/, "topic"), "");
   if (el.tagName === "SELECT" || el.type === "checkbox") render();
 });
 document.addEventListener("change", e => {
@@ -865,6 +909,8 @@ document.addEventListener("click", async e => {
   const act = el.dataset.act; const z = S.quiz;
   switch (act){
     case "start": startFromSetup(); break;
+    case "toggletopics": S.homeOpen[el.dataset.cat] = !S.homeOpen[el.dataset.cat]; render(); break;
+    case "quicktopic": { const p = shuffle(pool(el.dataset.cat, "all", el.dataset.topic)); startQuiz(p.slice(0, 25), "instant", el.dataset.cat + ": " + el.dataset.topic); break; }
     case "quick": { const p = shuffle(pool(el.dataset.cat, "all")); startQuiz(p.slice(0, 25), "instant", el.dataset.cat === "mistakes" ? "My mistakes" : el.dataset.cat); break; }
     case "practisepaper": { const id = el.dataset.id; const qs = id === "_unfiled" ? allQs().filter(q => !S.papers[q.paperId]) : paperQs(id); startQuiz(qs.filter(q => Number.isInteger(q.answer)), "exam", paperName(id)); break; }
     case "choose": choose(Number(el.dataset.k)); break;
@@ -884,7 +930,7 @@ document.addEventListener("click", async e => {
       render(); break;
     }
     case "delq": if (confirm("Delete this question?")){ try { await removeQuestion(el.dataset.id); toast("Question deleted."); } catch (err) { writeError(err); } render(); } break;
-    case "editq": { const q = S.questions[el.dataset.id]; if (!q) break; S.edit = { id: el.dataset.id, paperId: q.paperId, q: q.q, options: (q.options || []).concat(["","","",""]).slice(0, 4), answer: Number.isInteger(q.answer) ? q.answer : "", explanation: q.explanation || "", category: q.category || CATS[0] }; go("add"); break; }
+    case "editq": { const q = S.questions[el.dataset.id]; if (!q) break; S.edit = { id: el.dataset.id, paperId: q.paperId, q: q.q, options: (q.options || []).concat(["","","",""]).slice(0, 4), answer: Number.isInteger(q.answer) ? q.answer : "", explanation: q.explanation || "", category: q.category || CATS[0], topic: q.topic || "" }; go("add"); break; }
     case "canceledit": S.edit = blankEdit(); go("bank"); break;
     case "saveedit": saveEdit(); break;
     case "extract": extract(); break;
