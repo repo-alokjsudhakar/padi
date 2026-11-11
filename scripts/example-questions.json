@@ -1,0 +1,14 @@
+[
+  {
+    "q": "Which organelle is known as the powerhouse of the cell?",
+    "options": ["Nucleus", "Mitochondria", "Ribosome", "Golgi body"],
+    "answer": "B",
+    "explanation": "Mitochondria produce most of the cell's **ATP**, its energy currency."
+  },
+  {
+    "q": "The chemical formula of water is",
+    "options": ["H$_{2}$O", "CO$_{2}$", "NaCl", "O$_{2}$"],
+    "answer": 0,
+    "explanation": "Two hydrogen atoms and one oxygen atom: H$_{2}$O."
+  }
+]

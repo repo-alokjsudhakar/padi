@@ -316,15 +316,21 @@ const SYLLABUS = [
 const LEGACY_CATS = ["History & Culture of India","Geography","History, Culture & Heritage of Tamil Nadu","Aptitude & Mental Ability","Current Affairs","General English (Part A)","Tamil (Part A)"];
 const CATS = SYLLABUS.flatMap(g => g.cats).concat(LEGACY_CATS, ["Uncategorised"]);
 const TOPICS = {
+  "Aptitude and Mental Ability": ["Simplification","Percentage","LCM and HCF","Ratio and Proportion","Simple Interest","Compound Interest","Area","Volume","Time and Work","Number Series","Rational Numbers","Fractions","Square and Square Root","Cubes and Cube Root","Prime and Co-prime Numbers","Divisibility","Problems on Numbers"],
+  "History, Culture, Heritage and Socio-Political Movements in Tamil Nadu": ["History of Tamil Society, Related Archaeological Discoveries","Tamil Literature from Sangam Age till Contemporary Times","Thirukkural","Early Agitations Against British Rule","Role of Tamil Nadu in Freedom Struggle","Role of Women in Freedom Struggle","Evolution of 19th and 20th Century Socio-Political Movements of Tamil Nadu","Justice Party, Growth of Rationalism and Self-Respect Movement","Dravidian Movements – Principles Underlying Both These Movements","Contributions of Thanthai Periyar and Peraringnar Anna"],
+  "History and Culture of India": ["Buddhism and Jainism","Mauryas","Indus Valley Civilization","Guptas and Delhi Sultans","Characteristics of Indian Culture - Unity in Diversity, Race, Language and Customs","Change and Continuity in the Socio-Cultural History of India","India as a Secular State - Social Harmony","Vedic Period","South Indian History","Age of Vijayanagaram and Bahmini Kingdoms","Mughals and Marathas"],
+  "Geography of India": ["Agricultural Pattern","Environmental Pollution, Reasons and Preventive Measures, and Climate Change","Forest and Wildlife","Location and Physical Features of India and Tamil Nadu","Monsoon, Rainfall, Weather and Climate","Natural Calamities and Disaster Management","Racial and Linguistic Groups and Major Tribes","Social Geography: Population Density and Distribution","Soil, Minerals and Natural Resources","Transport, Communication and Tourism","Water Resources and Rivers in India","Oceans and Continents","Green Energy","Universe","Globe and Map Reading"],
+  "Biology": ["Main Concepts of Life Science","Classification of Living Organisms","Health and Hygiene","Human Diseases","Environment and Ecology","Nutrition","Physiology","Evolution","Genetics"],
   "History & Culture of India": ["Indus Valley Civilisation","Vedic Age & Religions","Mauryas, Guptas & Harsha","South Indian Dynasties","Delhi Sultanate & Mughals","Vijayanagar & Marathas","European Arrival & British Rule","Indian Culture & Languages"],
-  "Indian National Movement": ["Early Revolts & Reform Movements","Rise of Nationalism & Congress","Gandhian Era","Revolutionary & Other Movements","Freedom Struggle in Tamil Nadu","National Leaders","Independence & Partition"],
-  "Indian Polity": ["Constitution & Preamble","Fundamental Rights, Duties & DPSP","Union Executive & Parliament","State Government","Judiciary","Local Government","Elections & Constitutional Bodies","Centre–State Relations","Rights & Governance"],
+  "Indian National Movement": ["Early Revolts & Reform Movements","Rise of Nationalism & Congress","Gandhian Era","Revolutionary & Other Movements","Freedom Struggle in Tamil Nadu","National Leaders","Independence & Partition","National Renaissance","Early Uprising Against British Rule","Indian National Congress","Emergence of Leaders","Different Modes of Agitation, Growth of Satyagraha and Militant Movements","Communalism and Patriotism","Governor-General","European Invasion","India Since Independence"],
+  "Indian Polity": ["Constitution & Preamble","Fundamental Rights, Duties & DPSP","Union Executive & Parliament","State Government","Judiciary","Local Government","Elections & Constitutional Bodies","Centre–State Relations","Rights & Governance","Constitution of India","Preamble to the Constitution","Salient Features of the Constitution","Union, State and Union Territory","Citizenship","Fundamental Rights","Directive Principles of State Policy","Fundamental Duties","Union Executive","Union Legislature","State Executive","State Legislature","Local Government and Panchayat Raj","Spirit of Federalism – Centre-State Relationship","Election","Judiciary in India","Rule of Law","Anti-Corruption Measures (Lokpal, Lok Ayukta)","Rights to Information Act","Empowerment of Women","Consumer Protection Forums","Human Rights Charter","Emergence","Amendment of the Constitution","Constitutional and Non-Constitutional Bodies","Parts and Schedules of the Constitution","India's Foreign Policy","India's International Relations"],
   "Geography": ["Earth & Universe","Physical Geography of India","Climate, Soils & Agriculture","Resources & Industry","Transport & Communication","Population","Environment & Disasters","Geography of Tamil Nadu","World Geography"],
-  "Indian Economy": ["Planning & Five-Year Plans","Agriculture","Industry & Infrastructure","Money, Banking & Inflation","Taxation & Public Finance","Poverty, Employment & Welfare","Rural Development"],
+  "Indian Economy": ["Planning & Five-Year Plans","Agriculture","Industry & Infrastructure","Money, Banking & Inflation","Taxation & Public Finance","Poverty, Employment & Welfare","Rural Development","Nature of Indian Economy","Five Year Plan Models – An Assessment, Planning Commission and NITI Aayog","Sources of Revenue","Reserve Bank of India","Fiscal Policy and Monetary Policy","Finance Commission","Resource Sharing Between Union and State Governments","Goods and Service Tax","Structure of Indian Economy and Employment Generation","Land Reforms and Agriculture – Application of Science and Technology in Agriculture","Industrial Growth and Rural Welfare-Oriented Programmes","Social Problems – Population, Education, Health, Employment and Poverty"],
   "General Science": ["Scientific Knowledge & Scientific Temper","Power of Reasoning","Rote & Conceptual Learning","Science as a Tool: Past, Present & Future","Physics","Chemistry","Biology","Health & Diseases","Science & Technology"],
-  "Physics": ["Nature of Universe","General Scientific Laws","Mechanics","Properties of Matter","Everyday Application of the Basic Principles of Mechanics","Motion and Energy","Force","Electricity"],
+  "Physics": ["Nature of Universe","General Scientific Laws","Mechanics","Properties of Matter","Everyday Application of the Basic Principles of Mechanics","Motion and Energy","Force","Electricity","Magnets","Light","Sound","Heat","Nuclear Physics","Laser","Electronics and Communication"],
+  "Chemistry": ["Elements and Compounds","Acids, Bases and Salts","Oxidation and Reduction","Petroleum Products","Fertilizers and Pesticides","Periodic Classification of Elements","Atomic Structure","Inorganic Chemistry","Chemical Equilibrium and Kinetics","Metallurgy","Physical Chemistry","Electrochemistry","Biomolecules","Carbon and Its Compounds","Chemistry in Everyday Life","Organic Chemistry","Solutions","Applied Chemistry","Environmental Chemistry","Polymer Chemistry"],
   "History, Culture & Heritage of Tamil Nadu": ["Thirukkural","Sangam Age & Archaeology","Tamil Literature","Social Reform Movements","Palayakkarars & Early Resistance","Dynasties & Temples","Personalities of Tamil Nadu"],
-  "Development Administration in Tamil Nadu": ["Social Welfare Schemes","Education & Health","Economy & Agriculture of TN","e-Governance","Social Justice & Reservation","Administration & Vigilance"],
+  "Development Administration in Tamil Nadu": ["Social Welfare Schemes","Education & Health","Economy & Agriculture of TN","e-Governance","Social Justice & Reservation","Administration & Vigilance","Human Development Indicators in Tamil Nadu and a Comparative Assessment Across the Country","Impact of Social Reform Movements in the Socio-Economic Development of Tamil Nadu","Political Parties and Welfare Schemes for Various Sections of People","Rationale Behind Reservation Policy and Access to Social Resources","Economic Trends in Tamil Nadu","Role and Impact of Social Welfare Schemes in the Socio-Economic Development of Tamil Nadu","Social Justice and Social Harmony as the Cornerstones of Socio-Economic Development","Education and Health Systems in Tamil Nadu","Geography of Tamil Nadu and Its Impact on Economic Growth","Achievements of Tamil Nadu in Various Fields","E-Governance in Tamil Nadu"],
   "Current Affairs": ["National","Tamil Nadu","International","Science & Technology","Awards & Persons","Sports","Schemes & Welfare"],
   "Aptitude & Mental Ability": ["Simplification & Number System","HCF & LCM","Ratio & Proportion","Percentage","Simple & Compound Interest","Area & Volume","Time & Work","Averages","Probability","Algebra","Series & Number Puzzles","Logical Reasoning","Dice & Visual Reasoning"],
   "General English (Part A)": ["Grammar","Vocabulary & Word Usage","Sentence Transformation","Reading Comprehension","Literature & Poetry","Letters & Official Writing","Translation","Figures of Speech"],
@@ -340,7 +346,7 @@ const S = {
   mode: "local", loaded: false, loadNote: "", canEdit: true, uid: null,
   papers: {}, questions: {},
   progress: emptyProgress(),
-  setup: { cat: "all", topic: "all", paper: "all", count: "25", mode: "instant" }, homeOpen: {},
+  setup: { cat: "all", topic: "all", paper: "all", mode: "instant" }, homeOpen: {},
   quiz: null, result: null, wrongOnly: false,
   bankOpen: {},
   imp: { paper: "new", newTitle: "", newYear: "", kind: "official", text: "", items: [], busy: false, msg: "" },
@@ -470,7 +476,7 @@ function startQuiz(items, mode, label){
 }
 function startFromSetup(){
   const st = S.setup; const p = shuffle(pool(st.cat, st.paper, st.topic));
-  const n = st.count === "all" ? p.length : Math.min(Number(st.count), p.length);
+  const n = p.length; // every question that matches the chosen category and section
   const label = (st.cat === "all" ? "All categories" : st.cat === "mistakes" ? "My mistakes" : st.cat) + (st.topic && st.topic !== "all" && st.cat !== "all" && st.cat !== "mistakes" ? " → " + st.topic : "") + (st.paper !== "all" ? ", " + paperName(st.paper) : "");
   startQuiz(p.slice(0, n), st.mode, label);
 }
@@ -819,7 +825,7 @@ function syllabus(){
   const have = {}; catalogue().forEach(c => have[c.cat] = c);
   return SYLLABUS.map(g => ({ group: g.group, lang: g.lang, cats: g.cats.map(c => have[c] || { cat: c, n: 0, sections: [] }) }));
 }
-const SHORT_SEC = { "Scientific Knowledge & Scientific Temper": "Scientific Temper", "Science as a Tool: Past, Present & Future": "Science as a Tool", "Rote & Conceptual Learning": "Rote & Conceptual", "General Scientific Laws": "Scientific Laws", "Power of Reasoning": "Reasoning", "Everyday Application of the Basic Principles of Mechanics": "Everyday Mechanics" };
+const SHORT_SEC = { "Scientific Knowledge & Scientific Temper": "Scientific Temper", "Science as a Tool: Past, Present & Future": "Science as a Tool", "Rote & Conceptual Learning": "Rote & Conceptual", "General Scientific Laws": "Scientific Laws", "Power of Reasoning": "Reasoning", "Everyday Application of the Basic Principles of Mechanics": "Everyday Mechanics", "Electronics and Communication": "Electronics" };
 function statCat(c){ const p = S.progress.byCat[c]; return p && p.attempted ? p : null; }
 function statSec(c, t){ const p = (S.progress.byTopic || {})[c + "|" + t]; return p && p.attempted ? p : null; }
 function plural(n, one, many){ return n + " " + (n === 1 ? one : (many || one + "s")); }
@@ -903,7 +909,6 @@ function renderHome(){
     <div class="setup">
       <label class="f">Category${sel("setup.cat", catOpts, st.cat)}</label>
       ${secOpts ? `<label class="f">Section${sel("setup.topic", secOpts, st.topic)}</label>` : ""}
-      <label class="f">Questions${sel("setup.count", [["10","10"],["25","25"],["50","50"],["100","100"],["all","All matching"]], st.count)}</label>
       <label class="f">Checking${sel("setup.mode", [["instant","After each answer"],["exam","At the end, like the exam"]], st.mode)}</label>
       <button class="btn primary" data-act="start">Start test</button>
     </div>

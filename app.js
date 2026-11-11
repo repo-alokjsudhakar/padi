@@ -69,7 +69,11 @@ app.get("/api/status", wrap(async (req, res) => {
   const qs = await store.list("questions"); const ps = await store.list("papers");
   const byTopic = {};
   qs.forEach((q) => { const k = (q.data.category || "?") + " / " + (q.data.topic || "-"); byTopic[k] = (byTopic[k] || 0) + 1; });
-  res.json({ storage: store.kind, questionsInSeedFile: Object.keys(seed).filter((k) => k.startsWith("questions/")).length, questionsInDatabase: qs.length, papersInDatabase: ps.length, byTopic });
+  const sig = (v) => (String(v.q) + "|" + [...(v.options || [])].map(String).sort().join("|")).toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim();
+  const groups = {}; qs.forEach((q) => { const k = (q.data.category || "") + "|" + (q.data.topic || "") + "|" + sig(q.data); (groups[k] = groups[k] || []).push(q.id); });
+  const dups = Object.values(groups).filter((g) => g.length > 1);
+  const notInSeed = qs.filter((q) => !("questions/" + q.id in seed)).length;
+  res.json({ storage: store.kind, duplicateQuestionsInOneSection: dups.length, duplicateExamples: dups.slice(0, 10), questionsNotFromSeedFile: notInSeed, questionsInSeedFile: Object.keys(seed).filter((k) => k.startsWith("questions/")).length, questionsInDatabase: qs.length, papersInDatabase: ps.length, byTopic });
 }));
 
 

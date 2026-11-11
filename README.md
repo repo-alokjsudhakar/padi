@@ -109,6 +109,97 @@ into their account the first time they sign in.
 - **Backups.** Use **Question bank → Download backup** in the app now and then.
   **Add questions → Import a JSON file** restores it.
 
+## Adding questions yourself
+
+The question bank lives in `data/seed.json`. The easiest way to add to it is the helper script,
+which checks your file, tidies maths notation, saves the questions, and registers the section.
+
+### 1. Put your questions in a JSON file
+
+Either a simple list (see `scripts/example-questions.json`):
+
+```json
+[
+  {
+    "q": "Which organelle is known as the powerhouse of the cell?",
+    "options": ["Nucleus", "Mitochondria", "Ribosome", "Golgi body"],
+    "answer": "B",
+    "explanation": "Mitochondria produce most of the cell's ATP."
+  }
+]
+```
+
+`answer` is the correct option: `0`–`3`, or a letter `A`–`D`. `explanation` is optional and may
+use `**bold**` and `* bullet` lines. Maths such as `H$_{2}$O` or `10$^{-7}$` is converted to H₂O and 10⁻⁷.
+
+Or a file in Padi's own format (`"papers/…"` and `"questions/…"` keys), like the TNPSC Master
+files. Each question's own `topic` is used as its section.
+
+### 2. Run the script
+
+```
+node scripts/add-questions.js my-questions.json --category "Biology" --section "Cell Biology"
+```
+
+- `--category` must be a subject from the syllabus, spelled exactly (for example `Biology`,
+  `Indian Polity`, `Geography of India`). The script lists them if you get it wrong.
+- `--section` is the section name shown in the app. A new name creates a new section.
+- Add `--dry-run` to check the file without saving anything.
+- For a Padi-format file with several sections, pass only `--category`.
+
+A subject switches from **Coming soon** to live as soon as it has questions.
+Running the script again with the same file replaces those questions rather than duplicating them.
+
+### Avoiding and fixing duplicates
+
+- The script refuses to add a file if most of its questions are already in the bank under
+  another set, and tells you which set. This is what causes duplicates: the same questions
+  added twice under two different section names or ids.
+- `node scripts/add-questions.js --check` lists any identical questions in the bank.
+- `node scripts/add-questions.js --remove <set id>` removes a whole set. The set id is shown
+  when you add it (for example `tm-biology-cell-biology`).
+- Your local database and the Vercel database mirror `seed.json`: anything you remove from it
+  (or rename) is removed from them on the next start or deploy. Your users' progress and any
+  questions added inside the app are kept.
+- `http://localhost:3000/api/status` (or the same address on your Vercel site) shows
+  `duplicateQuestionsInOneSection` and `questionsNotFromSeedFile`, so you can see whether the
+  live database has anything `seed.json` doesn't.
+
+### 3. Check, then publish
+
+```
+npm start
+```
+
+Open http://localhost:3000 (and http://localhost:3000/api/status for the counts). Then commit and
+push; Vercel picks up the new questions on the first visit after deploying.
+
+### Editing by hand
+
+You can also edit `data/seed.json` directly. Each question is one entry under `"docs"`:
+
+```json
+"questions/tm-biology-cell-biology-001": {
+  "paperId": "tm-biology-cell-biology",
+  "n": 1,
+  "q": "Question text",
+  "options": ["A", "B", "C", "D"],
+  "answer": 1,
+  "explanation": "",
+  "category": "Biology",
+  "topic": "Cell Biology"
+}
+```
+
+Rules: the key after `questions/` must be unique; `answer` is `0`–`3`; `category` must match a
+syllabus subject exactly; `paperId` should match an entry `"papers/<paperId>"` with a `title`
+and `"kind": "practice"`. Section order within a subject comes from the `TOPICS` list near the
+top of the script in `public/index.html`; the helper script updates it for you.
+To remove something, delete its entry and add its key to the `"removed"` list at the end of
+`seed.json`, so it is also removed from the Vercel database.
+
+---
+
 ## Settings
 
 | Setting | Default | Purpose |
@@ -130,7 +221,8 @@ api/index.js            Starts app.js on Vercel
 lib/store.js            Storage: Upstash Redis on Vercel, data/bank.json locally
 public/index.html       The whole app (HTML, CSS and JavaScript in one file)
 public/claude-local.js  Browser runtime: storage, Claude, downloads, owner sign-in
-data/seed.json          Starting question bank
+data/seed.json          The question bank
+scripts/add-questions.js  Adds questions from a JSON file
 vercel.json             Vercel settings
 ```
 
