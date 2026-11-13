@@ -200,6 +200,27 @@ To remove something, delete its entry and add its key to the `"removed"` list at
 
 ---
 
+## How the question bank is served
+
+With tens of thousands of questions, the app never downloads the bank. `data/seed.json` is read
+once into memory on the server, and the app asks for small pieces:
+
+| Request | What it returns |
+| --- | --- |
+| `GET /api/catalogue` | Subjects, sections and counts (about 40 KB). The home page needs nothing else. |
+| `POST /api/quiz` | The question **ids** that make up a test, in order. A test holds at most 200 questions. |
+| `POST /api/questions` | Up to 50 questions by id. The app asks for 10 at a time and fetches the next 10 about five questions ahead. |
+| `GET /api/section` | One section or source, 20 questions per page (the owner's Question bank view). |
+| `GET /api/status` | Counts per subject and section, for checking a deployment. |
+
+The database (local file or Upstash Redis) holds only people's progress and any questions added
+or edited inside the app. Those are laid over the bank from `seed.json`, so editing a question in
+the app keeps working.
+
+To make a test longer or shorter than 200 questions, change `MAX_TEST` near the top of the
+question-bank routes in `app.js`; to change how many arrive per request, change `PAGE` and
+`AHEAD` in `public/index.html`.
+
 ## Settings
 
 | Setting | Default | Purpose |
@@ -219,6 +240,7 @@ app.js                  API routes, permissions and the Claude API proxy (Expres
 server.js               Starts app.js on your computer
 api/index.js            Starts app.js on Vercel
 lib/store.js            Storage: Upstash Redis on Vercel, data/bank.json locally
+lib/bank.js             The question bank in memory, served in small pages
 public/index.html       The whole app (HTML, CSS and JavaScript in one file)
 public/claude-local.js  Browser runtime: storage, Claude, downloads, owner sign-in
 data/seed.json          The question bank

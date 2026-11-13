@@ -42,6 +42,10 @@
       catch (e) { listeners[col].forEach((l) => l.err && l.err(e)); }
     }, 150);
   }
+  // The question bank is no longer fetched through this interface: the app asks the
+  // server for a catalogue and for small pages of questions (see /api/catalogue,
+  // /api/quiz, /api/questions, /api/section). Only questions added or edited inside
+  // the app live in these collections.
   const db = {
     collection(col) {
       return {

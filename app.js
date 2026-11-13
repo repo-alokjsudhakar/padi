@@ -6,6 +6,7 @@ const crypto = require("crypto");
 const path = require("path");
 const store = require("./lib/store");
 const auth = require("./lib/auth");
+const Bank = require("./lib/bank");
 
 const API_KEY = process.env.ANTHROPIC_API_KEY || "";
 const MODEL = process.env.CLAUDE_MODEL || "claude-sonnet-5-5";
@@ -61,26 +62,43 @@ app.get("/api/config", (req, res) => {
     googleClientId: auth.GOOGLE_CLIENT_ID || null, accounts: !!store, ai: !!API_KEY, storage: store ? store.kind : "none", images: IMAGES });
 });
 auth.mount(app, store, wrap);
-app.get("/api/status", wrap(async (req, res) => {
-  if (needStore(res)) return;
-  const fs = require("fs");
-  const seedFile = path.join(__dirname, "data", "seed.json");
-  const seed = fs.existsSync(seedFile) ? JSON.parse(fs.readFileSync(seedFile, "utf8")).docs || {} : {};
-  const qs = await store.list("questions"); const ps = await store.list("papers");
-  const byTopic = {};
-  qs.forEach((q) => { const k = (q.data.category || "?") + " / " + (q.data.topic || "-"); byTopic[k] = (byTopic[k] || 0) + 1; });
-  const sig = (v) => (String(v.q) + "|" + [...(v.options || [])].map(String).sort().join("|")).toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim();
-  const groups = {}; qs.forEach((q) => { const k = (q.data.category || "") + "|" + (q.data.topic || "") + "|" + sig(q.data); (groups[k] = groups[k] || []).push(q.id); });
-  const dups = Object.values(groups).filter((g) => g.length > 1);
-  const notInSeed = qs.filter((q) => !("questions/" + q.id in seed)).length;
-  res.json({ storage: store.kind, duplicateQuestionsInOneSection: dups.length, duplicateExamples: dups.slice(0, 10), questionsNotFromSeedFile: notInSeed, questionsInSeedFile: Object.keys(seed).filter((k) => k.startsWith("questions/")).length, questionsInDatabase: qs.length, papersInDatabase: ps.length, byTopic });
+/* ---------- question bank: small requests only ---------- */
+// What the home page needs: subjects, sections and counts (no questions).
+app.get("/api/catalogue", wrap(async (req, res) => {
+  res.json(Bank.catalogue(await Bank.bank(store, req.query.fresh === "1")));
 }));
-
+// Which questions make up a test: returns ids only, in test order.
+const MAX_TEST = 200;   // one test holds at most this many questions
+app.post("/api/quiz", wrap(async (req, res) => {
+  const v = await Bank.bank(store); const spec = req.body || {};
+  const all = Bank.pick(v, spec);
+  const cap = spec.paper ? all.length : Math.min(all.length, Number(spec.limit) || MAX_TEST);
+  res.json({ total: cap, available: all.length, ids: all.slice(0, cap) });
+}));
+// The questions themselves, at most 50 per request (the app asks for 10 at a time).
+app.post("/api/questions", wrap(async (req, res) => {
+  const ids = Array.isArray(req.body && req.body.ids) ? req.body.ids : [];
+  res.json({ items: Bank.byIds(await Bank.bank(store), ids) });
+}));
+// One section or one source of the question bank, a page at a time (owner's Question bank view).
+app.get("/api/section", wrap(async (req, res) => {
+  const v = await Bank.bank(store);
+  const ids = req.query.paper ? (v.byPaper.get(String(req.query.paper)) || []) : Bank.sectionIds(v, String(req.query.cat || ""), String(req.query.topic || ""));
+  res.json(Bank.page(v, ids, req.query.offset, req.query.limit));
+}));
+app.get("/api/status", wrap(async (req, res) => {
+  const v = await Bank.bank(store, true); const c = Bank.catalogue(v);
+  const bySection = {}; c.cats.forEach((x) => x.sections.forEach((s) => { bySection[x.cat + " / " + s.name] = s.n; }));
+  const overlay = store ? (await store.list("questions")).length : 0;
+  res.json({ storage: store ? store.kind : "none", questionsInBank: v.questions.size, questionsInSeedFile: Bank.loadBase().questions.size, questionsForPractice: c.total,
+    questionsAddedOrEditedInApp: overlay, sources: v.papers.size, subjects: c.cats.map((x) => ({ subject: x.cat, sections: x.sections.length, questions: x.n })), bySection });
+}));
 
 app.get("/api/collection", wrap(async (req, res) => {
   if (needStore(res)) return;
   const col = cleanPath(req.query.path, false); if (!col || col.startsWith("_")) return bad(res, "Bad collection path");
   if (col.startsWith("data/users") && !isAdmin(req)) return res.json([]);
+  if ((col === "questions" || col === "papers") && !isAdmin(req)) return res.json([]);   // only in-app additions live here, and only the owner needs them
   res.json(await store.list(col));
 }));
 app.get("/api/doc", wrap(async (req, res) => {
@@ -95,13 +113,17 @@ app.put("/api/doc", wrap(async (req, res) => {
   const p = cleanPath(req.query.path, true); if (!p) return bad(res, "Bad document path");
   if (!canWrite(req, p)) return res.status(403).json({ code: "invalid_argument", message: "Only the owner can change the question bank." });
   if (!req.body || typeof req.body !== "object" || Array.isArray(req.body)) return bad(res, "Document must be a JSON object");
-  await store.set(p, req.body); res.status(204).end();
+  await store.set(p, req.body); if (/^(questions|papers)\//.test(p)) Bank.invalidate(); res.status(204).end();
 }));
 app.delete("/api/doc", wrap(async (req, res) => {
   if (needStore(res)) return;
   const p = cleanPath(req.query.path, true); if (!p) return bad(res, "Bad document path");
   if (!canWrite(req, p)) return res.status(403).json({ code: "invalid_argument", message: "Only the owner can change the question bank." });
-  await store.del(p); res.status(204).end();
+  // Something that came from seed.json can't be deleted from the database, so it is hidden with a marker instead.
+  const m = p.match(/^(questions|papers)\/(.+)$/);
+  if (m && Bank.inSeed(m[1], m[2])) await store.set(p, { deleted: true }); else await store.del(p);
+  if (m) Bank.invalidate();
+  res.status(204).end();
 }));
 
 app.post("/api/claude", async (req, res) => {
