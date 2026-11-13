@@ -189,7 +189,8 @@ main{max-width:1080px}
 .mock-title{font-family:var(--head);font-weight:800;font-size:1.2rem}
 .mock{padding-right:96px}
 .mock::after{content:"";position:absolute;right:-18px;bottom:-18px;width:90px;height:90px;border-radius:50%;border:10px solid var(--guide);opacity:.55}
-.mock:hover{filter:brightness(1.12)}
+.mock:hover:not(:disabled){filter:brightness(1.12)}
+.mock:disabled{cursor:default;opacity:.55}
 
 /* categories and sections */
 .cat{margin-top:44px}
@@ -300,6 +301,27 @@ input[type=email],input[type=password]{background:var(--bg);border:1px solid var
 .q-wrap{max-width:1040px}
 .loading-q{display:flex;flex-direction:column;align-items:center;gap:14px;padding:56px 0}
 @media (max-width:860px){.q-main.answered{grid-template-columns:1fr}.q-main .verdict{max-height:none}.q-wrap{max-width:780px}}
+/* collapsible home sections + exam-year filter */
+.fold-btn{display:inline-flex;align-items:center;gap:12px;background:none;border:0;padding:0;margin:0;cursor:pointer;text-align:left;color:inherit}
+.fold-btn h2,.fold-btn h3{margin:0}
+.fold-btn .chev{width:11px;height:11px;margin-top:-6px;transition:transform .15s}
+.fold-btn[aria-expanded="true"] .chev{transform:rotate(45deg)}
+.fold-btn:hover h2,.fold-btn:hover h3{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.cat.shut .cat-head{margin-bottom:0}
+.mock-group .group-head{margin-bottom:16px;align-items:center}
+.years{display:flex;gap:6px;flex-wrap:wrap}
+.year{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 14px;font-weight:600;font-size:.9rem;cursor:pointer}
+.year.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+/* exam mode: answer sheet (1, 2 … 200) in a panel on the right */
+.q-wrap.exam{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,36%);gap:28px;align-items:start;max-width:1240px}
+main[data-view="quiz"]{max-width:1280px}
+.q-body{min-width:0}
+.sheet-panel{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px}
+.sheet-head{margin:0 0 10px;font-size:.9rem}
+.sheet-panel .sheet{grid-template-columns:repeat(auto-fill,minmax(42px,1fr));margin-top:0}
+.sheet-panel .sheet button{height:34px;padding:0}
+@media (max-width:1100px){.q-wrap.exam{grid-template-columns:minmax(0,1fr) 300px}}
+@media (max-width:860px){.q-wrap.exam{grid-template-columns:1fr;max-width:780px}.sheet-panel{position:static;max-height:none}.sheet-panel .sheet{grid-template-columns:repeat(auto-fill,minmax(40px,1fr))}}
 </style>
 </head>
 <body>
@@ -357,6 +379,8 @@ const S = {
   setup: { cat: "all", topic: "all", paper: "all", mode: "instant" }, homeOpen: {},
   quiz: null, result: null, wrongOnly: false,
   bankOpen: {},
+  fold: lsGet("padi:fold") || {},          // collapsed sections on the home page
+  mockYear: lsGet("padi:mockyear") || "all",
   imp: { paper: "new", newTitle: "", newYear: "", kind: "official", text: "", items: [], busy: false, msg: "" },
   edit: blankEdit(),
   sampleOK: false, exportText: ""
@@ -466,6 +490,10 @@ function paperList(){
     .sort((a, b) => (Number(b.year) || 0) - (Number(a.year) || 0) || String(a.title).localeCompare(String(b.title)));
 }
 function paperName(pid){ const p = S.papers[pid]; return p ? (p.title + (p.year ? " (" + p.year + ")" : "")) : "Unfiled"; }
+function isGroup2Paper(p){
+  const text = String((p && p.title) || "") + " " + String((p && p.id) || "");
+  return /(?:group\s*(?:ii|iia|2\s*\/\s*iia|2a)|tnpsc-group2a)/i.test(text) && /2026/.test(text);
+}
 
 /* ---------- routing ---------- */
 const VIEWS = ["home", "quiz", "results", "bank", "add"];
@@ -916,6 +944,9 @@ function render(){
   else html = renderHome();
   app.innerHTML = note + html;
   app.dataset.view = v;
+  // Keep the current question's number in view inside the answer-sheet panel.
+  const panel = app.querySelector(".sheet-panel"), cur = panel && panel.querySelector(".cur");
+  if (cur && panel.scrollHeight > panel.clientHeight) panel.scrollTop += cur.getBoundingClientRect().top - panel.getBoundingClientRect().top - panel.clientHeight / 2;
 }
 document.addEventListener("focusout", () => setTimeout(() => { if (pendingRender) render(); }, 0));
 
@@ -930,7 +961,9 @@ function renderHome(){
       <p class="lede">${S.canEdit ? "Add a past paper or a set of questions to start practising." : "Questions will appear here once the owner adds them."}</p>
       ${S.canEdit ? `<p><a class="btn primary big" href="#add">Add questions</a></p>` : ""}</div></section>`;
   }
-  const mocks = paperList().filter(p => p.kind === "official" && p.n).map(p => ({ p, n: p.n }));
+  // Mock tests: official papers. Empty ones (no questions added yet) show as "coming soon".
+  const mocks = paperList().filter(p => p.kind === "official" || (p.n && isGroup2Paper(p)))
+    .sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
   const st = S.setup;
   const curCat = cats.find(c => c.cat === st.cat);
   const sel = (bind, opts, val) => `<select data-bind="${bind}">${opts.map(([k, t]) => `<option value="${esc(k)}" ${k === val ? "selected" : ""}>${esc(t)}</option>`).join("")}</select>`;
@@ -972,26 +1005,39 @@ function renderHome(){
     </div>
   </section>
 
-  ${mocks.length ? `<section><h2>Full mock tests</h2><div class="mocks">${mocks.map(({ p, n }) => `<button class="mock" data-act="practisepaper" data-id="${esc(p.id)}">
-      <span class="mock-title">${esc(p.title)}</span><span class="muted small">${plural(n, "question")}, checked at the end like the real exam</span></button>`).join("")}</div></section>` : ""}
+  ${mocks.length ? (() => {
+    const years = [...new Set(mocks.map(p => String(p.year || "")).filter(Boolean))].sort((a, b) => b.localeCompare(a));
+    const yr = years.includes(String(S.mockYear)) ? String(S.mockYear) : "all";
+    const shown = yr === "all" ? mocks : mocks.filter(p => String(p.year) === yr);
+    return `<section class="group mock-group">
+    <div class="group-head">${foldBtn("mocks", `<h2>Full Mock Test</h2>`)}
+      ${years.length > 1 && !S.fold.mocks ? `<div class="years" role="group" aria-label="Exam year">${[["all", "All years"]].concat(years.map(y => [y, y])).map(([k, t]) => `<button class="year ${k === yr ? "on" : ""}" data-act="mockyear" data-year="${esc(k)}" aria-pressed="${k === yr}">${esc(t)}</button>`).join("")}</div>` : `<span class="muted small">${plural(mocks.length, "exam")}</span>`}</div>
+    ${S.fold.mocks ? "" : `<div class="mocks">${shown.map(p => `<button class="mock" data-act="practisepaper" data-id="${esc(p.id)}" ${p.n ? "" : "disabled"}>
+      <span class="mock-title">${esc(p.title)}</span><span class="muted small">${p.n ? plural(p.n, "question") + ", checked at the end like the real exam" : "Questions coming soon"}</span></button>`).join("")}</div>`}</section>`; })() : ""}
 
   ${syllabus().map(g => { const live = g.cats.filter(c => c.n), soon = g.cats.filter(c => !c.n); return `<section class="group">
-    <div class="group-head"><h2 ${g.lang ? `lang="${g.lang}"` : ""}>${esc(g.group)}</h2><span class="muted small">${live.length} of ${g.cats.length} subjects ready</span></div>
-    ${live.map(c => { const p = statCat(c.cat); return `<div class="cat">
+    <div class="group-head">${foldBtn("g|" + g.group, `<h2 ${g.lang ? `lang="${g.lang}"` : ""}>${esc(g.group)}</h2>`)}<span class="muted small">${live.length} of ${g.cats.length} subjects ready</span></div>
+    ${S.fold["g|" + g.group] ? "" : live.map(c => { const p = statCat(c.cat); const shut = !!S.fold["c|" + c.cat]; return `<div class="cat ${shut ? "shut" : ""}">
       <div class="cat-head">
-        <div><h3>${esc(c.cat)}</h3><p class="muted small">${plural(c.n, "question")} in ${plural(c.sections.length, "section")}${p ? `, ${pct(p.correct, p.attempted)}% right so far` : ""}</p></div>
+        <div>${foldBtn("c|" + c.cat, `<h3>${esc(c.cat)}</h3>`)}<p class="muted small">${plural(c.n, "question")} in ${plural(c.sections.length, "section")}${p ? `, ${pct(p.correct, p.attempted)}% right so far` : ""}</p></div>
         <button class="btn" data-act="quick" data-cat="${esc(c.cat)}">Practise all</button>
       </div>
-      <div class="secs">${c.sections.map(s => `<button class="sec" data-act="quicktopic" data-cat="${esc(c.cat)}" data-topic="${esc(s.name)}">
+      ${shut ? "" : `<div class="secs">${c.sections.map(s => `<button class="sec" data-act="quicktopic" data-cat="${esc(c.cat)}" data-topic="${esc(s.name)}">
           <span class="sec-name">${esc(s.name)}</span>
           <span class="sec-meta">${stairs(statSec(c.cat, s.name), s.name)}<span class="muted small">${plural(s.n, "question")}</span></span>
-        </button>`).join("")}</div>
+        </button>`).join("")}</div>`}
     </div>`; }).join("")}
-    ${soon.length ? `<div class="soon-list" ${g.lang ? `lang="${g.lang}"` : ""}>${soon.map(c => `<div class="soon" aria-disabled="true"><span>${esc(c.cat)}</span><span class="soon-pill">Coming soon</span></div>`).join("")}</div>` : ""}
+    ${soon.length && !S.fold["g|" + g.group] ? `<div class="soon-list" ${g.lang ? `lang="${g.lang}"` : ""}>${soon.map(c => `<div class="soon" aria-disabled="true"><span>${esc(c.cat)}</span><span class="soon-pill">Coming soon</span></div>`).join("")}</div>` : ""}
   </section>`; }).join("")}
 
   ${(P.history || []).length ? `<section><h2>Recent tests</h2><div class="hist">${P.history.slice(0, 6).map(h => `<div class="hist-row"><div><div>${esc(h.label)}</div><div class="muted small">${new Date(h.at).toLocaleString()}</div></div><strong>${h.score}/${h.total}</strong></div>`).join("")}</div></section>` : ""}
   `;
+}
+
+// A heading that collapses/expands its section on the home page (remembered per browser).
+function foldBtn(key, inner){
+  const open = !S.fold[key];
+  return `<button class="fold-btn" data-act="fold" data-key="${esc(key)}" aria-expanded="${open}" title="${open ? "Collapse" : "Expand"}"><span class="chev" aria-hidden="true"></span>${inner}</button>`;
 }
 
 function renderGate(inQuiz){
@@ -1058,7 +1104,8 @@ function renderQuiz(){
       <p class="verdict-head">${chosen === q.answer ? "Correct." : "Not quite. The answer is " + LETTERS[q.answer] + ": " + esc(q.options[q.answer]) + "."}</p>
       ${q.explanation ? `<div class="expl">${fmtExpl(q.explanation)}</div>` : ""}</aside>` : "";
   const last = i === z.ids.length - 1;
-  return `<div class="q-wrap">
+  const exam = z.mode === "exam";
+  return `<div class="q-wrap ${exam ? "exam" : ""}"><div class="q-body">
     <div class="q-top">
       <button class="btn link" data-act="quit">Leave test</button>
       <span class="q-label">${esc(z.label)}</span>
@@ -1080,7 +1127,9 @@ function renderQuiz(){
       <span class="spacer"></span>
       <button class="btn ${last ? "primary" : ""}" data-act="finish">${z.mode === "exam" ? "Submit test" : "Finish and see score"}</button>
     </div>
-    ${z.mode === "exam" ? `<div class="sheet" aria-label="Answer sheet">${z.ids.map((_, k) => `<button data-act="jump" data-k="${k}" class="${z.answers[k] !== undefined ? "done" : ""} ${k === i ? "cur" : ""}" aria-label="Question ${k + 1}">${k + 1}</button>`).join("")}</div><p class="muted small">${answered} of ${z.ids.length} answered. Keys 1–4 or A–D pick an option; arrow keys move between questions.</p>` : `<p class="muted small keys">Keys 1–4 or A–D pick an option; Enter goes to the next question.</p>`}
+    ${exam ? `<p class="muted small keys">Keys 1–4 or A–D pick an option; arrow keys move between questions.</p>` : `<p class="muted small keys">Keys 1–4 or A–D pick an option; Enter goes to the next question.</p>`}
+  </div>
+  ${exam ? `<aside class="sheet-panel" aria-label="Answer sheet"><p class="sheet-head"><strong>${answered}</strong> of ${z.ids.length} answered</p><div class="sheet">${z.ids.map((_, k) => `<button data-act="jump" data-k="${k}" class="${z.answers[k] !== undefined ? "done" : ""} ${k === i ? "cur" : ""}" aria-label="Question ${k + 1}">${k + 1}</button>`).join("")}</div></aside>` : ""}
   </div>`;
 }
 
@@ -1364,6 +1413,8 @@ document.addEventListener("click", async e => {
     case "start": startFromSetup(); break;
     case "quickall": startQuiz({ cat: "all", limit: 25 }, "instant", "Quick mix"); break;
     case "quit": if (!S.quiz || confirm("Leave this test? Your answers so far won’t be saved.")){ S.quiz = null; go("home"); } break;
+    case "fold": { const k = el.dataset.key; if (S.fold[k]) delete S.fold[k]; else S.fold[k] = 1; lsSet("padi:fold", S.fold); render(); break; }
+    case "mockyear": S.mockYear = el.dataset.year; lsSet("padi:mockyear", S.mockYear); render(); break;
     case "togglesec": { const k = el.dataset.key; S.bankOpen[k] = !S.bankOpen[k]; render(); if (S.bankOpen[k] && !(S.bankPage[k] || {}).items) loadBankPage(k); break; }
     case "signin": openAuth("signin"); break;
     case "signup": openAuth("signup"); break;

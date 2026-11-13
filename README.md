@@ -158,6 +158,26 @@ Running the script again with the same file replaces those questions rather than
 - `node scripts/add-questions.js --check` lists any identical questions in the bank.
 - `node scripts/add-questions.js --remove <set id>` removes a whole set. The set id is shown
   when you add it (for example `tm-biology-cell-biology`).
+
+### Adding questions to a Full Mock Test
+
+```
+node scripts/add-questions.js my-questions.json --mock "Technical Services Interview - 2026"
+```
+
+- `--mock` takes the test's title or id. `node scripts/add-questions.js --mocks` lists them:
+  `tnpsc-group2a-2026-paper2` (Group 2/2A - 2026), `tnpsc-technical-non-interview-2026`,
+  `tnpsc-technical-interview-2026`, `tnpsc-public-prosecutor-2026`, `tnpsc-technical-iti-2025`.
+- `--category` / `--section` are optional; a question's own `category` / `topic` are used if it
+  has them (they show on the results page breakdown).
+- New questions are numbered after those already in the test, and questions already in it
+  are skipped, so running the same file twice is safe. `--keep-numbers` uses each question's
+  own `n` instead.
+- `--remove <mock id>` (or `--clear <mock id>`) removes a test's questions but keeps the test.
+  If one of these tests goes missing anyway, `--mock <its id>` brings it back.
+- `--new-mock "<title>"` creates a brand-new mock test, e.g.
+  `node scripts/add-questions.js my-questions.json --new-mock "Group 1 Prelims - 2026"`.
+- A mock test with no questions shows on the home page as "Questions coming soon".
 - Your local database and the Vercel database mirror `seed.json`: anything you remove from it
   (or rename) is removed from them on the next start or deploy. Your users' progress and any
   questions added inside the app are kept.
