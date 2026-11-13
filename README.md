@@ -1,12 +1,11 @@
-# படி (Padi)
+# வெற்றிப் பாதை (Vetri Paathai)
 
-*Study, step by step.* படி means both “study” and “step” in Tamil.
+*படிப்படியாக வெற்றியை நோக்கி: step by step to TNPSC success.* வெற்றிப் பாதை means “the path to victory”.
 
-Padi is a practice app for TNPSC Group 4 past papers. Practise by subject or take full mock
-tests, track your accuracy and mistakes, and add new papers by uploading their PDFs: Claude
-reads each page (scanned or not) and the questions go straight into the test section.
-
-The question bank starts with the 2025 Group 4 (CCSE-IV) paper and a 20-question starter set.
+Vetri Paathai is a practice app for every TNPSC exam: Group 1, 2, 2A and 4, Technical Services and
+more. Practise section by section or take full mock tests, track your accuracy and mistakes,
+download study materials, and add new papers by uploading their PDFs: Claude reads each page
+(scanned or not) and the questions go straight into the test section.
 
 ---
 
@@ -34,7 +33,7 @@ question bank is saved in `data/bank.json`, with a dated copy in `data/backups/`
    ```
    git init
    git add .
-   git commit -m "Padi first version"
+   git commit -m "Vetri Paathai first version"
    git branch -M main
    git remote add origin https://github.com/YOUR-USERNAME/padi.git
    git push -u origin main
@@ -132,7 +131,7 @@ Either a simple list (see `scripts/example-questions.json`):
 `answer` is the correct option: `0`–`3`, or a letter `A`–`D`. `explanation` is optional and may
 use `**bold**` and `* bullet` lines. Maths such as `H$_{2}$O` or `10$^{-7}$` is converted to H₂O and 10⁻⁷.
 
-Or a file in Padi's own format (`"papers/…"` and `"questions/…"` keys), like the TNPSC Master
+Or a file in the app's own format (`"papers/…"` and `"questions/…"` keys), like the TNPSC Master
 files. Each question's own `topic` is used as its section.
 
 ### 2. Run the script
@@ -145,7 +144,7 @@ node scripts/add-questions.js my-questions.json --category "Biology" --section "
   `Indian Polity`, `Geography of India`). The script lists them if you get it wrong.
 - `--section` is the section name shown in the app. A new name creates a new section.
 - Add `--dry-run` to check the file without saving anything.
-- For a Padi-format file with several sections, pass only `--category`.
+- For an app-format file with several sections, pass only `--category`.
 
 A subject switches from **Coming soon** to live as soon as it has questions.
 Running the script again with the same file replaces those questions rather than duplicating them.
@@ -158,6 +157,44 @@ Running the script again with the same file replaces those questions rather than
 - `node scripts/add-questions.js --check` lists any identical questions in the bank.
 - `node scripts/add-questions.js --remove <set id>` removes a whole set. The set id is shown
   when you add it (for example `tm-biology-cell-biology`).
+
+### Adding study materials (Materials page)
+
+```
+node scripts/add-material.js science-10.pdf --type school --title "Science" --class 10 --medium English
+node scripts/add-material.js polity.pdf --type subject --title "Indian Polity: complete notes" --subject "Indian Polity"
+node scripts/add-material.js physics-recap.pdf --type revision --title "Physics one-liners" --subject "Physics"
+node scripts/add-material.js --type subject --title "Indian Economy" --subject "Indian Economy" --url "https://drive.google.com/…"
+```
+
+- `--type` is `school` (school books), `subject` (subject-wise combined material) or
+  `revision` (recap/revision notes). The file is copied into `public/materials/<type>/` and
+  listed in `public/materials.json`; adding the same title again replaces it.
+- `--list` shows everything; `--remove <id>` removes an entry and its file.
+- Files are plain downloads (they never touch the database). GitHub refuses files over
+  100 MB, so host very large books elsewhere and use `--url`.
+- The "All Tamil Nadu school textbooks" link at the top of School books comes from
+  `officialTextbooks` in `public/materials.json`.
+
+### Adding questions to a Full Mock Test
+
+```
+node scripts/add-questions.js my-questions.json --mock "Technical Services Interview - 2026"
+```
+
+- `--mock` takes the test's title or id. `node scripts/add-questions.js --mocks` lists them:
+  `tnpsc-group2a-prelims-2026` (Group 2/2A Prelims - 2026), `tnpsc-group2a-2026-paper2` (Group 2/2A Mains - 2026), `tnpsc-technical-non-interview-2026`,
+  `tnpsc-technical-interview-2026`, `tnpsc-public-prosecutor-2026`, `tnpsc-technical-iti-2025`.
+- `--category` / `--section` are optional; a question's own `category` / `topic` are used if it
+  has them (they show on the results page breakdown).
+- New questions are numbered after those already in the test, and questions already in it
+  are skipped, so running the same file twice is safe. `--keep-numbers` uses each question's
+  own `n` instead.
+- `--remove <mock id>` (or `--clear <mock id>`) removes a test's questions but keeps the test.
+  If one of these tests goes missing anyway, `--mock <its id>` brings it back.
+- `--new-mock "<title>"` creates a brand-new mock test, e.g.
+  `node scripts/add-questions.js my-questions.json --new-mock "Group 1 Prelims - 2026"`.
+- A mock test with no questions shows on the home page as "Questions coming soon".
 - Your local database and the Vercel database mirror `seed.json`: anything you remove from it
   (or rename) is removed from them on the next start or deploy. Your users' progress and any
   questions added inside the app are kept.

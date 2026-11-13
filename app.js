@@ -1,4 +1,4 @@
-// Padi (படி) — the web server: API routes, storage and the Claude API proxy.
+// Vetri Paathai (வெற்றிப் பாதை) — the web server: API routes, storage and the Claude API proxy.
 // Used by server.js on your computer and by api/index.js on Vercel.
 require("dotenv").config();
 const express = require("express");
@@ -89,7 +89,7 @@ app.get("/api/section", wrap(async (req, res) => {
 app.get("/api/status", wrap(async (req, res) => {
   const v = await Bank.bank(store, true); const c = Bank.catalogue(v);
   const bySection = {}; c.cats.forEach((x) => x.sections.forEach((s) => { bySection[x.cat + " / " + s.name] = s.n; }));
-  const overlay = store ? (await store.list("questions")).length : 0;
+  const overlay = store ? await store.count("questions") : 0;
   res.json({ storage: store ? store.kind : "none", questionsInBank: v.questions.size, questionsInSeedFile: Bank.loadBase().questions.size, questionsForPractice: c.total,
     questionsAddedOrEditedInApp: overlay, sources: v.papers.size, subjects: c.cats.map((x) => ({ subject: x.cat, sections: x.sections.length, questions: x.n })), bySection });
 }));

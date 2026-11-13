@@ -1,4 +1,4 @@
-// Runtime for Padi (படி) outside claude.ai.
+// Runtime for Vetri Paathai (வெற்றிப் பாதை) outside claude.ai.
 // The app was first built as a Claude artifact, which talks to a `window.claude` runtime.
 // This file provides the same small interface (db, user, sample, downloads) backed by
 // this project's server, so the app code in index.html runs unchanged.

@@ -1,7 +1,7 @@
 {
   "name": "padi",
   "version": "1.1.0",
-  "description": "Padi (படி): TNPSC Group 4 past-paper practice app with PDF import powered by Claude",
+  "description": "Vetri Paathai (வெற்றிப் பாதை): TNPSC exam practice, mock tests and study materials, with PDF import powered by Claude",
   "main": "server.js",
   "type": "commonjs",
   "private": true,
