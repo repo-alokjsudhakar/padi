@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>படி (Padi): TNPSC Group 4 practice</title>
+<title>வெற்றிப் பாதை (Vetri Paathai): Step by step to TNPSC success</title>
+<meta name="description" content="Vetri Paathai: practise for every TNPSC exam (Group 1, 2, 2A, 4 and Technical Services) with section-wise tests, full mock tests and study materials.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@500;700;800&family=Mukta+Malar:wght@400;600;700&display=swap" rel="stylesheet">
@@ -39,7 +40,11 @@ a{color:var(--pen)}
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
 .top-in{max-width:1000px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
 .brand{font-family:var(--head);font-weight:800;font-size:1.15rem;letter-spacing:-.01em;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
-.brand-sub{font-family:var(--body);font-weight:600;font-size:.82rem;color:var(--ink-2);letter-spacing:0}
+.brand-name{display:flex;flex-direction:column;line-height:1.15}
+.brand-name>span:first-child{white-space:nowrap}
+@media (max-width:420px){.brand{font-size:1rem;gap:7px}}
+.brand-sub{font-family:var(--body);font-weight:600;font-size:.74rem;color:var(--ink-2);letter-spacing:0}
+.brand-sub b{color:var(--guide);font-weight:700}
 @media (max-width:520px){.brand-sub{display:none}}
 .brand-mark{width:22px;height:22px;border-radius:50%;border:2px solid var(--guide);position:relative}
 .brand-mark::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--pen)}
@@ -141,7 +146,7 @@ textarea{resize:vertical;line-height:1.5}
 .hist td{padding:8px 0;border-bottom:1px solid var(--line)}
 .hist td:last-child{text-align:right;font-weight:700}
 .scroll-x{overflow-x:auto}
-/* ---------- Padi redesign ---------- */
+/* ---------- redesign ---------- */
 a.btn{text-decoration:none;display:inline-flex;align-items:center}
 .btn.big{padding:12px 22px;font-size:1.02rem;border-radius:12px}
 .btn.wide{width:100%;justify-content:center}
@@ -189,7 +194,8 @@ main{max-width:1080px}
 .mock-title{font-family:var(--head);font-weight:800;font-size:1.2rem}
 .mock{padding-right:96px}
 .mock::after{content:"";position:absolute;right:-18px;bottom:-18px;width:90px;height:90px;border-radius:50%;border:10px solid var(--guide);opacity:.55}
-.mock:hover{filter:brightness(1.12)}
+.mock:hover:not(:disabled){filter:brightness(1.12)}
+.mock:disabled{cursor:default;opacity:.55}
 
 /* categories and sections */
 .cat{margin-top:44px}
@@ -300,11 +306,49 @@ input[type=email],input[type=password]{background:var(--bg);border:1px solid var
 .q-wrap{max-width:1040px}
 .loading-q{display:flex;flex-direction:column;align-items:center;gap:14px;padding:56px 0}
 @media (max-width:860px){.q-main.answered{grid-template-columns:1fr}.q-main .verdict{max-height:none}.q-wrap{max-width:780px}}
+/* collapsible home sections + exam-year filter */
+.fold-btn{display:inline-flex;align-items:center;gap:12px;background:none;border:0;padding:0;margin:0;cursor:pointer;text-align:left;color:inherit}
+.fold-btn h2,.fold-btn h3{margin:0}
+.fold-btn .chev{width:11px;height:11px;margin-top:-6px;transition:transform .15s}
+.fold-btn[aria-expanded="true"] .chev{transform:rotate(45deg)}
+.fold-btn:hover h2,.fold-btn:hover h3{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.cat.shut .cat-head{margin-bottom:0}
+.mock-group .group-head{margin-bottom:16px;align-items:center}
+.years{display:flex;gap:6px;flex-wrap:wrap}
+.year{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 14px;font-weight:600;font-size:.9rem;cursor:pointer}
+.year.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+/* study materials */
+.mat-hero{padding:8px 0 4px}
+.mat-hero h1{max-width:none}
+.mat-jump{margin-top:18px}
+.mat-jump .year{text-decoration:none;color:var(--ink)}
+.mat-ta{font-size:.55em;font-weight:700;color:var(--guide);margin-left:6px;vertical-align:middle}
+.mat-lede{margin:6px 0 14px;max-width:70ch}
+.mat-sub{font-size:1.05rem;margin:22px 0 10px}
+.mats{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}
+.mat{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--pen);border-radius:12px;padding:12px 14px;min-width:0}
+.mat-ico{flex:none;width:44px;height:52px;border-radius:6px;background:var(--guide-soft);color:var(--guide);display:grid;place-items:center;font-weight:800;font-size:.72rem;letter-spacing:.04em}
+.mat-body{flex:1;min-width:0}
+.mat-title{font-weight:700;overflow-wrap:anywhere}
+.mat.official{text-decoration:none;color:var(--ink);border-left-color:var(--guide);margin-bottom:6px}
+.mat.official:hover{filter:brightness(.98)}
+.mat-empty{margin:10px 0 0}
+#mat-school .years{margin-bottom:6px}
+/* exam mode: answer sheet (1, 2 … 200) in a panel on the right */
+.q-wrap.exam{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,36%);gap:28px;align-items:start;max-width:1240px}
+main[data-view="quiz"]{max-width:1280px}
+.q-body{min-width:0}
+.sheet-panel{position:sticky;top:76px;max-height:calc(100vh - 96px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px}
+.sheet-head{margin:0 0 10px;font-size:.9rem}
+.sheet-panel .sheet{grid-template-columns:repeat(auto-fill,minmax(42px,1fr));margin-top:0}
+.sheet-panel .sheet button{height:34px;padding:0}
+@media (max-width:1100px){.q-wrap.exam{grid-template-columns:minmax(0,1fr) 300px}}
+@media (max-width:860px){.q-wrap.exam{grid-template-columns:1fr;max-width:780px}.sheet-panel{position:static;max-height:none}.sheet-panel .sheet{grid-template-columns:repeat(auto-fill,minmax(40px,1fr))}}
 </style>
 </head>
 <body>
 <header class="top"><div class="top-in">
-  <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true"></span><span lang="ta">படி</span><span class="brand-sub">Padi, TNPSC Group 4 practice</span></a>
+  <a class="brand" href="#home" aria-label="Vetri Paathai home"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name"><span lang="ta">வெற்றிப் பாதை</span><span class="brand-sub"><b>Vetri Paathai</b> · <span lang="ta">படிப்படியாக வெற்றியை நோக்கி</span></span></span></a>
   <nav id="nav"></nav>
   <div id="acct"></div>
 </div></header>
@@ -357,6 +401,9 @@ const S = {
   setup: { cat: "all", topic: "all", paper: "all", mode: "instant" }, homeOpen: {},
   quiz: null, result: null, wrongOnly: false,
   bankOpen: {},
+  fold: lsGet("padi:fold") || {},
+  mat: null, matErr: "", matMedium: lsGet("padi:matmedium") || "all",   // study materials (public/materials.json)          // collapsed sections on the home page
+  mockYear: lsGet("padi:mockyear") || "all",
   imp: { paper: "new", newTitle: "", newYear: "", kind: "official", text: "", items: [], busy: false, msg: "" },
   edit: blankEdit(),
   sampleOK: false, exportText: ""
@@ -466,9 +513,13 @@ function paperList(){
     .sort((a, b) => (Number(b.year) || 0) - (Number(a.year) || 0) || String(a.title).localeCompare(String(b.title)));
 }
 function paperName(pid){ const p = S.papers[pid]; return p ? (p.title + (p.year ? " (" + p.year + ")" : "")) : "Unfiled"; }
+function isGroup2Paper(p){
+  const text = String((p && p.title) || "") + " " + String((p && p.id) || "");
+  return /(?:group\s*(?:ii|iia|2\s*\/\s*iia|2a)|tnpsc-group2a)/i.test(text) && /2026/.test(text);
+}
 
 /* ---------- routing ---------- */
-const VIEWS = ["home", "quiz", "results", "bank", "add"];
+const VIEWS = ["home", "quiz", "results", "materials", "bank", "add"];
 function view(){ const h = location.hash.slice(1); return VIEWS.includes(h) ? h : "home"; }
 function go(v){ if (view() === v && location.hash.slice(1) === v) { render(); window.scrollTo(0, 0); } else location.hash = v; }
 window.addEventListener("hashchange", () => { if (view() !== "quiz") S.gate = false; render(); window.scrollTo(0, 0); });
@@ -589,7 +640,7 @@ function normalizeItem(x){
   return { include: true, q, options: opts, answer: a, explanation: String(x.explanation || "").trim(), category: cat, topic: validTopic(cat, x.topic) };
 }
 function extractPrompt(text){
-  return "You convert text copied from a TNPSC Group 4 exam question paper (and possibly its answer key) into structured multiple-choice questions.\n\n" +
+  return "You convert text copied from a TNPSC exam question paper (and possibly its answer key) into structured multiple-choice questions.\n\n" +
   "Return ONLY a JSON array, no prose and no code fences. Each element must be:\n" +
   '{"q": string, "options": [exactly 4 strings without the (A)/(B)/(C)/(D) labels], "answer": integer 0-3 or null, "explanation": string, "category": string}\n\n' +
   "Rules:\n" +
@@ -687,7 +738,7 @@ async function pageImage(doc, n){
   return blob;
 }
 function pagePrompt(a, b, total){
-  return "These images are pages " + a + " to " + b + " (of " + total + ") of a scanned TNPSC Group 4 exam question paper, in order.\n\n" +
+  return "These images are pages " + a + " to " + b + " (of " + total + ") of a scanned TNPSC exam question paper, in order.\n\n" +
   "Extract every multiple-choice question that is fully visible on these pages. Reply with ONLY this JSON:\n" +
   '{"questions":[{"n":12,"q":"question text","options":["A text","B text","C text","D text"],"marked":null,"suggested":2,"category":"Indian Polity","topic":"Judiciary"}],"key":{}}\n\n' +
   "Rules:\n" +
@@ -860,7 +911,7 @@ async function exportJSON(){
   } catch (e) { toast("Couldn’t build the backup: " + e.message); return; }
   const data = JSON.stringify({ app: "g4hall", version: 1, exportedAt: new Date().toISOString(), papers, questions }, null, 1);
   if (downloadsCap){
-    try { await downloadsCap.save({ filename: "padi-question-bank.json", data }); return; }
+    try { await downloadsCap.save({ filename: "vetri-paathai-question-bank.json", data }); return; }
     catch (e) { if (e && e.code === "cancelled") return; }
   }
   S.exportText = data; render(); toast("Copy the backup from the box below.");
@@ -887,7 +938,7 @@ const SHORT_SEC = { "Scientific Knowledge & Scientific Temper": "Scientific Temp
 function statCat(c){ const p = S.progress.byCat[c]; return p && p.attempted ? p : null; }
 function statSec(c, t){ const p = (S.progress.byTopic || {})[c + "|" + t]; return p && p.attempted ? p : null; }
 function plural(n, one, many){ return n + " " + (n === 1 ? one : (many || one + "s")); }
-// Five steps, one per 20% accuracy: the Padi (step) motif.
+// Five steps, one per 20% accuracy: the step (படி) motif.
 function stairs(p, label){
   const lvl = p ? Math.max(1, Math.min(5, Math.round(pct(p.correct, p.attempted) / 20))) : 0;
   const txt = p ? pct(p.correct, p.attempted) + "% right of " + p.attempted : "Not started";
@@ -902,7 +953,7 @@ function render(){
   pendingRender = false;
   const v = view();
   // Students see only Practise; the owner also gets the question bank and the tools to add questions.
-  const links = S.canEdit ? [["home", "Practise"], ["bank", "Question bank"], ["add", "Add questions"]] : [["home", "Practise"]];
+  const links = [["home", "Practise"], ["materials", "Materials"]].concat(S.canEdit ? [["bank", "Question bank"], ["add", "Add questions"]] : []);
   document.getElementById("nav").innerHTML = links.map(([h, t]) => `<a href="#${h}" ${v === h || (h === "home" && (v === "quiz" || v === "results")) ? 'aria-current="page"' : ""}>${t}</a>`).join("");
   renderAccount();
   const app = document.getElementById("app");
@@ -911,11 +962,15 @@ function render(){
   let html = "";
   if (v === "quiz") html = S.quiz ? renderQuiz() : S.gate ? `<div class="q-wrap">${renderGate(false)}</div>` : renderHome();
   else if (v === "results") html = S.result ? renderResults() : renderHome();
+  else if (v === "materials") html = renderMaterials();
   else if (v === "bank") html = S.canEdit ? renderBank() : renderHome();
   else if (v === "add") html = S.canEdit ? renderAdd() : renderHome();
   else html = renderHome();
   app.innerHTML = note + html;
   app.dataset.view = v;
+  // Keep the current question's number in view inside the answer-sheet panel.
+  const panel = app.querySelector(".sheet-panel"), cur = panel && panel.querySelector(".cur");
+  if (cur && panel.scrollHeight > panel.clientHeight) panel.scrollTop += cur.getBoundingClientRect().top - panel.getBoundingClientRect().top - panel.clientHeight / 2;
 }
 document.addEventListener("focusout", () => setTimeout(() => { if (pendingRender) render(); }, 0));
 
@@ -930,7 +985,9 @@ function renderHome(){
       <p class="lede">${S.canEdit ? "Add a past paper or a set of questions to start practising." : "Questions will appear here once the owner adds them."}</p>
       ${S.canEdit ? `<p><a class="btn primary big" href="#add">Add questions</a></p>` : ""}</div></section>`;
   }
-  const mocks = paperList().filter(p => p.kind === "official" && p.n).map(p => ({ p, n: p.n }));
+  // Mock tests: official papers. Empty ones (no questions added yet) show as "coming soon".
+  const mocks = paperList().filter(p => p.kind === "official" || (p.n && isGroup2Paper(p)))
+    .sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
   const st = S.setup;
   const curCat = cats.find(c => c.cat === st.cat);
   const sel = (bind, opts, val) => `<select data-bind="${bind}">${opts.map(([k, t]) => `<option value="${esc(k)}" ${k === val ? "selected" : ""}>${esc(t)}</option>`).join("")}</select>`;
@@ -945,8 +1002,8 @@ function renderHome(){
   <section class="hero">
     <div class="hero-copy">
       <p class="hello" lang="ta">வணக்கம்${name ? ", " + esc(name) : ""}</p>
-      <h1>${tot[0] ? "Keep climbing, one step at a time." : "Every step counts towards Group 4."}</h1>
-      <p class="lede">${plural(total, "question")} ready in ${cats.map(c => esc(c.cat)).join(" and ").replace(/ and (?=[^]* and )/g, ", ")}, with ${SYLLABUS.reduce((n, g) => n + g.cats.length, 0) - cats.length} more subjects on the way.${tot[0] ? ` You’ve answered ${tot[0]} so far with ${pct(tot[1], tot[0])}% right.` : " Pick a section below, or start with a quick mixed test."}</p>
+      <h1>${tot[0] ? "Keep climbing, one step at a time." : "Every step counts towards your success."}</h1>
+      <p class="lede">${total.toLocaleString("en-IN")} questions across ${cats.length} subjects, built for every TNPSC exam: Group 1, 2, 2A and 4, Technical Services and more. Master one section at a time, sit full mock tests just like the real exam, and turn every mistake into marks.${tot[0] ? ` <strong>You’ve answered ${tot[0].toLocaleString("en-IN")} so far with ${pct(tot[1], tot[0])}% right.</strong>` : ""}</p>
       <div class="row hero-cta">
         <button class="btn primary big" data-act="quickall" ${S.starting ? "disabled" : ""}>${S.starting ? "Preparing…" : "Start a quick 25"}</button>
         ${P.wrong.length ? `<button class="btn big" data-act="quick" data-cat="mistakes">Revise ${plural(P.wrong.length, "mistake")}</button>` : ""}
@@ -972,26 +1029,108 @@ function renderHome(){
     </div>
   </section>
 
-  ${mocks.length ? `<section><h2>Full mock tests</h2><div class="mocks">${mocks.map(({ p, n }) => `<button class="mock" data-act="practisepaper" data-id="${esc(p.id)}">
-      <span class="mock-title">${esc(p.title)}</span><span class="muted small">${plural(n, "question")}, checked at the end like the real exam</span></button>`).join("")}</div></section>` : ""}
+  ${mocks.length ? (() => {
+    const years = [...new Set(mocks.map(p => String(p.year || "")).filter(Boolean))].sort((a, b) => b.localeCompare(a));
+    const yr = years.includes(String(S.mockYear)) ? String(S.mockYear) : "all";
+    const shown = yr === "all" ? mocks : mocks.filter(p => String(p.year) === yr);
+    return `<section class="group mock-group">
+    <div class="group-head">${foldBtn("mocks", `<h2>Full Mock Test</h2>`)}
+      ${years.length > 1 && !S.fold.mocks ? `<div class="years" role="group" aria-label="Exam year">${[["all", "All years"]].concat(years.map(y => [y, y])).map(([k, t]) => `<button class="year ${k === yr ? "on" : ""}" data-act="mockyear" data-year="${esc(k)}" aria-pressed="${k === yr}">${esc(t)}</button>`).join("")}</div>` : `<span class="muted small">${plural(mocks.length, "exam")}</span>`}</div>
+    ${S.fold.mocks ? "" : `<div class="mocks">${shown.map(p => `<button class="mock" data-act="practisepaper" data-id="${esc(p.id)}" ${p.n ? "" : "disabled"}>
+      <span class="mock-title">${esc(p.title)}</span><span class="muted small">${p.n ? plural(p.n, "question") + ", checked at the end like the real exam" : "Questions coming soon"}</span></button>`).join("")}</div>`}</section>`; })() : ""}
 
   ${syllabus().map(g => { const live = g.cats.filter(c => c.n), soon = g.cats.filter(c => !c.n); return `<section class="group">
-    <div class="group-head"><h2 ${g.lang ? `lang="${g.lang}"` : ""}>${esc(g.group)}</h2><span class="muted small">${live.length} of ${g.cats.length} subjects ready</span></div>
-    ${live.map(c => { const p = statCat(c.cat); return `<div class="cat">
+    <div class="group-head">${foldBtn("g|" + g.group, `<h2 ${g.lang ? `lang="${g.lang}"` : ""}>${esc(g.group)}</h2>`)}<span class="muted small">${live.length} of ${g.cats.length} subjects ready</span></div>
+    ${S.fold["g|" + g.group] ? "" : live.map(c => { const p = statCat(c.cat); const shut = !!S.fold["c|" + c.cat]; return `<div class="cat ${shut ? "shut" : ""}">
       <div class="cat-head">
-        <div><h3>${esc(c.cat)}</h3><p class="muted small">${plural(c.n, "question")} in ${plural(c.sections.length, "section")}${p ? `, ${pct(p.correct, p.attempted)}% right so far` : ""}</p></div>
+        <div>${foldBtn("c|" + c.cat, `<h3>${esc(c.cat)}</h3>`)}<p class="muted small">${plural(c.n, "question")} in ${plural(c.sections.length, "section")}${p ? `, ${pct(p.correct, p.attempted)}% right so far` : ""}</p></div>
         <button class="btn" data-act="quick" data-cat="${esc(c.cat)}">Practise all</button>
       </div>
-      <div class="secs">${c.sections.map(s => `<button class="sec" data-act="quicktopic" data-cat="${esc(c.cat)}" data-topic="${esc(s.name)}">
+      ${shut ? "" : `<div class="secs">${c.sections.map(s => `<button class="sec" data-act="quicktopic" data-cat="${esc(c.cat)}" data-topic="${esc(s.name)}">
           <span class="sec-name">${esc(s.name)}</span>
           <span class="sec-meta">${stairs(statSec(c.cat, s.name), s.name)}<span class="muted small">${plural(s.n, "question")}</span></span>
-        </button>`).join("")}</div>
+        </button>`).join("")}</div>`}
     </div>`; }).join("")}
-    ${soon.length ? `<div class="soon-list" ${g.lang ? `lang="${g.lang}"` : ""}>${soon.map(c => `<div class="soon" aria-disabled="true"><span>${esc(c.cat)}</span><span class="soon-pill">Coming soon</span></div>`).join("")}</div>` : ""}
+    ${soon.length && !S.fold["g|" + g.group] ? `<div class="soon-list" ${g.lang ? `lang="${g.lang}"` : ""}>${soon.map(c => `<div class="soon" aria-disabled="true"><span>${esc(c.cat)}</span><span class="soon-pill">Coming soon</span></div>`).join("")}</div>` : ""}
   </section>`; }).join("")}
 
   ${(P.history || []).length ? `<section><h2>Recent tests</h2><div class="hist">${P.history.slice(0, 6).map(h => `<div class="hist-row"><div><div>${esc(h.label)}</div><div class="muted small">${new Date(h.at).toLocaleString()}</div></div><strong>${h.score}/${h.total}</strong></div>`).join("")}</div></section>` : ""}
   `;
+}
+
+/* ---------- study materials ---------- */
+// The list lives in public/materials.json (add files with scripts/add-material.js). Files are
+// plain static downloads, so they never touch the database.
+const MAT_TYPES = [
+  { type: "school", title: "School books", ta: "பள்ளிப் பாடநூல்கள்", lede: "Tamil Nadu State Board textbooks from Class 6 to 12: the base for most TNPSC questions." },
+  { type: "subject", title: "Subject-wise material", ta: "பாடவாரியான தொகுப்பு", lede: "Each subject combined into one book, arranged by the TNPSC syllabus." },
+  { type: "revision", title: "Recap and revision notes", ta: "மீள்பார்வைக் குறிப்புகள்", lede: "Short notes, key facts and one-liners for the last weeks before the exam." },
+];
+async function loadMaterials(){
+  if (S.matLoading) return; S.matLoading = true;
+  try { const r = await fetch("/materials.json", { cache: "no-cache" }); if (!r.ok) throw new Error("status " + r.status); S.mat = await r.json(); S.matErr = ""; }
+  catch (e) { S.mat = { items: [] }; S.matErr = "The materials list couldn’t be loaded (" + e.message + ")."; }
+  S.matLoading = false; if (view() === "materials") render();
+}
+function fmtSize(b){ b = Number(b) || 0; return !b ? "" : b >= 1048576 ? (b / 1048576).toFixed(b >= 10485760 ? 0 : 1) + " MB" : Math.max(1, Math.round(b / 1024)) + " KB"; }
+function matCard(m){
+  const href = m.file || m.url || "";
+  const meta = [m.class ? "Class " + m.class : "", m.subject && m.subject !== m.title ? m.subject : "", m.medium ? m.medium + " medium" : "", m.pages ? m.pages + " pages" : "", fmtSize(m.size)].filter(Boolean);
+  const ext = (href.match(/\.([a-z0-9]{2,4})(?:$|\?)/i) || [])[1];
+  return `<div class="mat">
+    <span class="mat-ico" aria-hidden="true">${esc((ext || (m.file ? "pdf" : "link")).toUpperCase())}</span>
+    <div class="mat-body"><div class="mat-title">${esc(m.title)}</div>${meta.length ? `<div class="muted small">${meta.map(esc).join(" · ")}</div>` : ""}${m.note ? `<div class="muted small">${esc(m.note)}</div>` : ""}</div>
+    ${!href ? `<span class="soon-pill">Coming soon</span>`
+      : m.file ? `<a class="btn primary" href="${esc(href)}" download>Download</a>`
+      : `<a class="btn" href="${esc(href)}" target="_blank" rel="noopener">Open</a>`}
+  </div>`;
+}
+function renderMaterials(){
+  if (!S.mat){ loadMaterials(); return `<div class="loading"><span class="stairs big" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><p class="muted">Loading materials…</p></div>`; }
+  const items = Array.isArray(S.mat.items) ? S.mat.items : [];
+  const total = items.filter(m => m.file || m.url).length;
+  return `<section class="mat-hero">
+    <p class="hello" lang="ta">படிக்கும் பொருட்கள்</p>
+    <h1>Study materials</h1>
+    <p class="lede">Everything you need to read alongside your practice: school books, subject-wise books and quick revision notes, free to download.${total ? ` ${plural(total, "file")} ready.` : ""}</p>
+    <div class="years mat-jump">${MAT_TYPES.map(t => `<a class="year" href="#materials" data-act="matjump" data-type="${t.type}">${esc(t.title)}</a>`).join("")}</div>
+  </section>
+  ${S.matErr ? `<div class="note">${esc(S.matErr)}</div>` : ""}
+  ${MAT_TYPES.map(t => {
+    let list = items.filter(m => m.type === t.type);
+    const key = "m|" + t.type, shut = !!S.fold[key];
+    let extra = "";
+    if (t.type === "school"){
+      const media = [...new Set(list.map(m => m.medium).filter(Boolean))].sort();
+      const md = media.includes(S.matMedium) ? S.matMedium : "all";
+      if (media.length > 1) extra = `<div class="years" role="group" aria-label="Medium">${[["all", "All"]].concat(media.map(x => [x, x + " medium"])).map(([k, label]) => `<button class="year ${k === md ? "on" : ""}" data-act="matmedium" data-m="${esc(k)}" aria-pressed="${k === md}">${esc(label)}</button>`).join("")}</div>`;
+      if (md !== "all") list = list.filter(m => m.medium === md);
+    }
+    const official = t.type === "school" && S.mat.officialTextbooks ? `<a class="mat official" href="${esc(S.mat.officialTextbooks)}" target="_blank" rel="noopener">
+        <span class="mat-ico" aria-hidden="true">TN</span><div class="mat-body"><div class="mat-title">All Tamil Nadu school textbooks</div><div class="muted small">Free on the official Tamil Nadu textbook website, every class and medium</div></div><span class="btn">Open site</span></a>` : "";
+    let body;
+    if (t.type === "school"){
+      const byClass = {}; list.forEach(m => { const c = m.class ? String(m.class) : "Other"; (byClass[c] = byClass[c] || []).push(m); });
+      const classes = Object.keys(byClass).sort((a, b) => (Number(a) || 99) - (Number(b) || 99));
+      body = official + classes.map(c => `<h3 class="mat-sub">${c === "Other" ? "Other books" : "Class " + esc(c)}</h3><div class="mats">${byClass[c].map(matCard).join("")}</div>`).join("");
+    } else {
+      const bySub = {}; list.forEach(m => { const c = m.subject || ""; (bySub[c] = bySub[c] || []).push(m); });
+      const subs = Object.keys(bySub).sort((a, b) => CATS.indexOf(a) - CATS.indexOf(b) || a.localeCompare(b));
+      body = t.type === "subject" ? `<div class="mats">${list.slice().sort((a, b) => (CATS.indexOf(a.subject) + 1 || 999) - (CATS.indexOf(b.subject) + 1 || 999) || String(a.title).localeCompare(String(b.title))).map(matCard).join("")}</div>`
+        : subs.map(c => `${c ? `<h3 class="mat-sub">${esc(c)}</h3>` : ""}<div class="mats">${bySub[c].map(matCard).join("")}</div>`).join("");
+    }
+    if (!list.length) body = (official || "") + `<p class="muted mat-empty">${t.type === "school" ? "Downloadable copies of individual books will appear here soon." : "Materials for this section are being prepared and will appear here soon."}</p>`;
+    return `<section class="group" id="mat-${t.type}">
+      <div class="group-head">${foldBtn(key, `<h2>${esc(t.title)} <span class="mat-ta" lang="ta">${esc(t.ta)}</span></h2>`)}<span class="muted small">${list.length ? plural(list.length, "file") : ""}</span></div>
+      ${shut ? "" : `<p class="muted mat-lede">${esc(t.lede)}</p>${extra}${body}`}
+    </section>`;
+  }).join("")}`;
+}
+
+// A heading that collapses/expands its section on the home page (remembered per browser).
+function foldBtn(key, inner){
+  const open = !S.fold[key];
+  return `<button class="fold-btn" data-act="fold" data-key="${esc(key)}" aria-expanded="${open}" title="${open ? "Collapse" : "Expand"}"><span class="chev" aria-hidden="true"></span>${inner}</button>`;
 }
 
 function renderGate(inQuiz){
@@ -1058,7 +1197,8 @@ function renderQuiz(){
       <p class="verdict-head">${chosen === q.answer ? "Correct." : "Not quite. The answer is " + LETTERS[q.answer] + ": " + esc(q.options[q.answer]) + "."}</p>
       ${q.explanation ? `<div class="expl">${fmtExpl(q.explanation)}</div>` : ""}</aside>` : "";
   const last = i === z.ids.length - 1;
-  return `<div class="q-wrap">
+  const exam = z.mode === "exam";
+  return `<div class="q-wrap ${exam ? "exam" : ""}"><div class="q-body">
     <div class="q-top">
       <button class="btn link" data-act="quit">Leave test</button>
       <span class="q-label">${esc(z.label)}</span>
@@ -1080,7 +1220,9 @@ function renderQuiz(){
       <span class="spacer"></span>
       <button class="btn ${last ? "primary" : ""}" data-act="finish">${z.mode === "exam" ? "Submit test" : "Finish and see score"}</button>
     </div>
-    ${z.mode === "exam" ? `<div class="sheet" aria-label="Answer sheet">${z.ids.map((_, k) => `<button data-act="jump" data-k="${k}" class="${z.answers[k] !== undefined ? "done" : ""} ${k === i ? "cur" : ""}" aria-label="Question ${k + 1}">${k + 1}</button>`).join("")}</div><p class="muted small">${answered} of ${z.ids.length} answered. Keys 1–4 or A–D pick an option; arrow keys move between questions.</p>` : `<p class="muted small keys">Keys 1–4 or A–D pick an option; Enter goes to the next question.</p>`}
+    ${exam ? `<p class="muted small keys">Keys 1–4 or A–D pick an option; arrow keys move between questions.</p>` : `<p class="muted small keys">Keys 1–4 or A–D pick an option; Enter goes to the next question.</p>`}
+  </div>
+  ${exam ? `<aside class="sheet-panel" aria-label="Answer sheet"><p class="sheet-head"><strong>${answered}</strong> of ${z.ids.length} answered</p><div class="sheet">${z.ids.map((_, k) => `<button data-act="jump" data-k="${k}" class="${z.answers[k] !== undefined ? "done" : ""} ${k === i ? "cur" : ""}" aria-label="Question ${k + 1}">${k + 1}</button>`).join("")}</div></aside>` : ""}
   </div>`;
 }
 
@@ -1202,7 +1344,7 @@ function drawAuth(){
   const up = S.authMode === "signup"; const gid = S.auth && S.auth.googleClientId;
   const keep = {}; ["au-name", "au-email"].forEach(id => { const el = document.getElementById(id); if (el) keep[id] = el.value; });
   dlg.innerHTML = `<form method="dialog" class="auth-card" onsubmit="return false">
-    <div class="auth-head"><span class="brand-mark" aria-hidden="true"></span><h2>${up ? "Create your account" : "Sign in to Padi"}</h2><button class="btn link close" data-act="authclose" aria-label="Close">✕</button></div>
+    <div class="auth-head"><span class="brand-mark" aria-hidden="true"></span><h2>${up ? "Create your account" : "Sign in to Vetri Paathai"}</h2><button class="btn link close" data-act="authclose" aria-label="Close">✕</button></div>
     ${S.authReason ? `<div class="auth-reason">${esc(S.authReason)}</div>` : `<p class="muted small">Your scores and mistakes follow you to every device.</p>`}
     ${gid === "prototype" ? `<button class="btn big wide gproto" data-act="authgoogleproto"><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Continue with Google</button><div class="or"><span>or use email</span></div>`
       : gid ? `<div id="gbtn" class="gbtn"></div><div class="or"><span>or use email</span></div>` : ""}
@@ -1211,7 +1353,7 @@ function drawAuth(){
     <label class="f">Password<input id="au-pass" type="password" autocomplete="${up ? "new-password" : "current-password"}" minlength="8" required></label>
     ${S.authErr ? `<div class="auth-err" role="alert">${esc(S.authErr)}</div>` : ""}
     <button class="btn primary big wide" data-act="authsubmit" ${S.authBusy ? "disabled" : ""}>${S.authBusy ? "Please wait…" : up ? "Create account" : "Sign in"}</button>
-    <p class="small center">${up ? "Already have an account?" : "New to Padi?"} <button class="btn link" data-act="authswitch">${up ? "Sign in" : "Create an account"}</button></p>
+    <p class="small center">${up ? "Already have an account?" : "New to Vetri Paathai?"} <button class="btn link" data-act="authswitch">${up ? "Sign in" : "Create an account"}</button></p>
     <p class="small center"><button class="btn link muted" data-act="authclose">Continue as a guest</button></p>
   </form>`;
   Object.entries(keep).forEach(([id, val]) => { const el = document.getElementById(id); if (el) el.value = val; });
@@ -1364,6 +1506,10 @@ document.addEventListener("click", async e => {
     case "start": startFromSetup(); break;
     case "quickall": startQuiz({ cat: "all", limit: 25 }, "instant", "Quick mix"); break;
     case "quit": if (!S.quiz || confirm("Leave this test? Your answers so far won’t be saved.")){ S.quiz = null; go("home"); } break;
+    case "matjump": { e.preventDefault(); const k = "m|" + el.dataset.type; if (S.fold[k]){ delete S.fold[k]; lsSet("padi:fold", S.fold); render(); } const t = document.getElementById("mat-" + el.dataset.type); if (t) t.scrollIntoView({ behavior: "smooth", block: "start" }); break; }
+    case "fold": { const k = el.dataset.key; if (S.fold[k]) delete S.fold[k]; else S.fold[k] = 1; lsSet("padi:fold", S.fold); render(); break; }
+    case "matmedium": S.matMedium = el.dataset.m; lsSet("padi:matmedium", S.matMedium); render(); break;
+    case "mockyear": S.mockYear = el.dataset.year; lsSet("padi:mockyear", S.mockYear); render(); break;
     case "togglesec": { const k = el.dataset.key; S.bankOpen[k] = !S.bankOpen[k]; render(); if (S.bankOpen[k] && !(S.bankPage[k] || {}).items) loadBankPage(k); break; }
     case "signin": openAuth("signin"); break;
     case "signup": openAuth("signup"); break;
